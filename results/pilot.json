@@ -1,0 +1,46 @@
+{
+  "rows": [
+    {
+      "case": "A04",
+      "safe": true,
+      "full_states": 2219,
+      "full_obligations": 10702,
+      "verifier": {
+        "verdict": "SAFE",
+        "obligations": 10702
+      },
+      "oracle_constraint_systems": 790,
+      "oracle_states": 95
+    },
+    {
+      "case": "C05",
+      "safe": false,
+      "full_states": 156,
+      "full_obligations": 337,
+      "verifier": {
+        "verdict": "UNSAFE",
+        "obligations": 3
+      },
+      "oracle_constraint_systems": 105,
+      "oracle_states": 26
+    },
+    {
+      "case": "C08",
+      "safe": false,
+      "full_states": 1642,
+      "full_obligations": 3183,
+      "verifier": {
+        "verdict": "UNSAFE",
+        "obligations": 7
+      },
+      "oracle_constraint_systems": 93,
+      "oracle_states": 49
+    }
+  ],
+  "cpu_seconds": 0.043969022999999996,
+  "wall_seconds": 0.04423139000004994,
+  "peak_rss_kib": 93864,
+  "workers": 1,
+  "bounded_action_events": 32,
+  "bounded_interrupts": 8
+}

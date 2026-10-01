@@ -1,0 +1,51 @@
+{
+  "id": "A01",
+  "title": "Guarded protected use",
+  "initial": "d",
+  "nodes": [
+    {
+      "id": "d",
+      "clean": false,
+      "pending": false
+    },
+    {
+      "id": "c",
+      "clean": true,
+      "pending": false
+    }
+  ],
+  "edges": [
+    {
+      "id": "n",
+      "src": "d",
+      "dst": "c",
+      "kind": "neutralize",
+      "guard": [],
+      "reset": true
+    },
+    {
+      "id": "i",
+      "src": "c",
+      "dst": "d",
+      "kind": "interrupt",
+      "guard": [],
+      "reset": false
+    },
+    {
+      "id": "u",
+      "src": "c",
+      "dst": "c",
+      "kind": "use",
+      "guard": [],
+      "reset": false
+    },
+    {
+      "id": "w",
+      "src": "d",
+      "dst": "d",
+      "kind": "step",
+      "guard": [],
+      "reset": false
+    }
+  ]
+}

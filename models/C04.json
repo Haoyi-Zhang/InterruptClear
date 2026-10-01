@@ -1,0 +1,61 @@
+{
+  "id": "C04",
+  "title": "Explicit pending cancellation",
+  "initial": "p",
+  "nodes": [
+    {
+      "id": "p",
+      "clean": false,
+      "pending": true
+    },
+    {
+      "id": "r",
+      "clean": true,
+      "pending": true
+    },
+    {
+      "id": "c",
+      "clean": true,
+      "pending": false
+    }
+  ],
+  "edges": [
+    {
+      "id": "n",
+      "src": "p",
+      "dst": "r",
+      "kind": "neutralize",
+      "guard": [],
+      "reset": true
+    },
+    {
+      "id": "effect",
+      "src": "r",
+      "dst": "c",
+      "kind": "effect",
+      "guard": [
+        [
+          ">=",
+          2
+        ]
+      ],
+      "reset": false
+    },
+    {
+      "id": "u",
+      "src": "r",
+      "dst": "r",
+      "kind": "use",
+      "guard": [],
+      "reset": false
+    },
+    {
+      "id": "after",
+      "src": "c",
+      "dst": "c",
+      "kind": "use",
+      "guard": [],
+      "reset": false
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+id,states,feasible_prefixes,constraint_systems,match
+A01,50,126,375,True
+A02,37,48,141,True
+A03,107,64,441,True
+A04,95,159,790,True
+C01,39,23,66,True
+C02,39,23,66,True
+C03,42,22,147,True
+C04,42,22,147,True
+C05,26,22,105,True
+C06,22,12,59,True
+C07,30,42,123,True
+C08,49,32,93,True

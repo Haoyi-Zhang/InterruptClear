@@ -1,0 +1,13 @@
+{
+  "tests": 37,
+  "failures": 0,
+  "errors": 0,
+  "malformed_cases_rejected": 22,
+  "generator_obligations": 1216,
+  "oracle_constraint_systems": 941,
+  "verifier_obligations": 116,
+  "cpu_seconds": 0.022341502999999985,
+  "wall_seconds": 0.023126865999984147,
+  "peak_rss_kib": 94120,
+  "workers": 1
+}

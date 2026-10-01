@@ -1,0 +1,90 @@
+{
+  "status": "All documented commands succeeded from the clean extracted packet; semantic comparison passed",
+  "environment_scope": "Separate processes in the same available container, not an independent laboratory or reviewer",
+  "commands": [
+    {
+      "command": "python3 run_tests.py --output results/reproduced-tests.json",
+      "working_directory": "artifact",
+      "exit_code": 0
+    },
+    {
+      "command": "python3 reproduce.py --output results/reproduced --compare results/reference.json",
+      "working_directory": "artifact",
+      "exit_code": 0
+    },
+    {
+      "command": "python3 verify.py models/A01.json results/certificates/A01.json --events 32 --interrupts 8",
+      "working_directory": "artifact",
+      "exit_code": 0
+    },
+    {
+      "command": "sh paper/build.sh",
+      "working_directory": ".",
+      "exit_code": 0
+    }
+  ],
+  "all_deterministic_protocol_fields_match": true,
+  "all_four_csv_outputs_match": true,
+  "all_twelve_certificates_match": true,
+  "test_semantic_fields_match": true,
+  "test_summary": {
+    "tests": 37,
+    "failures": 0,
+    "errors": 0,
+    "malformed_cases_rejected": 22,
+    "generator_obligations": 1216,
+    "oracle_constraint_systems": 941,
+    "workers": 1
+  },
+  "direct_verifier": {
+    "obligations": 2474,
+    "verdict": "SAFE"
+  },
+  "pdf_pages": {
+    "main.pdf": 7,
+    "supplement.pdf": 3
+  },
+  "implementation_proofs_models_protocol_and_paper_sources_unchanged": true,
+  "visual_inspection": {
+    "main_pages_viewed": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "supplement_pages_viewed": [
+      1,
+      2,
+      3
+    ],
+    "method": "Individual rendered pages inspected with the built-in image viewer after the clean build",
+    "observed_repairs": "Return-label overlap and fractional-marker collision are absent in the final TikZ renders",
+    "layout_observations": "No clipped text, overlapping labels, missing glyphs or undefined references observed. Last main page is substantially unfilled. Seven-page report is not twelve-page contract compliance.",
+    "independent_review": false
+  },
+  "experiment_measurements": {
+    "cpu_seconds": 0.1718475359999999,
+    "wall_seconds": 0.17120320200001515,
+    "peak_rss_kib": 95276,
+    "workers": 1
+  },
+  "test_measurements": {
+    "cpu_seconds": 0.01999689199999999,
+    "wall_seconds": 0.02142183599994496,
+    "peak_rss_kib": 94188,
+    "verifier_obligations": 124
+  },
+  "compile_measurements": {
+    "wall_seconds": 2.3122580660001404,
+    "child_cpu_seconds": 2.310181
+  },
+  "accounting_comparison": {
+    "primary_malformed_suite_verifier_obligations": 116,
+    "clean_malformed_suite_verifier_obligations": 124,
+    "explanation": "Set iteration can change work before rejecting a malformed certificate. These run-specific work observations are not semantic reference fields. An initial bookkeeping comparison incorrectly treated them as deterministic; the comparison was corrected without changing code, models, test outcomes or primary protocol results, and without another experiment run."
+  },
+  "limits": "CPU totals internal to runners exclude startup; direct demonstration CPU was not separately retained. PDF byte identity and independent execution assurance are not claimed. Final evidence and state metadata are added after the run; scientific sources stay unchanged."
+}

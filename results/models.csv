@@ -1,0 +1,13 @@
+id,locations,edges,max_constant,safe,states,obligations,verifier_obligations,integer_safe,certificate_bytes,diagnostic_length
+A01,2,4,0,True,872,2474,2474,True,11302,0
+A02,4,6,0,True,844,2237,2237,True,10964,0
+A03,3,5,2,True,2430,12480,12480,True,31437,0
+A04,4,8,1,True,2219,10702,10702,True,28701,0
+C01,5,6,0,False,936,1784,3,False,140,3
+C02,5,6,0,True,936,1784,1784,True,12156,0
+C03,3,4,2,False,250,1064,3,False,140,3
+C04,3,4,2,True,250,1064,1064,True,3254,0
+C05,3,4,1,False,156,337,3,True,135,3
+C06,3,4,1,True,126,278,278,True,1674,0
+C07,4,6,0,False,186,453,4,False,157,4
+C08,7,9,0,False,1642,3183,7,False,244,7
