@@ -40,4 +40,4 @@ There is no hardware refinement relation, information-flow proof, eventual-use g
 
 ## License and provenance
 
-Original code, models, tests, result data and documentation are available under the accompanying MIT license. No upstream executable code or source-paper figures are included. Scholarly algorithms are attributed in `docs/literature.md` and `external_resources.csv`. Substantive model design, arguments, source code, tests and documentation were generated with OpenAI ChatGPT (GPT-6 Astra Pro); they must not be represented as human-only work. No independent author approval or external peer review is asserted.
+Original code, models, tests, result data and documentation are available under the accompanying MIT license. No upstream executable code or source-paper figures are included. Scholarly algorithms are attributed in `docs/literature.md` and `external_resources.csv`.
