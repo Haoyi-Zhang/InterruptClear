@@ -1,4 +1,0 @@
-id,omitted_obligation,complete_model_safe,modified_model_safe,modified_verifier
-C01,interior,False,True,SAFE
-C03,effect,False,True,SAFE
-C05,i,False,True,SAFE

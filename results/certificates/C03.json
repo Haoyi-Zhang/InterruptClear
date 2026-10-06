@@ -1,1 +1,0 @@
-{"kind":"diagnostic","model":"C03","events":32,"interrupts":8,"steps":[{"edge":"n","x2":0},{"edge":"effect","x2":4},{"edge":"bad","x2":4}]}
