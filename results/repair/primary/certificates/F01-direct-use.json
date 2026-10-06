@@ -1,0 +1,93 @@
+{
+  "frontier": [
+    [
+      1,
+      1,
+      0,
+      0
+    ]
+  ],
+  "model": {
+    "atoms": [
+      {
+        "cost": 1,
+        "id": "C"
+      }
+    ],
+    "cap": [
+      1,
+      0,
+      0
+    ],
+    "constants": [
+      0
+    ],
+    "edges": [
+      {
+        "dst": "done",
+        "guard": [],
+        "id": "use",
+        "kind": "use",
+        "p_clear": null,
+        "reset": false,
+        "resume": null,
+        "src": "c0",
+        "t_clear": "C"
+      }
+    ],
+    "initial": {
+      "pc": "c0",
+      "pending": false,
+      "taint": true
+    },
+    "invariants": {},
+    "locations": [
+      "c0",
+      "done"
+    ],
+    "name": "F01-direct-use",
+    "urgent": [
+      "c0",
+      "done"
+    ]
+  },
+  "nodes": [
+    {
+      "p": [],
+      "parent": null,
+      "state": [
+        0,
+        0,
+        0,
+        "c0",
+        0,
+        []
+      ],
+      "t": [
+        0
+      ]
+    },
+    {
+      "p": [],
+      "parent": [
+        0,
+        [
+          "edge",
+          "use"
+        ]
+      ],
+      "state": [
+        1,
+        0,
+        0,
+        "done",
+        0,
+        []
+      ],
+      "t": [
+        1
+      ]
+    }
+  ],
+  "schema": "neutralization-frontier"
+}

@@ -1,0 +1,78 @@
+{
+  "atoms": [
+    {
+      "cost": 1,
+      "id": "C"
+    },
+    {
+      "cost": 2,
+      "id": "P"
+    },
+    {
+      "cost": 3,
+      "id": "U"
+    }
+  ],
+  "cap": [
+    3,
+    0,
+    0
+  ],
+  "constants": [
+    0
+  ],
+  "edges": [
+    {
+      "dst": "c1",
+      "guard": [],
+      "id": "visible-clean",
+      "kind": "nop",
+      "p_clear": null,
+      "reset": false,
+      "resume": null,
+      "src": "c0",
+      "t_clear": "C"
+    },
+    {
+      "dst": "c2",
+      "guard": [],
+      "id": "commit",
+      "kind": "commit",
+      "p_clear": "P",
+      "reset": false,
+      "resume": null,
+      "src": "c1",
+      "t_clear": null
+    },
+    {
+      "dst": "done",
+      "guard": [],
+      "id": "use",
+      "kind": "use",
+      "p_clear": null,
+      "reset": false,
+      "resume": null,
+      "src": "c2",
+      "t_clear": "U"
+    }
+  ],
+  "initial": {
+    "pc": "c0",
+    "pending": true,
+    "taint": true
+  },
+  "invariants": {},
+  "locations": [
+    "c0",
+    "c1",
+    "c2",
+    "done"
+  ],
+  "name": "F02-deferred-cause",
+  "urgent": [
+    "c0",
+    "c1",
+    "c2",
+    "done"
+  ]
+}

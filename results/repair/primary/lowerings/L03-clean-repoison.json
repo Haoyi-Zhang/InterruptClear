@@ -1,0 +1,239 @@
+{
+  "base": {
+    "atoms": [
+      {
+        "cost": 1,
+        "id": "C"
+      }
+    ],
+    "cap": [
+      5,
+      1,
+      1
+    ],
+    "constants": [
+      0
+    ],
+    "edges": [
+      {
+        "dst": "c1",
+        "guard": [],
+        "id": "start",
+        "kind": "nop",
+        "p_clear": null,
+        "reset": false,
+        "resume": null,
+        "src": "c0",
+        "t_clear": null
+      },
+      {
+        "dst": "h0",
+        "guard": [],
+        "id": "irq",
+        "kind": "interrupt",
+        "p_clear": null,
+        "reset": false,
+        "resume": "c1",
+        "src": "c1",
+        "t_clear": null
+      },
+      {
+        "dst": "done",
+        "guard": [],
+        "id": "use",
+        "kind": "use",
+        "p_clear": null,
+        "reset": false,
+        "resume": null,
+        "src": "c1",
+        "t_clear": null
+      },
+      {
+        "dst": "h1",
+        "guard": [],
+        "id": "handler",
+        "kind": "arm",
+        "p_clear": null,
+        "reset": false,
+        "resume": null,
+        "src": "h0",
+        "t_clear": null
+      },
+      {
+        "dst": null,
+        "guard": [],
+        "id": "ret",
+        "kind": "return",
+        "p_clear": null,
+        "reset": false,
+        "resume": null,
+        "src": "h1",
+        "t_clear": null
+      }
+    ],
+    "initial": {
+      "pc": "c0",
+      "pending": false,
+      "taint": true
+    },
+    "invariants": {},
+    "locations": [
+      "c0",
+      "c1",
+      "done",
+      "h0",
+      "h1"
+    ],
+    "name": "L03-clean-repoison",
+    "urgent": [
+      "c0",
+      "c1",
+      "done",
+      "h0",
+      "h1"
+    ]
+  },
+  "edge_origins": {
+    "x0": "start",
+    "x1": null,
+    "x2": "irq",
+    "x3": "irq",
+    "x4": "use",
+    "x5": "handler",
+    "x6": "ret"
+  },
+  "expanded": {
+    "atoms": [
+      {
+        "cost": 1,
+        "id": "C"
+      }
+    ],
+    "cap": [
+      5,
+      1,
+      1
+    ],
+    "constants": [
+      0
+    ],
+    "edges": [
+      {
+        "dst": "v1p0",
+        "guard": [],
+        "id": "x0",
+        "kind": "nop",
+        "p_clear": null,
+        "reset": false,
+        "resume": null,
+        "src": "v0p0",
+        "t_clear": null
+      },
+      {
+        "dst": "v1p1",
+        "guard": [],
+        "id": "x1",
+        "kind": "repair",
+        "p_clear": null,
+        "reset": false,
+        "resume": null,
+        "src": "v1p0",
+        "t_clear": "C"
+      },
+      {
+        "dst": "v3p0",
+        "guard": [],
+        "id": "x2",
+        "kind": "interrupt",
+        "p_clear": null,
+        "reset": false,
+        "resume": "v1p0",
+        "src": "v1p0",
+        "t_clear": null
+      },
+      {
+        "dst": "v3p0",
+        "guard": [],
+        "id": "x3",
+        "kind": "interrupt",
+        "p_clear": null,
+        "reset": false,
+        "resume": "v1p1",
+        "src": "v1p1",
+        "t_clear": null
+      },
+      {
+        "dst": "v2p0",
+        "guard": [],
+        "id": "x4",
+        "kind": "use",
+        "p_clear": null,
+        "reset": false,
+        "resume": null,
+        "src": "v1p1",
+        "t_clear": null
+      },
+      {
+        "dst": "v4p0",
+        "guard": [],
+        "id": "x5",
+        "kind": "arm",
+        "p_clear": null,
+        "reset": false,
+        "resume": null,
+        "src": "v3p0",
+        "t_clear": null
+      },
+      {
+        "dst": null,
+        "guard": [],
+        "id": "x6",
+        "kind": "return",
+        "p_clear": null,
+        "reset": false,
+        "resume": null,
+        "src": "v4p0",
+        "t_clear": null
+      }
+    ],
+    "initial": {
+      "pc": "v0p0",
+      "pending": false,
+      "taint": true
+    },
+    "invariants": {},
+    "locations": [
+      "v0p0",
+      "v1p0",
+      "v1p1",
+      "v2p0",
+      "v3p0",
+      "v4p0"
+    ],
+    "name": "L03-clean-repoison-phased",
+    "urgent": [
+      "v0p0",
+      "v1p0",
+      "v1p1",
+      "v2p0",
+      "v3p0",
+      "v4p0"
+    ]
+  },
+  "projection": {
+    "v0p0": "c0",
+    "v1p0": "c1",
+    "v1p1": "c1",
+    "v2p0": "done",
+    "v3p0": "h0",
+    "v4p0": "h1"
+  },
+  "words": {
+    "c1": [
+      [
+        "C",
+        "t"
+      ]
+    ]
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "correct_original_event_safe": false,
+  "frontier": [
+    {
+      "cuts": [],
+      "events": 1,
+      "interrupts": 0,
+      "peak_depth": 0
+    }
+  ],
+  "inserted_rows": 3,
+  "original_event_cap": 1,
+  "wrong_all_rows_as_events_safe": true
+}

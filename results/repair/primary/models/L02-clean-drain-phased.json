@@ -1,0 +1,146 @@
+{
+  "atoms": [
+    {
+      "cost": 1,
+      "id": "P"
+    },
+    {
+      "cost": 1,
+      "id": "C"
+    }
+  ],
+  "cap": [
+    5,
+    1,
+    1
+  ],
+  "constants": [
+    0
+  ],
+  "edges": [
+    {
+      "dst": "v1p0",
+      "guard": [],
+      "id": "x0",
+      "kind": "nop",
+      "p_clear": null,
+      "reset": false,
+      "resume": null,
+      "src": "v0p0",
+      "t_clear": null
+    },
+    {
+      "dst": "v1p1",
+      "guard": [],
+      "id": "x1",
+      "kind": "repair",
+      "p_clear": null,
+      "reset": false,
+      "resume": null,
+      "src": "v1p0",
+      "t_clear": "C"
+    },
+    {
+      "dst": "v1p2",
+      "guard": [],
+      "id": "x2",
+      "kind": "repair",
+      "p_clear": "P",
+      "reset": false,
+      "resume": null,
+      "src": "v1p1",
+      "t_clear": null
+    },
+    {
+      "dst": "v3p0",
+      "guard": [],
+      "id": "x3",
+      "kind": "interrupt",
+      "p_clear": null,
+      "reset": false,
+      "resume": "v1p0",
+      "src": "v1p0",
+      "t_clear": null
+    },
+    {
+      "dst": "v3p0",
+      "guard": [],
+      "id": "x4",
+      "kind": "interrupt",
+      "p_clear": null,
+      "reset": false,
+      "resume": "v1p1",
+      "src": "v1p1",
+      "t_clear": null
+    },
+    {
+      "dst": "v3p0",
+      "guard": [],
+      "id": "x5",
+      "kind": "interrupt",
+      "p_clear": null,
+      "reset": false,
+      "resume": "v1p2",
+      "src": "v1p2",
+      "t_clear": null
+    },
+    {
+      "dst": "v2p0",
+      "guard": [],
+      "id": "x6",
+      "kind": "use",
+      "p_clear": null,
+      "reset": false,
+      "resume": null,
+      "src": "v1p2",
+      "t_clear": null
+    },
+    {
+      "dst": "v4p0",
+      "guard": [],
+      "id": "x7",
+      "kind": "commit",
+      "p_clear": null,
+      "reset": false,
+      "resume": null,
+      "src": "v3p0",
+      "t_clear": null
+    },
+    {
+      "dst": null,
+      "guard": [],
+      "id": "x8",
+      "kind": "return",
+      "p_clear": null,
+      "reset": false,
+      "resume": null,
+      "src": "v4p0",
+      "t_clear": null
+    }
+  ],
+  "initial": {
+    "pc": "v0p0",
+    "pending": true,
+    "taint": true
+  },
+  "invariants": {},
+  "locations": [
+    "v0p0",
+    "v1p0",
+    "v1p1",
+    "v1p2",
+    "v2p0",
+    "v3p0",
+    "v4p0"
+  ],
+  "name": "L02-clean-drain-phased",
+  "urgent": [
+    "v0p0",
+    "v1p0",
+    "v1p1",
+    "v1p2",
+    "v2p0",
+    "v3p0",
+    "v4p0"
+  ]
+}

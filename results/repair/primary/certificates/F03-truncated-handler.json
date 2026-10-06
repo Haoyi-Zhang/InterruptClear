@@ -1,0 +1,144 @@
+{
+  "frontier": [
+    [
+      1,
+      2,
+      1,
+      1
+    ]
+  ],
+  "model": {
+    "atoms": [
+      {
+        "cost": 1,
+        "id": "C"
+      }
+    ],
+    "cap": [
+      2,
+      1,
+      1
+    ],
+    "constants": [
+      0
+    ],
+    "edges": [
+      {
+        "dst": "h0",
+        "guard": [],
+        "id": "call",
+        "kind": "interrupt",
+        "p_clear": null,
+        "reset": false,
+        "resume": "done",
+        "src": "c0",
+        "t_clear": null
+      },
+      {
+        "dst": "h1",
+        "guard": [],
+        "id": "inside-use",
+        "kind": "use",
+        "p_clear": null,
+        "reset": false,
+        "resume": null,
+        "src": "h0",
+        "t_clear": "C"
+      },
+      {
+        "dst": null,
+        "guard": [],
+        "id": "return",
+        "kind": "return",
+        "p_clear": null,
+        "reset": false,
+        "resume": null,
+        "src": "h1",
+        "t_clear": null
+      }
+    ],
+    "initial": {
+      "pc": "c0",
+      "pending": false,
+      "taint": true
+    },
+    "invariants": {},
+    "locations": [
+      "c0",
+      "done",
+      "h0",
+      "h1"
+    ],
+    "name": "F03-truncated-handler",
+    "urgent": [
+      "c0",
+      "done",
+      "h0",
+      "h1"
+    ]
+  },
+  "nodes": [
+    {
+      "p": [],
+      "parent": null,
+      "state": [
+        0,
+        0,
+        0,
+        "c0",
+        0,
+        []
+      ],
+      "t": [
+        0
+      ]
+    },
+    {
+      "p": [],
+      "parent": [
+        0,
+        [
+          "edge",
+          "call"
+        ]
+      ],
+      "state": [
+        1,
+        1,
+        1,
+        "h0",
+        0,
+        [
+          "done"
+        ]
+      ],
+      "t": [
+        0
+      ]
+    },
+    {
+      "p": [],
+      "parent": [
+        1,
+        [
+          "edge",
+          "inside-use"
+        ]
+      ],
+      "state": [
+        2,
+        1,
+        1,
+        "h1",
+        0,
+        [
+          "done"
+        ]
+      ],
+      "t": [
+        1
+      ]
+    }
+  ],
+  "schema": "neutralization-frontier"
+}

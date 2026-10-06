@@ -1,0 +1,12 @@
+{
+  "cpu_seconds": 3.55422871,
+  "deterministic_reference_sha256": "4864fa063c22ddec409aad08cd77c59e0153db4043e48d2cd5775798133fc791",
+  "limits": {
+    "address_space_mib": 512,
+    "charged_obligations": 150000,
+    "cpu_seconds": 25,
+    "oracle_constraints_per_plan": 100000
+  },
+  "peak_rss_kib": 17408,
+  "wall_seconds": 3.560674215999825
+}

@@ -1,0 +1,70 @@
+{
+  "atoms": [
+    {
+      "cost": 1,
+      "id": "C"
+    }
+  ],
+  "cap": [
+    2,
+    1,
+    1
+  ],
+  "constants": [
+    0
+  ],
+  "edges": [
+    {
+      "dst": "h0",
+      "guard": [],
+      "id": "call",
+      "kind": "interrupt",
+      "p_clear": null,
+      "reset": false,
+      "resume": "done",
+      "src": "c0",
+      "t_clear": null
+    },
+    {
+      "dst": "h1",
+      "guard": [],
+      "id": "inside-use",
+      "kind": "use",
+      "p_clear": null,
+      "reset": false,
+      "resume": null,
+      "src": "h0",
+      "t_clear": "C"
+    },
+    {
+      "dst": null,
+      "guard": [],
+      "id": "return",
+      "kind": "return",
+      "p_clear": null,
+      "reset": false,
+      "resume": null,
+      "src": "h1",
+      "t_clear": null
+    }
+  ],
+  "initial": {
+    "pc": "c0",
+    "pending": false,
+    "taint": true
+  },
+  "invariants": {},
+  "locations": [
+    "c0",
+    "done",
+    "h0",
+    "h1"
+  ],
+  "name": "F03-truncated-handler",
+  "urgent": [
+    "c0",
+    "done",
+    "h0",
+    "h1"
+  ]
+}

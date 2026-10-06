@@ -1,0 +1,7 @@
+{
+  "cpu_seconds": 0.607987138,
+  "meaning": "whole comparison including all methods; no speedup or per-method timing inference",
+  "peak_rss_kib": 21464,
+  "wall_seconds": 0.6065579799997067,
+  "workers": 1
+}

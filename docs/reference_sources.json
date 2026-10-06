@@ -1,0 +1,372 @@
+{
+  "status": "newly assembled, not recovered frozen input",
+  "count": 20,
+  "full_same_venue_calibration_complete": false,
+  "crossref_live_batch_claimed": false,
+  "records": [
+    {
+      "key": "tontou",
+      "entry_type": "inproceedings",
+      "bib_fields": {
+        "author": "Dani{\\\"e}l Trujillo and Mengjia Yan",
+        "title": "{TONTOU}: On the Exploitability of Time-of-Neutralization to Time-of-Use Windows",
+        "booktitle": "35th USENIX Security Symposium",
+        "year": "2026",
+        "pages": "477--495",
+        "publisher": "USENIX Association",
+        "url": "https://www.usenix.org/conference/usenixsecurity26/presentation/trujillo"
+      },
+      "primary_source": "https://www.usenix.org/conference/usenixsecurity26/presentation/trujillo",
+      "author_text": "https://www.usenix.org/system/files/usenixsecurity26-trujillo.pdf",
+      "reading_status": "substantive passages",
+      "scope_of_use": "Introduction and neutralization/interrupt mitigation discussion; defensive motivation only",
+      "checked_in_this_work_on": "2026-10-05"
+    },
+    {
+      "key": "blade",
+      "entry_type": "article",
+      "bib_fields": {
+        "author": "Marco Vassena and Craig Disselkoen and Klaus von Gleissenthall and Sunjay Cauligi and Rami G{\\\"o}khan K{\\i}c{\\i} and Ranjit Jhala and Dean Tullsen and Deian Stefan",
+        "title": "Automatically Eliminating Speculative Leaks from Cryptographic Code with {Blade}",
+        "journal": "Proceedings of the ACM on Programming Languages",
+        "volume": "5",
+        "number": "POPL",
+        "pages": "49:1--49:30",
+        "year": "2021",
+        "doi": "10.1145/3434330"
+      },
+      "primary_source": "https://dl.acm.org/doi/10.1145/3434330",
+      "author_text": "https://arxiv.org/pdf/2005.00294",
+      "reading_status": "substantive passages",
+      "scope_of_use": "Protect primitive, minimum-cut synthesis and cryptographic-code evaluation; no tool execution",
+      "checked_in_this_work_on": "2026-10-05"
+    },
+    {
+      "key": "curespec",
+      "entry_type": "inproceedings",
+      "bib_fields": {
+        "author": "Joachim Bard and Swen Jacobs and Yakir Vizel",
+        "title": "Automatic and Incremental Repair for Speculative Information Leaks",
+        "booktitle": "Verification, Model Checking, and Abstract Interpretation",
+        "series": "LNCS",
+        "volume": "14500",
+        "pages": "291--313",
+        "year": "2024",
+        "doi": "10.1007/978-3-031-50521-8_14"
+      },
+      "primary_source": "https://cris.technion.ac.il/en/publications/automatic-andincremental-repair-forspeculative-information-leaks/",
+      "author_text": "https://arxiv.org/pdf/2305.10092",
+      "reading_status": "substantive passages",
+      "scope_of_use": "Formal repair, architectural versus speculative behavior preservation, invariant certificate; no external baseline run",
+      "checked_in_this_work_on": "2026-10-05"
+    },
+    {
+      "key": "tartar",
+      "entry_type": "inproceedings",
+      "bib_fields": {
+        "author": "Martin K{\\\"o}lbl and Stefan Leue and Thomas Wies",
+        "title": "{TarTar}: A Timed Automata Repair Tool",
+        "booktitle": "Computer Aided Verification",
+        "series": "LNCS",
+        "volume": "12224",
+        "pages": "529--540",
+        "year": "2020",
+        "doi": "10.1007/978-3-030-53288-8_25"
+      },
+      "primary_source": "https://link.springer.com/chapter/10.1007/978-3-030-53288-8_25",
+      "author_text": "https://arxiv.org/pdf/2002.02760",
+      "reading_status": "substantive article",
+      "scope_of_use": "Repair operators and admissibility as functional/untimed-language preservation; not an absence of preservation",
+      "checked_in_this_work_on": "2026-10-05"
+    },
+    {
+      "key": "alur",
+      "entry_type": "article",
+      "bib_fields": {
+        "author": "Rajeev Alur and David L. Dill",
+        "title": "A Theory of Timed Automata",
+        "journal": "Theoretical Computer Science",
+        "volume": "126",
+        "number": "2",
+        "pages": "183--235",
+        "year": "1994",
+        "doi": "10.1016/0304-3975(94)90010-8"
+      },
+      "primary_source": "https://doi.org/10.1016/0304-3975(94)90010-8",
+      "author_text": null,
+      "reading_status": "bibliographic and foundation cross-check",
+      "scope_of_use": "The one-clock region proof is supplied in the manuscript; the general construction is attributed",
+      "checked_in_this_work_on": "2026-10-05"
+    },
+    {
+      "key": "ifds",
+      "entry_type": "inproceedings",
+      "bib_fields": {
+        "author": "Thomas Reps and Susan Horwitz and Mooly Sagiv",
+        "title": "Precise Interprocedural Dataflow Analysis via Graph Reachability",
+        "booktitle": "22nd ACM SIGPLAN-SIGACT Symposium on Principles of Programming Languages",
+        "pages": "49--61",
+        "year": "1995",
+        "doi": "10.1145/199448.199462"
+      },
+      "primary_source": "https://doi.org/10.1145/199448.199462",
+      "author_text": "https://research.cs.wisc.edu/wpis/papers/popl95.pdf",
+      "reading_status": "substantive passages",
+      "scope_of_use": "Finite distributive dataflow and valid-path graph reachability; symbolic transfer is a specialization",
+      "checked_in_this_work_on": "2026-10-05"
+    },
+    {
+      "key": "wpds",
+      "entry_type": "article",
+      "bib_fields": {
+        "author": "Thomas Reps and Stefan Schwoon and Somesh Jha and David Melski",
+        "title": "Weighted Pushdown Systems and Their Application to Interprocedural Dataflow Analysis",
+        "journal": "Science of Computer Programming",
+        "volume": "58",
+        "number": "1--2",
+        "pages": "206--263",
+        "year": "2005",
+        "doi": "10.1016/j.scico.2005.02.009"
+      },
+      "primary_source": "https://www.sciencedirect.com/science/article/pii/S0167642305000493",
+      "author_text": null,
+      "reading_status": "metadata and abstract",
+      "scope_of_use": "General weighted valid-path framework; not counted as a full calibration reading",
+      "checked_in_this_work_on": "2026-10-05"
+    },
+    {
+      "key": "reiter",
+      "entry_type": "article",
+      "bib_fields": {
+        "author": "Raymond Reiter",
+        "title": "A Theory of Diagnosis from First Principles",
+        "journal": "Artificial Intelligence",
+        "volume": "32",
+        "number": "1",
+        "pages": "57--95",
+        "year": "1987",
+        "doi": "10.1016/0004-3702(87)90062-2"
+      },
+      "primary_source": "https://www.sciencedirect.com/science/article/abs/pii/0004370287900622",
+      "author_text": null,
+      "reading_status": "metadata and abstract",
+      "scope_of_use": "Conflict/hitting-set background; not counted as full-paper calibration",
+      "checked_in_this_work_on": "2026-10-05"
+    },
+    {
+      "key": "wimmer2018",
+      "entry_type": "inproceedings",
+      "bib_fields": {
+        "author": "Simon Wimmer and Peter Lammich",
+        "title": "Verified Model Checking of Timed Automata",
+        "booktitle": "Tools and Algorithms for the Construction and Analysis of Systems",
+        "series": "LNCS",
+        "volume": "10805",
+        "pages": "61--78",
+        "year": "2018",
+        "doi": "10.1007/978-3-319-89960-2_4"
+      },
+      "primary_source": "https://link.springer.com/chapter/10.1007/978-3-319-89960-2_4",
+      "author_text": null,
+      "reading_status": "publisher record and method context",
+      "scope_of_use": "Mechanized timed model checking; stronger implementation assurance than the present finite tests",
+      "checked_in_this_work_on": "2026-10-05"
+    },
+    {
+      "key": "wimmer2020",
+      "entry_type": "inproceedings",
+      "bib_fields": {
+        "author": "Simon Wimmer and Joshua von Mutius",
+        "title": "Verified Certification of Reachability Checking for Timed Automata",
+        "booktitle": "Tools and Algorithms for the Construction and Analysis of Systems",
+        "series": "LNCS",
+        "volume": "12078",
+        "pages": "425--443",
+        "year": "2020",
+        "doi": "10.1007/978-3-030-45190-5_24"
+      },
+      "primary_source": "https://link.springer.com/chapter/10.1007/978-3-030-45190-5_24",
+      "author_text": null,
+      "reading_status": "publisher record and method context",
+      "scope_of_use": "Verified timed reachability certification; no claim of novel inductive closure",
+      "checked_in_this_work_on": "2026-10-05"
+    },
+    {
+      "key": "contracts",
+      "entry_type": "inproceedings",
+      "bib_fields": {
+        "author": "Marco Guarnieri and Boris K{\\\"o}pf and Jan Reineke and Pepe Vila",
+        "title": "Hardware-Software Contracts for Secure Speculation",
+        "booktitle": "IEEE Symposium on Security and Privacy",
+        "pages": "1868--1883",
+        "year": "2021",
+        "doi": "10.1109/SP40001.2021.00036"
+      },
+      "primary_source": "https://doi.org/10.1109/SP40001.2021.00036",
+      "author_text": "https://arxiv.org/abs/2006.03841",
+      "reading_status": "metadata and author abstract",
+      "scope_of_use": "Hardware/software leakage-contract relation; does not count as a complete paper reading here",
+      "checked_in_this_work_on": "2026-10-05"
+    },
+    {
+      "key": "shadow",
+      "entry_type": "inproceedings",
+      "bib_fields": {
+        "author": "Qinhan Tan and Yuheng Yang and Thomas Bourgeat and Sharad Malik and Mengjia Yan",
+        "title": "{RTL} Verification for Secure Speculation Using Contract Shadow Logic",
+        "booktitle": "30th ACM International Conference on Architectural Support for Programming Languages and Operating Systems, Volume 1",
+        "pages": "970--986",
+        "year": "2025",
+        "doi": "10.1145/3669940.3707243"
+      },
+      "primary_source": "https://doi.org/10.1145/3669940.3707243",
+      "author_text": "https://arxiv.org/pdf/2407.12232",
+      "reading_status": "substantive introductory passages",
+      "scope_of_use": "RTL contract-shadow verification and its model scope; no reproduction",
+      "checked_in_this_work_on": "2026-10-05"
+    },
+    {
+      "key": "granite",
+      "entry_type": "misc",
+      "bib_fields": {
+        "author": "Stella Lau and Andres Erbsen and Adam Chlipala",
+        "title": "Granite: A Modular Methodology for Foundational Verification of Hardware-Software Leakage Contracts",
+        "year": "2026",
+        "howpublished": "arXiv:2607.27480",
+        "note": "Preprint, July 29",
+        "doi": "10.48550/arXiv.2607.27480"
+      },
+      "primary_source": "https://arxiv.org/abs/2607.27480",
+      "author_text": "https://arxiv.org/pdf/2607.27480",
+      "reading_status": "substantive passages",
+      "scope_of_use": "Precise interrupts, modular foundational leakage proof and stated scope; preprint status retained",
+      "checked_in_this_work_on": "2026-10-05"
+    },
+    {
+      "key": "knox",
+      "entry_type": "inproceedings",
+      "bib_fields": {
+        "author": "Anish Athalye and M. Frans Kaashoek and Nickolai Zeldovich",
+        "title": "Verifying Hardware Security Modules with Information-Preserving Refinement",
+        "booktitle": "16th USENIX Symposium on Operating Systems Design and Implementation",
+        "pages": "503--519",
+        "year": "2022",
+        "publisher": "USENIX Association",
+        "url": "https://www.usenix.org/conference/osdi22/presentation/athalye"
+      },
+      "primary_source": "https://www.usenix.org/conference/osdi22/presentation/athalye",
+      "author_text": null,
+      "reading_status": "official metadata and abstract",
+      "scope_of_use": "Information-preserving refinement at hardware/software boundary; not a full-paper calibration reading",
+      "checked_in_this_work_on": "2026-10-05"
+    },
+    {
+      "key": "intabs",
+      "entry_type": "inproceedings",
+      "bib_fields": {
+        "author": "Chungha Sung and Markus Kusano and Chao Wang",
+        "title": "Modular Verification of Interrupt-Driven Software",
+        "booktitle": "32nd IEEE/ACM International Conference on Automated Software Engineering",
+        "pages": "206--216",
+        "year": "2017",
+        "doi": "10.1109/ASE.2017.8115634"
+      },
+      "primary_source": "https://doi.org/10.1109/ASE.2017.8115634",
+      "author_text": "https://arxiv.org/abs/1709.10078",
+      "reading_status": "publisher/author metadata and abstract",
+      "scope_of_use": "Modular interrupt-driven software analysis precedes this work; no tool execution",
+      "checked_in_this_work_on": "2026-10-05"
+    },
+    {
+      "key": "aim",
+      "entry_type": "article",
+      "bib_fields": {
+        "author": "Bo Feng and Meng Luo and Changming Liu and Long Lu and Engin Kirda",
+        "title": "{AIM}: Automatic Interrupt Modeling for Dynamic Firmware Analysis",
+        "journal": "IEEE Transactions on Dependable and Secure Computing",
+        "volume": "21",
+        "number": "4",
+        "pages": "3866--3882",
+        "year": "2024",
+        "doi": "10.1109/TDSC.2023.3339569"
+      },
+      "primary_source": "https://doi.org/10.1109/TDSC.2023.3339569",
+      "author_text": "https://arxiv.org/pdf/2312.01195",
+      "reading_status": "substantive introductory passages",
+      "scope_of_use": "On-demand interrupt modeling for dynamic firmware analysis; not a new static-repair result",
+      "checked_in_this_work_on": "2026-10-05"
+    },
+    {
+      "key": "specbox",
+      "entry_type": "article",
+      "bib_fields": {
+        "author": "Bowen Tang and Chenggang Wu and Zhe Wang and Lichen Jia and Pen-Chung Yew and Yueqiang Cheng and Yinqian Zhang and Chenxi Wang and Guoqing Harry Xu",
+        "title": "{SpecBox}: A Label-Based Transparent Speculation Scheme Against Transient Execution Attacks",
+        "journal": "IEEE Transactions on Dependable and Secure Computing",
+        "volume": "20",
+        "number": "1",
+        "pages": "827--840",
+        "year": "2023",
+        "doi": "10.1109/TDSC.2022.3144287"
+      },
+      "primary_source": "https://experts.umn.edu/en/publications/specbox-a-label-based-transparent-speculation-scheme-against-tran/",
+      "author_text": "https://arxiv.org/pdf/2107.08367",
+      "reading_status": "metadata and mechanism passages",
+      "scope_of_use": "Concrete cache-state separation; no representation theorem to our two bits",
+      "checked_in_this_work_on": "2026-10-05"
+    },
+    {
+      "key": "provenance",
+      "primary_source": "https://dl.acm.org/doi/10.1145/1265530.1265535",
+      "author_text": "https://www.cs.ucdavis.edu/~green/papers/pods07.pdf",
+      "reading_status": "substantive method passages",
+      "scope_of_use": "Sections 2-4: Boolean annotated relations, homomorphisms and provenance; not an executed tool baseline",
+      "checked_in_this_work_on": "2026-10-05",
+      "entry_type": "inproceedings",
+      "bib_fields": {
+        "author": "Todd J. Green and Grigoris Karvounarakis and Val Tannen",
+        "title": "Provenance Semirings",
+        "booktitle": "26th ACM SIGMOD-SIGACT-SIGART Symposium on Principles of Database Systems",
+        "pages": "31--40",
+        "year": "2007",
+        "doi": "10.1145/1265530.1265535"
+      }
+    },
+    {
+      "key": "spllift",
+      "primary_source": "https://dl.acm.org/doi/10.1145/2491956.2491976",
+      "author_text": "https://www.bodden.de/pubs/bmb+13spllift.pdf",
+      "reading_status": "substantive method passages",
+      "scope_of_use": "Sections 2-3: optional flow functions and exact all-configuration lifting; local comparator is not SPLlift execution",
+      "checked_in_this_work_on": "2026-10-05",
+      "entry_type": "inproceedings",
+      "bib_fields": {
+        "author": "Eric Bodden and T{\\'a}rsis Tol{\\^e}do and M{\\'a}rcio Ribeiro and Claus Brabrand and Paulo Borba and Mira Mezini",
+        "title": "{SPLlift}: Statically Analyzing Software Product Lines in Minutes Instead of Years",
+        "booktitle": "34th ACM SIGPLAN Conference on Programming Language Design and Implementation",
+        "pages": "355--364",
+        "year": "2013",
+        "doi": "10.1145/2491956.2491976"
+      }
+    },
+    {
+      "key": "timedfault2018",
+      "entry_type": "article",
+      "bib_fields": {
+        "author": "Fathiyeh Faghih and Borzoo Bonakdarpour",
+        "title": "Symbolic Synthesis of Timed Models with Strict 2-Phase Fault Recovery",
+        "journal": "IEEE Transactions on Dependable and Secure Computing",
+        "volume": "15",
+        "number": "3",
+        "pages": "526--541",
+        "year": "2018",
+        "doi": "10.1109/TDSC.2016.2596719"
+      },
+      "primary_source": "https://doi.org/10.1109/TDSC.2016.2596719",
+      "author_text": "https://www.cse.msu.edu/~borzoo/Publications/16/TDSC/tdsc16.pdf",
+      "reading_status": "substantive primary full-text method, proofs, evaluation and limitations",
+      "scope_of_use": "Sections 3-6 and 8: legitimate-subbehavior preservation, strict two-phase recovery, sound incomplete synthesis; no tool execution",
+      "checked_in_this_work_on": "2026-10-05"
+    }
+  ]
+}

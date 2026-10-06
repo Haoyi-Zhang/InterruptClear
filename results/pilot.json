@@ -1,46 +1,368 @@
 {
-  "rows": [
+  "fixed_and_threshold": [
     {
-      "case": "A04",
-      "safe": true,
-      "full_states": 2219,
-      "full_obligations": 10702,
-      "verifier": {
-        "verdict": "SAFE",
-        "obligations": 10702
-      },
-      "oracle_constraint_systems": 790,
-      "oracle_states": 95
+      "model": "F01-direct-use",
+      "frontier": [
+        [
+          1,
+          1,
+          0,
+          0
+        ]
+      ],
+      "query_comparisons": 4,
+      "optimum": {
+        "minimum_cost": 1,
+        "optimal_plans": [
+          1
+        ],
+        "safe_plans": 1
+      }
     },
     {
-      "case": "C05",
-      "safe": false,
-      "full_states": 156,
-      "full_obligations": 337,
-      "verifier": {
-        "verdict": "UNSAFE",
-        "obligations": 3
-      },
-      "oracle_constraint_systems": 105,
-      "oracle_states": 26
+      "model": "F02-deferred-cause",
+      "frontier": [
+        [
+          5,
+          3,
+          0,
+          0
+        ],
+        [
+          6,
+          3,
+          0,
+          0
+        ]
+      ],
+      "query_comparisons": 32,
+      "optimum": {
+        "minimum_cost": 3,
+        "optimal_plans": [
+          3,
+          4
+        ],
+        "safe_plans": 5
+      }
     },
     {
-      "case": "C08",
-      "safe": false,
-      "full_states": 1642,
-      "full_obligations": 3183,
-      "verifier": {
-        "verdict": "UNSAFE",
-        "obligations": 7
-      },
-      "oracle_constraint_systems": 93,
-      "oracle_states": 49
+      "model": "F03-truncated-handler",
+      "frontier": [
+        [
+          1,
+          2,
+          1,
+          1
+        ]
+      ],
+      "query_comparisons": 24,
+      "optimum": {
+        "minimum_cost": 1,
+        "optimal_plans": [
+          1
+        ],
+        "safe_plans": 1
+      }
+    },
+    {
+      "model": "F04-returned-handler",
+      "frontier": [
+        [
+          1,
+          2,
+          1,
+          1
+        ]
+      ],
+      "query_comparisons": 32,
+      "optimum": {
+        "minimum_cost": 1,
+        "optimal_plans": [
+          1
+        ],
+        "safe_plans": 1
+      }
+    },
+    {
+      "model": "F05-label-collision",
+      "frontier": [
+        [
+          1,
+          3,
+          1,
+          1
+        ]
+      ],
+      "query_comparisons": 32,
+      "optimum": {
+        "minimum_cost": 1,
+        "optimal_plans": [
+          1
+        ],
+        "safe_plans": 1
+      }
+    },
+    {
+      "model": "F06-open-window",
+      "frontier": [
+        [
+          1,
+          2,
+          0,
+          0
+        ]
+      ],
+      "query_comparisons": 6,
+      "optimum": {
+        "minimum_cost": 1,
+        "optimal_plans": [
+          1
+        ],
+        "safe_plans": 1
+      }
+    },
+    {
+      "model": "F07-infeasible-window",
+      "frontier": [],
+      "query_comparisons": 6,
+      "optimum": {
+        "minimum_cost": 0,
+        "optimal_plans": [
+          0
+        ],
+        "safe_plans": 2
+      }
+    },
+    {
+      "model": "F08-resource-tradeoff",
+      "frontier": [
+        [
+          1,
+          2,
+          1,
+          1
+        ],
+        [
+          2,
+          3,
+          0,
+          0
+        ]
+      ],
+      "query_comparisons": 64,
+      "optimum": {
+        "minimum_cost": 3,
+        "optimal_plans": [
+          3
+        ],
+        "safe_plans": 1
+      }
+    },
+    {
+      "model": "F09-nested-cause",
+      "frontier": [
+        [
+          3,
+          6,
+          2,
+          2
+        ]
+      ],
+      "query_comparisons": 252,
+      "optimum": {
+        "minimum_cost": 1,
+        "optimal_plans": [
+          1
+        ],
+        "safe_plans": 3
+      }
+    },
+    {
+      "model": "F10-unrepairable-source",
+      "frontier": [
+        [
+          0,
+          2,
+          0,
+          0
+        ]
+      ],
+      "query_comparisons": 6,
+      "optimum": {
+        "minimum_cost": null,
+        "optimal_plans": [],
+        "safe_plans": 0
+      }
+    },
+    {
+      "model": "F11-alternative-cuts",
+      "frontier": [
+        [
+          3,
+          2,
+          0,
+          0
+        ],
+        [
+          6,
+          2,
+          0,
+          0
+        ]
+      ],
+      "query_comparisons": 24,
+      "optimum": {
+        "minimum_cost": 2,
+        "optimal_plans": [
+          5
+        ],
+        "safe_plans": 5
+      }
+    },
+    {
+      "model": "F12-disjunctive-join",
+      "frontier": [
+        [
+          1,
+          4,
+          0,
+          0
+        ],
+        [
+          2,
+          4,
+          0,
+          0
+        ]
+      ],
+      "query_comparisons": 20,
+      "optimum": {
+        "minimum_cost": 2,
+        "optimal_plans": [
+          3
+        ],
+        "safe_plans": 1
+      }
+    },
+    {
+      "model": "T4-2",
+      "frontier": [
+        [
+          3,
+          5,
+          0,
+          0
+        ],
+        [
+          5,
+          5,
+          0,
+          0
+        ],
+        [
+          6,
+          5,
+          0,
+          0
+        ],
+        [
+          9,
+          5,
+          0,
+          0
+        ],
+        [
+          10,
+          5,
+          0,
+          0
+        ],
+        [
+          12,
+          5,
+          0,
+          0
+        ]
+      ],
+      "query_comparisons": 96,
+      "optimum": {
+        "minimum_cost": 3,
+        "optimal_plans": [
+          7,
+          11,
+          13,
+          14
+        ],
+        "safe_plans": 5
+      }
     }
   ],
-  "cpu_seconds": 0.043969022999999996,
-  "wall_seconds": 0.04423139000004994,
-  "peak_rss_kib": 93864,
-  "workers": 1,
-  "bounded_action_events": 32,
-  "bounded_interrupts": 8
+  "order_negative_control": [
+    {
+      "word": [
+        [
+          "P",
+          "p"
+        ],
+        [
+          "C",
+          "t"
+        ]
+      ],
+      "frontier": [
+        [
+          1,
+          5,
+          1,
+          1
+        ],
+        [
+          2,
+          2,
+          0,
+          0
+        ]
+      ],
+      "all_atoms_safe": true
+    },
+    {
+      "word": [
+        [
+          "C",
+          "t"
+        ],
+        [
+          "P",
+          "p"
+        ]
+      ],
+      "frontier": [
+        [
+          0,
+          5,
+          1,
+          1
+        ],
+        [
+          2,
+          2,
+          0,
+          0
+        ]
+      ],
+      "all_atoms_safe": false
+    }
+  ],
+  "measured": {
+    "cpu_seconds": 0.0066174069999999086,
+    "peak_rss_kib": 92840,
+    "workers": 1,
+    "charged_operations": {
+      "skeleton_edges": 109,
+      "symbolic_arcs": 109,
+      "bad_terms": 27,
+      "explicit_edges": 531
+    }
+  },
+  "scope": "owned models; no hardware or empirical deployment evidence"
 }

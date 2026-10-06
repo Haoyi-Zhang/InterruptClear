@@ -1,0 +1,187 @@
+{
+  "frontier": [
+    [
+      3,
+      2,
+      0,
+      0
+    ],
+    [
+      6,
+      2,
+      0,
+      0
+    ]
+  ],
+  "model": {
+    "atoms": [
+      {
+        "cost": 1,
+        "id": "A"
+      },
+      {
+        "cost": 3,
+        "id": "B"
+      },
+      {
+        "cost": 1,
+        "id": "C"
+      }
+    ],
+    "cap": [
+      2,
+      0,
+      0
+    ],
+    "constants": [
+      0
+    ],
+    "edges": [
+      {
+        "dst": "a",
+        "guard": [],
+        "id": "a1",
+        "kind": "nop",
+        "p_clear": null,
+        "reset": false,
+        "resume": null,
+        "src": "c0",
+        "t_clear": "A"
+      },
+      {
+        "dst": "done",
+        "guard": [],
+        "id": "au",
+        "kind": "use",
+        "p_clear": null,
+        "reset": false,
+        "resume": null,
+        "src": "a",
+        "t_clear": "B"
+      },
+      {
+        "dst": "b",
+        "guard": [],
+        "id": "b1",
+        "kind": "nop",
+        "p_clear": null,
+        "reset": false,
+        "resume": null,
+        "src": "c0",
+        "t_clear": "B"
+      },
+      {
+        "dst": "done",
+        "guard": [],
+        "id": "bu",
+        "kind": "use",
+        "p_clear": null,
+        "reset": false,
+        "resume": null,
+        "src": "b",
+        "t_clear": "C"
+      }
+    ],
+    "initial": {
+      "pc": "c0",
+      "pending": false,
+      "taint": true
+    },
+    "invariants": {},
+    "locations": [
+      "c0",
+      "a",
+      "b",
+      "done"
+    ],
+    "name": "F11-alternative-cuts",
+    "urgent": [
+      "a",
+      "b",
+      "c0",
+      "done"
+    ]
+  },
+  "nodes": [
+    {
+      "p": [],
+      "parent": null,
+      "state": [
+        0,
+        0,
+        0,
+        "c0",
+        0,
+        []
+      ],
+      "t": [
+        0
+      ]
+    },
+    {
+      "p": [],
+      "parent": [
+        0,
+        [
+          "edge",
+          "a1"
+        ]
+      ],
+      "state": [
+        1,
+        0,
+        0,
+        "a",
+        0,
+        []
+      ],
+      "t": [
+        1
+      ]
+    },
+    {
+      "p": [],
+      "parent": [
+        0,
+        [
+          "edge",
+          "b1"
+        ]
+      ],
+      "state": [
+        1,
+        0,
+        0,
+        "b",
+        0,
+        []
+      ],
+      "t": [
+        2
+      ]
+    },
+    {
+      "p": [],
+      "parent": [
+        1,
+        [
+          "edge",
+          "au"
+        ]
+      ],
+      "state": [
+        2,
+        0,
+        0,
+        "done",
+        0,
+        []
+      ],
+      "t": [
+        3,
+        6
+      ]
+    }
+  ],
+  "schema": "neutralization-frontier"
+}

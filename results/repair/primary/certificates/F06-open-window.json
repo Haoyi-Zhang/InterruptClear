@@ -1,0 +1,199 @@
+{
+  "frontier": [
+    [
+      1,
+      2,
+      0,
+      0
+    ]
+  ],
+  "model": {
+    "atoms": [
+      {
+        "cost": 1,
+        "id": "C"
+      }
+    ],
+    "cap": [
+      2,
+      0,
+      0
+    ],
+    "constants": [
+      0,
+      1
+    ],
+    "edges": [
+      {
+        "dst": "c1",
+        "guard": [
+          [
+            ">",
+            0
+          ],
+          [
+            "<",
+            1
+          ]
+        ],
+        "id": "window",
+        "kind": "nop",
+        "p_clear": null,
+        "reset": false,
+        "resume": null,
+        "src": "c0",
+        "t_clear": null
+      },
+      {
+        "dst": "done",
+        "guard": [],
+        "id": "use",
+        "kind": "use",
+        "p_clear": null,
+        "reset": false,
+        "resume": null,
+        "src": "c1",
+        "t_clear": "C"
+      }
+    ],
+    "initial": {
+      "pc": "c0",
+      "pending": false,
+      "taint": true
+    },
+    "invariants": {},
+    "locations": [
+      "c0",
+      "c1",
+      "done"
+    ],
+    "name": "F06-open-window",
+    "urgent": [
+      "c1",
+      "done"
+    ]
+  },
+  "nodes": [
+    {
+      "p": [],
+      "parent": null,
+      "state": [
+        0,
+        0,
+        0,
+        "c0",
+        0,
+        []
+      ],
+      "t": [
+        0
+      ]
+    },
+    {
+      "p": [],
+      "parent": [
+        0,
+        [
+          "delay",
+          1
+        ]
+      ],
+      "state": [
+        0,
+        0,
+        0,
+        "c0",
+        1,
+        []
+      ],
+      "t": [
+        0
+      ]
+    },
+    {
+      "p": [],
+      "parent": [
+        1,
+        [
+          "delay",
+          2
+        ]
+      ],
+      "state": [
+        0,
+        0,
+        0,
+        "c0",
+        2,
+        []
+      ],
+      "t": [
+        0
+      ]
+    },
+    {
+      "p": [],
+      "parent": [
+        2,
+        [
+          "delay",
+          3
+        ]
+      ],
+      "state": [
+        0,
+        0,
+        0,
+        "c0",
+        3,
+        []
+      ],
+      "t": [
+        0
+      ]
+    },
+    {
+      "p": [],
+      "parent": [
+        1,
+        [
+          "edge",
+          "window"
+        ]
+      ],
+      "state": [
+        1,
+        0,
+        0,
+        "c1",
+        1,
+        []
+      ],
+      "t": [
+        0
+      ]
+    },
+    {
+      "p": [],
+      "parent": [
+        4,
+        [
+          "edge",
+          "use"
+        ]
+      ],
+      "state": [
+        2,
+        0,
+        0,
+        "done",
+        1,
+        []
+      ],
+      "t": [
+        1
+      ]
+    }
+  ],
+  "schema": "neutralization-frontier"
+}

@@ -1,0 +1,376 @@
+{
+  "aggregate_charged_operation_ceiling": 400000,
+  "charged_operations_by_campaign": {
+    "configuration_lifting_comparison": 85503,
+    "primary_study": 34728,
+    "retained_certificate_replay": 1074,
+    "separate_semantic_audit": 145424,
+    "tests": 33681
+  },
+  "charged_operations_total": 300410,
+  "configuration_lifting_comparison": {
+    "budget_configurations": 526,
+    "comparison_obligations": {
+      "fact_state_plan_comparisons": 18816,
+      "three_way_optimal_plan_set_comparisons": 526,
+      "three_way_plan_budget_comparisons": 5046
+    },
+    "dense_fact_table_logical_bits": 18816,
+    "fact_state_plan_comparisons": 18816,
+    "fact_vector_slots": 882,
+    "frontier_and_explicit_operations": {
+      "bad_terms": 175,
+      "explicit_edges": 17841,
+      "skeleton_edges": 396,
+      "symbolic_arcs": 396
+    },
+    "frontier_records": 173,
+    "frontier_symbolic_proof_terms": 893,
+    "lifting_operations": {
+      "bad_bucket_bitwise_or": 78,
+      "clear_bitwise_and": 271,
+      "commit_bitwise_or": 40,
+      "configuration_literal_bit_tests": 3128,
+      "constant_fact_assignments": 115,
+      "fact_transfer_arcs": 396,
+      "join_bitwise_or": 792,
+      "optimization_atom_tests": 25509,
+      "optimization_plan_bit_tests": 5046,
+      "query_bitwise_or": 284,
+      "query_cost_bucket_tests": 1206,
+      "query_plan_bit_tests": 5046,
+      "skeleton_successor_arcs": 396
+    },
+    "mismatches": 0,
+    "model_instances": 84,
+    "optimal_plan_set_comparisons": 526,
+    "plan_budget_comparisons": 5046,
+    "semantic_reference_equal": true
+  },
+  "lowerings": [
+    "L01-drain-clean",
+    "L02-clean-drain",
+    "L03-clean-repoison",
+    "L04-return-repair"
+  ],
+  "meaning": "all listed commands and finite equalities completed; not a proof-assistant result or publication endorsement",
+  "primary_summary": {
+    "budget_configurations": 360,
+    "charged_obligations": {
+      "bad_terms": 199,
+      "checker_arcs": 396,
+      "checker_bad": 175,
+      "checker_parent": 357,
+      "checker_terms": 893,
+      "explicit_edges": 22326,
+      "irredundancy_separator": 173,
+      "microstep_bound_arcs": 396,
+      "optimality_comparison": 638,
+      "oracle_constraints": 2806,
+      "ordering_law_query": 124,
+      "policy_budget_query": 5046,
+      "skeleton_edges": 495,
+      "symbolic_arcs": 495,
+      "word_base_edge": 155,
+      "word_repair": 54
+    },
+    "cleanup_word_plan_queries": 124,
+    "cleanup_word_shapes": 31,
+    "finite_grammar_models": 64,
+    "finite_grammar_unique_executable_models": 64,
+    "fixed_models": 12,
+    "lowering_models": 4,
+    "mismatches": 0,
+    "oracle_distinct_model_descriptions": 18,
+    "oracle_plan_instances": 76,
+    "policy_budget_queries": 5046,
+    "threshold_models": 4,
+    "total_model_instances": 84
+  },
+  "replay": [
+    {
+      "check": {
+        "annotation_equality": true,
+        "checked_frontier_records": 1,
+        "checked_nodes": 2,
+        "reachable_and_closed": true
+      },
+      "model": "F01-direct-use"
+    },
+    {
+      "check": {
+        "annotation_equality": true,
+        "checked_frontier_records": 2,
+        "checked_nodes": 4,
+        "reachable_and_closed": true
+      },
+      "model": "F02-deferred-cause"
+    },
+    {
+      "check": {
+        "annotation_equality": true,
+        "checked_frontier_records": 1,
+        "checked_nodes": 3,
+        "reachable_and_closed": true
+      },
+      "model": "F03-truncated-handler"
+    },
+    {
+      "check": {
+        "annotation_equality": true,
+        "checked_frontier_records": 1,
+        "checked_nodes": 4,
+        "reachable_and_closed": true
+      },
+      "model": "F04-returned-handler"
+    },
+    {
+      "check": {
+        "annotation_equality": true,
+        "checked_frontier_records": 1,
+        "checked_nodes": 6,
+        "reachable_and_closed": true
+      },
+      "model": "F05-label-collision"
+    },
+    {
+      "check": {
+        "annotation_equality": true,
+        "checked_frontier_records": 1,
+        "checked_nodes": 6,
+        "reachable_and_closed": true
+      },
+      "model": "F06-open-window"
+    },
+    {
+      "check": {
+        "annotation_equality": true,
+        "checked_frontier_records": 0,
+        "checked_nodes": 5,
+        "reachable_and_closed": true
+      },
+      "model": "F07-infeasible-window"
+    },
+    {
+      "check": {
+        "annotation_equality": true,
+        "checked_frontier_records": 2,
+        "checked_nodes": 9,
+        "reachable_and_closed": true
+      },
+      "model": "F08-resource-tradeoff"
+    },
+    {
+      "check": {
+        "annotation_equality": true,
+        "checked_frontier_records": 1,
+        "checked_nodes": 21,
+        "reachable_and_closed": true
+      },
+      "model": "F09-nested-cause"
+    },
+    {
+      "check": {
+        "annotation_equality": true,
+        "checked_frontier_records": 1,
+        "checked_nodes": 3,
+        "reachable_and_closed": true
+      },
+      "model": "F10-unrepairable-source"
+    },
+    {
+      "check": {
+        "annotation_equality": true,
+        "checked_frontier_records": 2,
+        "checked_nodes": 4,
+        "reachable_and_closed": true
+      },
+      "model": "F11-alternative-cuts"
+    },
+    {
+      "check": {
+        "annotation_equality": true,
+        "checked_frontier_records": 2,
+        "checked_nodes": 6,
+        "reachable_and_closed": true
+      },
+      "model": "F12-disjunctive-join"
+    },
+    {
+      "check": {
+        "annotation_equality": true,
+        "checked_frontier_records": 2,
+        "checked_nodes": 15,
+        "reachable_and_closed": true
+      },
+      "model": "L01-drain-clean-phased"
+    },
+    {
+      "check": {
+        "annotation_equality": true,
+        "checked_frontier_records": 2,
+        "checked_nodes": 15,
+        "reachable_and_closed": true
+      },
+      "model": "L02-clean-drain-phased"
+    },
+    {
+      "check": {
+        "annotation_equality": true,
+        "checked_frontier_records": 2,
+        "checked_nodes": 11,
+        "reachable_and_closed": true
+      },
+      "model": "L03-clean-repoison-phased"
+    },
+    {
+      "check": {
+        "annotation_equality": true,
+        "checked_frontier_records": 2,
+        "checked_nodes": 13,
+        "reachable_and_closed": true
+      },
+      "model": "L04-return-repair-phased"
+    },
+    {
+      "check": {
+        "annotation_equality": true,
+        "checked_frontier_records": 2,
+        "checked_nodes": 5,
+        "reachable_and_closed": true
+      },
+      "model": "T2-1"
+    },
+    {
+      "check": {
+        "annotation_equality": true,
+        "checked_frontier_records": 6,
+        "checked_nodes": 10,
+        "reachable_and_closed": true
+      },
+      "model": "T4-2"
+    },
+    {
+      "check": {
+        "annotation_equality": true,
+        "checked_frontier_records": 20,
+        "checked_nodes": 17,
+        "reachable_and_closed": true
+      },
+      "model": "T6-3"
+    },
+    {
+      "check": {
+        "annotation_equality": true,
+        "checked_frontier_records": 70,
+        "checked_nodes": 26,
+        "reachable_and_closed": true
+      },
+      "model": "T8-4"
+    }
+  ],
+  "replay_charges": {
+    "checker_arcs": 204,
+    "checker_bad": 123,
+    "checker_parent": 165,
+    "checker_terms": 582
+  },
+  "retained_lowerings_rechecked": 4,
+  "retained_models_replayed": 20,
+  "scientific_limits": [
+    "one clock",
+    "finite base-event/delivery/depth budgets",
+    "data-independent control",
+    "disjunctive facts",
+    "zero-time repair slots",
+    "well-nested interrupts",
+    "model-language lowering only"
+  ],
+  "semantic_reference_equal": true,
+  "separate_semantic_audit": {
+    "models": 80,
+    "oracle_ceiling_cases": 0,
+    "oracle_constraint_systems": 79080,
+    "oracle_control_prefixes": 11248,
+    "oracle_disagreements": 0,
+    "oracle_state_observations": 17986,
+    "plan_budget_queries": 28800,
+    "plans": 640,
+    "query_disagreements": 0,
+    "semantic_reference_equal": true,
+    "unique_executable_descriptions": 80
+  },
+  "status": "PASS",
+  "test_methods": 61,
+  "test_report": {
+    "charged_operations": {
+      "bad_bucket_bitwise_or": 31,
+      "bad_terms": 249,
+      "checker_arcs": 413,
+      "checker_bad": 185,
+      "checker_parent": 376,
+      "checker_terms": 959,
+      "clear_bitwise_and": 53,
+      "commit_bitwise_or": 9,
+      "configuration_literal_bit_tests": 204,
+      "constant_fact_assignments": 22,
+      "explicit_edges": 21499,
+      "fact_transfer_arcs": 152,
+      "join_bitwise_or": 304,
+      "optimization_atom_tests": 28,
+      "optimization_plan_bit_tests": 35,
+      "oracle_constraints": 818,
+      "query_bitwise_or": 83,
+      "query_cost_bucket_tests": 651,
+      "query_plan_bit_tests": 508,
+      "skeleton_edges": 638,
+      "skeleton_successor_arcs": 152,
+      "symbolic_arcs": 638,
+      "test_explicit_edges": 419,
+      "test_query": 5046,
+      "word_base_edge": 155,
+      "word_repair": 54
+    },
+    "charged_operations_by_module": {
+      "test_config_lift": {
+        "bad_bucket_bitwise_or": 31,
+        "clear_bitwise_and": 53,
+        "commit_bitwise_or": 9,
+        "configuration_literal_bit_tests": 204,
+        "constant_fact_assignments": 22,
+        "fact_transfer_arcs": 152,
+        "join_bitwise_or": 304,
+        "optimization_atom_tests": 28,
+        "optimization_plan_bit_tests": 35,
+        "query_bitwise_or": 83,
+        "query_cost_bucket_tests": 651,
+        "query_plan_bit_tests": 508,
+        "skeleton_successor_arcs": 152,
+        "test_explicit_edges": 419
+      },
+      "test_core": {
+        "bad_terms": 249,
+        "checker_arcs": 413,
+        "checker_bad": 185,
+        "checker_parent": 376,
+        "checker_terms": 959,
+        "explicit_edges": 21499,
+        "oracle_constraints": 818,
+        "skeleton_edges": 638,
+        "symbolic_arcs": 638,
+        "test_query": 5046,
+        "word_base_edge": 155,
+        "word_repair": 54
+      }
+    },
+    "errors": 0,
+    "failures": 0,
+    "measured_cpu_seconds": 1.864622076,
+    "mutation_cases_in_systematic_test": 20,
+    "peak_rss_kib": 15752,
+    "skips": 0,
+    "successful": true,
+    "test_methods": 61
+  },
+  "wall_seconds_descriptive": 29.00781130499945
+}

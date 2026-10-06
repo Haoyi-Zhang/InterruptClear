@@ -1,0 +1,122 @@
+{
+  "atoms": [
+    {
+      "cost": 1,
+      "id": "N"
+    },
+    {
+      "cost": 2,
+      "id": "U"
+    }
+  ],
+  "cap": [
+    6,
+    2,
+    2
+  ],
+  "constants": [
+    0
+  ],
+  "edges": [
+    {
+      "dst": "h0",
+      "guard": [],
+      "id": "call",
+      "kind": "interrupt",
+      "p_clear": null,
+      "reset": false,
+      "resume": "done",
+      "src": "c0",
+      "t_clear": null
+    },
+    {
+      "dst": "h1",
+      "guard": [],
+      "id": "clean",
+      "kind": "neutralize",
+      "p_clear": null,
+      "reset": false,
+      "resume": null,
+      "src": "h0",
+      "t_clear": null
+    },
+    {
+      "dst": "n0",
+      "guard": [],
+      "id": "nested",
+      "kind": "interrupt",
+      "p_clear": null,
+      "reset": false,
+      "resume": "h1",
+      "src": "h1",
+      "t_clear": null
+    },
+    {
+      "dst": "n1",
+      "guard": [],
+      "id": "arm",
+      "kind": "arm",
+      "p_clear": null,
+      "reset": false,
+      "resume": null,
+      "src": "n0",
+      "t_clear": null
+    },
+    {
+      "dst": null,
+      "guard": [],
+      "id": "nested-return",
+      "kind": "return",
+      "p_clear": null,
+      "reset": false,
+      "resume": null,
+      "src": "n1",
+      "t_clear": "N"
+    },
+    {
+      "dst": "h1",
+      "guard": [],
+      "id": "use",
+      "kind": "use",
+      "p_clear": null,
+      "reset": false,
+      "resume": null,
+      "src": "h1",
+      "t_clear": "U"
+    },
+    {
+      "dst": null,
+      "guard": [],
+      "id": "return",
+      "kind": "return",
+      "p_clear": null,
+      "reset": false,
+      "resume": null,
+      "src": "h1",
+      "t_clear": null
+    }
+  ],
+  "initial": {
+    "pc": "c0",
+    "pending": false,
+    "taint": true
+  },
+  "invariants": {},
+  "locations": [
+    "c0",
+    "done",
+    "h0",
+    "h1",
+    "n0",
+    "n1"
+  ],
+  "name": "F09-nested-cause",
+  "urgent": [
+    "c0",
+    "done",
+    "h0",
+    "h1",
+    "n0",
+    "n1"
+  ]
+}

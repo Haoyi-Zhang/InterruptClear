@@ -1,0 +1,125 @@
+{
+  "frontier": [
+    [
+      0,
+      2,
+      0,
+      0
+    ]
+  ],
+  "model": {
+    "atoms": [
+      {
+        "cost": 1,
+        "id": "C"
+      }
+    ],
+    "cap": [
+      2,
+      0,
+      0
+    ],
+    "constants": [
+      0
+    ],
+    "edges": [
+      {
+        "dst": "c1",
+        "guard": [],
+        "id": "ineffective-clear",
+        "kind": "arm",
+        "p_clear": null,
+        "reset": false,
+        "resume": null,
+        "src": "c0",
+        "t_clear": "C"
+      },
+      {
+        "dst": "done",
+        "guard": [],
+        "id": "use",
+        "kind": "use",
+        "p_clear": null,
+        "reset": false,
+        "resume": null,
+        "src": "c1",
+        "t_clear": null
+      }
+    ],
+    "initial": {
+      "pc": "c0",
+      "pending": false,
+      "taint": false
+    },
+    "invariants": {},
+    "locations": [
+      "c0",
+      "c1",
+      "done"
+    ],
+    "name": "F10-unrepairable-source",
+    "urgent": [
+      "c0",
+      "c1",
+      "done"
+    ]
+  },
+  "nodes": [
+    {
+      "p": [],
+      "parent": null,
+      "state": [
+        0,
+        0,
+        0,
+        "c0",
+        0,
+        []
+      ],
+      "t": []
+    },
+    {
+      "p": [],
+      "parent": [
+        0,
+        [
+          "edge",
+          "ineffective-clear"
+        ]
+      ],
+      "state": [
+        1,
+        0,
+        0,
+        "c1",
+        0,
+        []
+      ],
+      "t": [
+        0
+      ]
+    },
+    {
+      "p": [],
+      "parent": [
+        1,
+        [
+          "edge",
+          "use"
+        ]
+      ],
+      "state": [
+        2,
+        0,
+        0,
+        "done",
+        0,
+        []
+      ],
+      "t": [
+        0
+      ]
+    }
+  ],
+  "schema": "neutralization-frontier"
+}

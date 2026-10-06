@@ -1,0 +1,67 @@
+{
+  "atoms": [
+    {
+      "cost": 1,
+      "id": "C"
+    }
+  ],
+  "cap": [
+    2,
+    0,
+    0
+  ],
+  "constants": [
+    0,
+    1
+  ],
+  "edges": [
+    {
+      "dst": "c1",
+      "guard": [
+        [
+          ">",
+          1
+        ]
+      ],
+      "id": "after",
+      "kind": "nop",
+      "p_clear": null,
+      "reset": false,
+      "resume": null,
+      "src": "c0",
+      "t_clear": null
+    },
+    {
+      "dst": "done",
+      "guard": [
+        [
+          "<=",
+          1
+        ]
+      ],
+      "id": "use",
+      "kind": "use",
+      "p_clear": null,
+      "reset": false,
+      "resume": null,
+      "src": "c1",
+      "t_clear": "C"
+    }
+  ],
+  "initial": {
+    "pc": "c0",
+    "pending": false,
+    "taint": true
+  },
+  "invariants": {},
+  "locations": [
+    "c0",
+    "c1",
+    "done"
+  ],
+  "name": "F07-infeasible-window",
+  "urgent": [
+    "c1",
+    "done"
+  ]
+}

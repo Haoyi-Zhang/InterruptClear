@@ -1,0 +1,23 @@
+{
+  "cpu_seconds": 5.015625,
+  "deterministic_reference_sha256": "4864fa063c22ddec409aad08cd77c59e0153db4043e48d2cd5775798133fc791",
+  "limits": {
+    "address_space_mib": 512,
+    "charged_obligations": 150000,
+    "cpu_seconds": 25,
+    "oracle_constraints_per_plan": 100000
+  },
+  "peak_rss_kib": null,
+  "runtime_limits": {
+    "cooperative_cpu_checks": true,
+    "mode": "portable",
+    "os_address_space_limit_enforced": false,
+    "os_cpu_limit_enforced": false,
+    "peak_rss_available": false,
+    "platform": "win32",
+    "requested_address_space_mib": 512,
+    "requested_cpu_hard_seconds": 25,
+    "requested_cpu_soft_seconds": 25
+  },
+  "wall_seconds": 5.093138699994597
+}

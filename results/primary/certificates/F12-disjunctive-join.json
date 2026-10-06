@@ -1,0 +1,252 @@
+{
+  "frontier": [
+    [
+      1,
+      4,
+      0,
+      0
+    ],
+    [
+      2,
+      4,
+      0,
+      0
+    ]
+  ],
+  "model": {
+    "atoms": [
+      {
+        "cost": 1,
+        "id": "A"
+      },
+      {
+        "cost": 1,
+        "id": "B"
+      }
+    ],
+    "cap": [
+      4,
+      0,
+      0
+    ],
+    "constants": [
+      0
+    ],
+    "edges": [
+      {
+        "dst": "a",
+        "guard": [],
+        "id": "arm",
+        "kind": "arm",
+        "p_clear": null,
+        "reset": false,
+        "resume": null,
+        "src": "c0",
+        "t_clear": null
+      },
+      {
+        "dst": "b",
+        "guard": [],
+        "id": "schedule",
+        "kind": "schedule",
+        "p_clear": null,
+        "reset": false,
+        "resume": null,
+        "src": "c0",
+        "t_clear": null
+      },
+      {
+        "dst": "j",
+        "guard": [],
+        "id": "aj",
+        "kind": "nop",
+        "p_clear": null,
+        "reset": false,
+        "resume": null,
+        "src": "a",
+        "t_clear": "A"
+      },
+      {
+        "dst": "j",
+        "guard": [],
+        "id": "bj",
+        "kind": "nop",
+        "p_clear": "B",
+        "reset": false,
+        "resume": null,
+        "src": "b",
+        "t_clear": null
+      },
+      {
+        "dst": "k",
+        "guard": [],
+        "id": "commit",
+        "kind": "commit",
+        "p_clear": null,
+        "reset": false,
+        "resume": null,
+        "src": "j",
+        "t_clear": null
+      },
+      {
+        "dst": "done",
+        "guard": [],
+        "id": "use",
+        "kind": "use",
+        "p_clear": null,
+        "reset": false,
+        "resume": null,
+        "src": "k",
+        "t_clear": null
+      }
+    ],
+    "initial": {
+      "pc": "c0",
+      "pending": false,
+      "taint": false
+    },
+    "invariants": {},
+    "locations": [
+      "c0",
+      "a",
+      "b",
+      "j",
+      "k",
+      "done"
+    ],
+    "name": "F12-disjunctive-join",
+    "urgent": [
+      "a",
+      "b",
+      "c0",
+      "done",
+      "j",
+      "k"
+    ]
+  },
+  "nodes": [
+    {
+      "p": [],
+      "parent": null,
+      "state": [
+        0,
+        0,
+        0,
+        "c0",
+        0,
+        []
+      ],
+      "t": []
+    },
+    {
+      "p": [],
+      "parent": [
+        0,
+        [
+          "edge",
+          "arm"
+        ]
+      ],
+      "state": [
+        1,
+        0,
+        0,
+        "a",
+        0,
+        []
+      ],
+      "t": [
+        0
+      ]
+    },
+    {
+      "p": [
+        0
+      ],
+      "parent": [
+        0,
+        [
+          "edge",
+          "schedule"
+        ]
+      ],
+      "state": [
+        1,
+        0,
+        0,
+        "b",
+        0,
+        []
+      ],
+      "t": []
+    },
+    {
+      "p": [
+        2
+      ],
+      "parent": [
+        1,
+        [
+          "edge",
+          "aj"
+        ]
+      ],
+      "state": [
+        2,
+        0,
+        0,
+        "j",
+        0,
+        []
+      ],
+      "t": [
+        1
+      ]
+    },
+    {
+      "p": [],
+      "parent": [
+        3,
+        [
+          "edge",
+          "commit"
+        ]
+      ],
+      "state": [
+        3,
+        0,
+        0,
+        "k",
+        0,
+        []
+      ],
+      "t": [
+        1,
+        2
+      ]
+    },
+    {
+      "p": [],
+      "parent": [
+        4,
+        [
+          "edge",
+          "use"
+        ]
+      ],
+      "state": [
+        4,
+        0,
+        0,
+        "done",
+        0,
+        []
+      ],
+      "t": [
+        1,
+        2
+      ]
+    }
+  ],
+  "schema": "neutralization-frontier"
+}

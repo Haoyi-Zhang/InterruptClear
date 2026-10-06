@@ -1,0 +1,466 @@
+{
+  "frontier": [
+    [
+      3,
+      5,
+      0,
+      0
+    ],
+    [
+      5,
+      5,
+      0,
+      0
+    ],
+    [
+      6,
+      5,
+      0,
+      0
+    ],
+    [
+      9,
+      5,
+      0,
+      0
+    ],
+    [
+      10,
+      5,
+      0,
+      0
+    ],
+    [
+      12,
+      5,
+      0,
+      0
+    ]
+  ],
+  "model": {
+    "atoms": [
+      {
+        "cost": 1,
+        "id": "A0"
+      },
+      {
+        "cost": 1,
+        "id": "A1"
+      },
+      {
+        "cost": 1,
+        "id": "A2"
+      },
+      {
+        "cost": 1,
+        "id": "A3"
+      }
+    ],
+    "cap": [
+      5,
+      0,
+      0
+    ],
+    "constants": [
+      0
+    ],
+    "edges": [
+      {
+        "dst": "q1_0",
+        "guard": [],
+        "id": "skip0_0",
+        "kind": "nop",
+        "p_clear": null,
+        "reset": false,
+        "resume": null,
+        "src": "q0_0",
+        "t_clear": null
+      },
+      {
+        "dst": "q1_1",
+        "guard": [],
+        "id": "pick0_0",
+        "kind": "nop",
+        "p_clear": null,
+        "reset": false,
+        "resume": null,
+        "src": "q0_0",
+        "t_clear": "A0"
+      },
+      {
+        "dst": "q2_0",
+        "guard": [],
+        "id": "skip1_0",
+        "kind": "nop",
+        "p_clear": null,
+        "reset": false,
+        "resume": null,
+        "src": "q1_0",
+        "t_clear": null
+      },
+      {
+        "dst": "q2_1",
+        "guard": [],
+        "id": "pick1_0",
+        "kind": "nop",
+        "p_clear": null,
+        "reset": false,
+        "resume": null,
+        "src": "q1_0",
+        "t_clear": "A1"
+      },
+      {
+        "dst": "q2_1",
+        "guard": [],
+        "id": "skip1_1",
+        "kind": "nop",
+        "p_clear": null,
+        "reset": false,
+        "resume": null,
+        "src": "q1_1",
+        "t_clear": null
+      },
+      {
+        "dst": "q2_2",
+        "guard": [],
+        "id": "pick1_1",
+        "kind": "nop",
+        "p_clear": null,
+        "reset": false,
+        "resume": null,
+        "src": "q1_1",
+        "t_clear": "A1"
+      },
+      {
+        "dst": "q3_1",
+        "guard": [],
+        "id": "pick2_0",
+        "kind": "nop",
+        "p_clear": null,
+        "reset": false,
+        "resume": null,
+        "src": "q2_0",
+        "t_clear": "A2"
+      },
+      {
+        "dst": "q3_1",
+        "guard": [],
+        "id": "skip2_1",
+        "kind": "nop",
+        "p_clear": null,
+        "reset": false,
+        "resume": null,
+        "src": "q2_1",
+        "t_clear": null
+      },
+      {
+        "dst": "q3_2",
+        "guard": [],
+        "id": "pick2_1",
+        "kind": "nop",
+        "p_clear": null,
+        "reset": false,
+        "resume": null,
+        "src": "q2_1",
+        "t_clear": "A2"
+      },
+      {
+        "dst": "q3_2",
+        "guard": [],
+        "id": "skip2_2",
+        "kind": "nop",
+        "p_clear": null,
+        "reset": false,
+        "resume": null,
+        "src": "q2_2",
+        "t_clear": null
+      },
+      {
+        "dst": "q4_2",
+        "guard": [],
+        "id": "pick3_1",
+        "kind": "nop",
+        "p_clear": null,
+        "reset": false,
+        "resume": null,
+        "src": "q3_1",
+        "t_clear": "A3"
+      },
+      {
+        "dst": "q4_2",
+        "guard": [],
+        "id": "skip3_2",
+        "kind": "nop",
+        "p_clear": null,
+        "reset": false,
+        "resume": null,
+        "src": "q3_2",
+        "t_clear": null
+      },
+      {
+        "dst": "done",
+        "guard": [],
+        "id": "use",
+        "kind": "use",
+        "p_clear": null,
+        "reset": false,
+        "resume": null,
+        "src": "q4_2",
+        "t_clear": null
+      }
+    ],
+    "initial": {
+      "pc": "q0_0",
+      "pending": false,
+      "taint": true
+    },
+    "invariants": {},
+    "locations": [
+      "q0_0",
+      "q1_0",
+      "q1_1",
+      "q2_0",
+      "q2_1",
+      "q2_2",
+      "q3_1",
+      "q3_2",
+      "q4_2",
+      "done"
+    ],
+    "name": "T4-2",
+    "urgent": [
+      "done",
+      "q0_0",
+      "q1_0",
+      "q1_1",
+      "q2_0",
+      "q2_1",
+      "q2_2",
+      "q3_1",
+      "q3_2",
+      "q4_2"
+    ]
+  },
+  "nodes": [
+    {
+      "p": [],
+      "parent": null,
+      "state": [
+        0,
+        0,
+        0,
+        "q0_0",
+        0,
+        []
+      ],
+      "t": [
+        0
+      ]
+    },
+    {
+      "p": [],
+      "parent": [
+        0,
+        [
+          "edge",
+          "skip0_0"
+        ]
+      ],
+      "state": [
+        1,
+        0,
+        0,
+        "q1_0",
+        0,
+        []
+      ],
+      "t": [
+        0
+      ]
+    },
+    {
+      "p": [],
+      "parent": [
+        0,
+        [
+          "edge",
+          "pick0_0"
+        ]
+      ],
+      "state": [
+        1,
+        0,
+        0,
+        "q1_1",
+        0,
+        []
+      ],
+      "t": [
+        1
+      ]
+    },
+    {
+      "p": [],
+      "parent": [
+        1,
+        [
+          "edge",
+          "skip1_0"
+        ]
+      ],
+      "state": [
+        2,
+        0,
+        0,
+        "q2_0",
+        0,
+        []
+      ],
+      "t": [
+        0
+      ]
+    },
+    {
+      "p": [],
+      "parent": [
+        1,
+        [
+          "edge",
+          "pick1_0"
+        ]
+      ],
+      "state": [
+        2,
+        0,
+        0,
+        "q2_1",
+        0,
+        []
+      ],
+      "t": [
+        1,
+        2
+      ]
+    },
+    {
+      "p": [],
+      "parent": [
+        2,
+        [
+          "edge",
+          "pick1_1"
+        ]
+      ],
+      "state": [
+        2,
+        0,
+        0,
+        "q2_2",
+        0,
+        []
+      ],
+      "t": [
+        3
+      ]
+    },
+    {
+      "p": [],
+      "parent": [
+        3,
+        [
+          "edge",
+          "pick2_0"
+        ]
+      ],
+      "state": [
+        3,
+        0,
+        0,
+        "q3_1",
+        0,
+        []
+      ],
+      "t": [
+        1,
+        2,
+        4
+      ]
+    },
+    {
+      "p": [],
+      "parent": [
+        4,
+        [
+          "edge",
+          "pick2_1"
+        ]
+      ],
+      "state": [
+        3,
+        0,
+        0,
+        "q3_2",
+        0,
+        []
+      ],
+      "t": [
+        3,
+        5,
+        6
+      ]
+    },
+    {
+      "p": [],
+      "parent": [
+        6,
+        [
+          "edge",
+          "pick3_1"
+        ]
+      ],
+      "state": [
+        4,
+        0,
+        0,
+        "q4_2",
+        0,
+        []
+      ],
+      "t": [
+        3,
+        5,
+        6,
+        9,
+        10,
+        12
+      ]
+    },
+    {
+      "p": [],
+      "parent": [
+        8,
+        [
+          "edge",
+          "use"
+        ]
+      ],
+      "state": [
+        5,
+        0,
+        0,
+        "done",
+        0,
+        []
+      ],
+      "t": [
+        3,
+        5,
+        6,
+        9,
+        10,
+        12
+      ]
+    }
+  ],
+  "schema": "neutralization-frontier"
+}

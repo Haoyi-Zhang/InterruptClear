@@ -1,0 +1,317 @@
+{
+  "frontier": [
+    [
+      1,
+      2,
+      1,
+      1
+    ],
+    [
+      2,
+      3,
+      0,
+      0
+    ]
+  ],
+  "model": {
+    "atoms": [
+      {
+        "cost": 2,
+        "id": "A"
+      },
+      {
+        "cost": 1,
+        "id": "B"
+      }
+    ],
+    "cap": [
+      3,
+      1,
+      1
+    ],
+    "constants": [
+      0
+    ],
+    "edges": [
+      {
+        "dst": "h0",
+        "guard": [],
+        "id": "call",
+        "kind": "interrupt",
+        "p_clear": null,
+        "reset": false,
+        "resume": "done",
+        "src": "c0",
+        "t_clear": null
+      },
+      {
+        "dst": "h0",
+        "guard": [],
+        "id": "fast-use",
+        "kind": "use",
+        "p_clear": null,
+        "reset": false,
+        "resume": null,
+        "src": "h0",
+        "t_clear": "A"
+      },
+      {
+        "dst": null,
+        "guard": [],
+        "id": "return",
+        "kind": "return",
+        "p_clear": null,
+        "reset": false,
+        "resume": null,
+        "src": "h0",
+        "t_clear": null
+      },
+      {
+        "dst": "c1",
+        "guard": [],
+        "id": "long1",
+        "kind": "nop",
+        "p_clear": null,
+        "reset": false,
+        "resume": null,
+        "src": "c0",
+        "t_clear": null
+      },
+      {
+        "dst": "c2",
+        "guard": [],
+        "id": "long2",
+        "kind": "nop",
+        "p_clear": null,
+        "reset": false,
+        "resume": null,
+        "src": "c1",
+        "t_clear": null
+      },
+      {
+        "dst": "done",
+        "guard": [],
+        "id": "slow-use",
+        "kind": "use",
+        "p_clear": null,
+        "reset": false,
+        "resume": null,
+        "src": "c2",
+        "t_clear": "B"
+      }
+    ],
+    "initial": {
+      "pc": "c0",
+      "pending": false,
+      "taint": true
+    },
+    "invariants": {},
+    "locations": [
+      "c0",
+      "c1",
+      "c2",
+      "done",
+      "h0"
+    ],
+    "name": "F08-resource-tradeoff",
+    "urgent": [
+      "c0",
+      "c1",
+      "c2",
+      "done",
+      "h0"
+    ]
+  },
+  "nodes": [
+    {
+      "p": [],
+      "parent": null,
+      "state": [
+        0,
+        0,
+        0,
+        "c0",
+        0,
+        []
+      ],
+      "t": [
+        0
+      ]
+    },
+    {
+      "p": [],
+      "parent": [
+        0,
+        [
+          "edge",
+          "long1"
+        ]
+      ],
+      "state": [
+        1,
+        0,
+        0,
+        "c1",
+        0,
+        []
+      ],
+      "t": [
+        0
+      ]
+    },
+    {
+      "p": [],
+      "parent": [
+        0,
+        [
+          "edge",
+          "call"
+        ]
+      ],
+      "state": [
+        1,
+        1,
+        1,
+        "h0",
+        0,
+        [
+          "done"
+        ]
+      ],
+      "t": [
+        0
+      ]
+    },
+    {
+      "p": [],
+      "parent": [
+        1,
+        [
+          "edge",
+          "long2"
+        ]
+      ],
+      "state": [
+        2,
+        0,
+        0,
+        "c2",
+        0,
+        []
+      ],
+      "t": [
+        0
+      ]
+    },
+    {
+      "p": [],
+      "parent": [
+        2,
+        [
+          "edge",
+          "return"
+        ]
+      ],
+      "state": [
+        2,
+        1,
+        1,
+        "done",
+        0,
+        []
+      ],
+      "t": [
+        0
+      ]
+    },
+    {
+      "p": [],
+      "parent": [
+        2,
+        [
+          "edge",
+          "fast-use"
+        ]
+      ],
+      "state": [
+        2,
+        1,
+        1,
+        "h0",
+        0,
+        [
+          "done"
+        ]
+      ],
+      "t": [
+        1
+      ]
+    },
+    {
+      "p": [],
+      "parent": [
+        3,
+        [
+          "edge",
+          "slow-use"
+        ]
+      ],
+      "state": [
+        3,
+        0,
+        0,
+        "done",
+        0,
+        []
+      ],
+      "t": [
+        2
+      ]
+    },
+    {
+      "p": [],
+      "parent": [
+        5,
+        [
+          "edge",
+          "return"
+        ]
+      ],
+      "state": [
+        3,
+        1,
+        1,
+        "done",
+        0,
+        []
+      ],
+      "t": [
+        1
+      ]
+    },
+    {
+      "p": [],
+      "parent": [
+        5,
+        [
+          "edge",
+          "fast-use"
+        ]
+      ],
+      "state": [
+        3,
+        1,
+        1,
+        "h0",
+        0,
+        [
+          "done"
+        ]
+      ],
+      "t": [
+        1
+      ]
+    }
+  ],
+  "schema": "neutralization-frontier"
+}

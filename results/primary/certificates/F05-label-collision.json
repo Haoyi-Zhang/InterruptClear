@@ -1,0 +1,217 @@
+{
+  "frontier": [
+    [
+      1,
+      3,
+      1,
+      1
+    ]
+  ],
+  "model": {
+    "atoms": [
+      {
+        "cost": 1,
+        "id": "C"
+      }
+    ],
+    "cap": [
+      3,
+      1,
+      1
+    ],
+    "constants": [
+      0,
+      1
+    ],
+    "edges": [
+      {
+        "dst": "h0",
+        "guard": [
+          [
+            "==",
+            1
+          ]
+        ],
+        "id": "delay->(0,1)",
+        "kind": "interrupt",
+        "p_clear": null,
+        "reset": false,
+        "resume": "c1",
+        "src": "c0",
+        "t_clear": null
+      },
+      {
+        "dst": null,
+        "guard": [],
+        "id": "return",
+        "kind": "return",
+        "p_clear": null,
+        "reset": false,
+        "resume": null,
+        "src": "h0",
+        "t_clear": null
+      },
+      {
+        "dst": "done",
+        "guard": [],
+        "id": "use",
+        "kind": "use",
+        "p_clear": null,
+        "reset": false,
+        "resume": null,
+        "src": "c1",
+        "t_clear": "C"
+      }
+    ],
+    "initial": {
+      "pc": "c0",
+      "pending": false,
+      "taint": true
+    },
+    "invariants": {
+      "c0": [
+        [
+          "<=",
+          1
+        ]
+      ]
+    },
+    "locations": [
+      "c0",
+      "c1",
+      "done",
+      "h0"
+    ],
+    "name": "F05-label-collision",
+    "urgent": [
+      "c1",
+      "done",
+      "h0"
+    ]
+  },
+  "nodes": [
+    {
+      "p": [],
+      "parent": null,
+      "state": [
+        0,
+        0,
+        0,
+        "c0",
+        0,
+        []
+      ],
+      "t": [
+        0
+      ]
+    },
+    {
+      "p": [],
+      "parent": [
+        0,
+        [
+          "delay",
+          1
+        ]
+      ],
+      "state": [
+        0,
+        0,
+        0,
+        "c0",
+        1,
+        []
+      ],
+      "t": [
+        0
+      ]
+    },
+    {
+      "p": [],
+      "parent": [
+        1,
+        [
+          "delay",
+          2
+        ]
+      ],
+      "state": [
+        0,
+        0,
+        0,
+        "c0",
+        2,
+        []
+      ],
+      "t": [
+        0
+      ]
+    },
+    {
+      "p": [],
+      "parent": [
+        2,
+        [
+          "edge",
+          "delay->(0,1)"
+        ]
+      ],
+      "state": [
+        1,
+        1,
+        1,
+        "h0",
+        2,
+        [
+          "c1"
+        ]
+      ],
+      "t": [
+        0
+      ]
+    },
+    {
+      "p": [],
+      "parent": [
+        3,
+        [
+          "edge",
+          "return"
+        ]
+      ],
+      "state": [
+        2,
+        1,
+        1,
+        "c1",
+        2,
+        []
+      ],
+      "t": [
+        0
+      ]
+    },
+    {
+      "p": [],
+      "parent": [
+        4,
+        [
+          "edge",
+          "use"
+        ]
+      ],
+      "state": [
+        3,
+        1,
+        1,
+        "done",
+        2,
+        []
+      ],
+      "t": [
+        1
+      ]
+    }
+  ],
+  "schema": "neutralization-frontier"
+}
