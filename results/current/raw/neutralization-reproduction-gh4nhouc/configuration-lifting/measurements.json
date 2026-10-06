@@ -1,0 +1,18 @@
+{
+  "cpu_seconds": 0.475961578,
+  "meaning": "whole comparison including all methods; no speedup or per-method timing inference",
+  "peak_rss_kib": 24792,
+  "runtime_limits": {
+    "cooperative_cpu_checks": true,
+    "mode": "posix",
+    "os_address_space_limit_enforced": true,
+    "os_cpu_limit_enforced": true,
+    "peak_rss_available": true,
+    "platform": "linux",
+    "requested_address_space_mib": 2500,
+    "requested_cpu_hard_seconds": 180,
+    "requested_cpu_soft_seconds": 170
+  },
+  "wall_seconds": 0.4763623209999963,
+  "workers": 1
+}

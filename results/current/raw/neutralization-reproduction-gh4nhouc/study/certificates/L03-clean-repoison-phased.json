@@ -1,0 +1,370 @@
+{
+  "frontier": [
+    [
+      0,
+      5,
+      1,
+      1
+    ],
+    [
+      1,
+      2,
+      0,
+      0
+    ]
+  ],
+  "model": {
+    "atoms": [
+      {
+        "cost": 1,
+        "id": "C"
+      }
+    ],
+    "cap": [
+      5,
+      1,
+      1
+    ],
+    "constants": [
+      0
+    ],
+    "edges": [
+      {
+        "dst": "v1p0",
+        "guard": [],
+        "id": "x0",
+        "kind": "nop",
+        "p_clear": null,
+        "reset": false,
+        "resume": null,
+        "src": "v0p0",
+        "t_clear": null
+      },
+      {
+        "dst": "v1p1",
+        "guard": [],
+        "id": "x1",
+        "kind": "repair",
+        "p_clear": null,
+        "reset": false,
+        "resume": null,
+        "src": "v1p0",
+        "t_clear": "C"
+      },
+      {
+        "dst": "v3p0",
+        "guard": [],
+        "id": "x2",
+        "kind": "interrupt",
+        "p_clear": null,
+        "reset": false,
+        "resume": "v1p0",
+        "src": "v1p0",
+        "t_clear": null
+      },
+      {
+        "dst": "v3p0",
+        "guard": [],
+        "id": "x3",
+        "kind": "interrupt",
+        "p_clear": null,
+        "reset": false,
+        "resume": "v1p1",
+        "src": "v1p1",
+        "t_clear": null
+      },
+      {
+        "dst": "v2p0",
+        "guard": [],
+        "id": "x4",
+        "kind": "use",
+        "p_clear": null,
+        "reset": false,
+        "resume": null,
+        "src": "v1p1",
+        "t_clear": null
+      },
+      {
+        "dst": "v4p0",
+        "guard": [],
+        "id": "x5",
+        "kind": "arm",
+        "p_clear": null,
+        "reset": false,
+        "resume": null,
+        "src": "v3p0",
+        "t_clear": null
+      },
+      {
+        "dst": null,
+        "guard": [],
+        "id": "x6",
+        "kind": "return",
+        "p_clear": null,
+        "reset": false,
+        "resume": null,
+        "src": "v4p0",
+        "t_clear": null
+      }
+    ],
+    "initial": {
+      "pc": "v0p0",
+      "pending": false,
+      "taint": true
+    },
+    "invariants": {},
+    "locations": [
+      "v0p0",
+      "v1p0",
+      "v1p1",
+      "v2p0",
+      "v3p0",
+      "v4p0"
+    ],
+    "name": "L03-clean-repoison-phased",
+    "urgent": [
+      "v0p0",
+      "v1p0",
+      "v1p1",
+      "v2p0",
+      "v3p0",
+      "v4p0"
+    ]
+  },
+  "nodes": [
+    {
+      "p": [],
+      "parent": null,
+      "state": [
+        0,
+        0,
+        0,
+        "v0p0",
+        0,
+        []
+      ],
+      "t": [
+        0
+      ]
+    },
+    {
+      "p": [],
+      "parent": [
+        0,
+        [
+          "edge",
+          "x0"
+        ]
+      ],
+      "state": [
+        1,
+        0,
+        0,
+        "v1p0",
+        0,
+        []
+      ],
+      "t": [
+        0
+      ]
+    },
+    {
+      "p": [],
+      "parent": [
+        1,
+        [
+          "edge",
+          "x1"
+        ]
+      ],
+      "state": [
+        1,
+        0,
+        0,
+        "v1p1",
+        0,
+        []
+      ],
+      "t": [
+        1
+      ]
+    },
+    {
+      "p": [],
+      "parent": [
+        2,
+        [
+          "edge",
+          "x4"
+        ]
+      ],
+      "state": [
+        2,
+        0,
+        0,
+        "v2p0",
+        0,
+        []
+      ],
+      "t": [
+        1
+      ]
+    },
+    {
+      "p": [],
+      "parent": [
+        1,
+        [
+          "edge",
+          "x2"
+        ]
+      ],
+      "state": [
+        2,
+        1,
+        1,
+        "v3p0",
+        0,
+        [
+          "v1p0"
+        ]
+      ],
+      "t": [
+        0
+      ]
+    },
+    {
+      "p": [],
+      "parent": [
+        2,
+        [
+          "edge",
+          "x3"
+        ]
+      ],
+      "state": [
+        2,
+        1,
+        1,
+        "v3p0",
+        0,
+        [
+          "v1p1"
+        ]
+      ],
+      "t": [
+        1
+      ]
+    },
+    {
+      "p": [],
+      "parent": [
+        4,
+        [
+          "edge",
+          "x5"
+        ]
+      ],
+      "state": [
+        3,
+        1,
+        1,
+        "v4p0",
+        0,
+        [
+          "v1p0"
+        ]
+      ],
+      "t": [
+        0
+      ]
+    },
+    {
+      "p": [],
+      "parent": [
+        5,
+        [
+          "edge",
+          "x5"
+        ]
+      ],
+      "state": [
+        3,
+        1,
+        1,
+        "v4p0",
+        0,
+        [
+          "v1p1"
+        ]
+      ],
+      "t": [
+        0
+      ]
+    },
+    {
+      "p": [],
+      "parent": [
+        6,
+        [
+          "edge",
+          "x6"
+        ]
+      ],
+      "state": [
+        4,
+        1,
+        1,
+        "v1p0",
+        0,
+        []
+      ],
+      "t": [
+        0
+      ]
+    },
+    {
+      "p": [],
+      "parent": [
+        7,
+        [
+          "edge",
+          "x6"
+        ]
+      ],
+      "state": [
+        4,
+        1,
+        1,
+        "v1p1",
+        0,
+        []
+      ],
+      "t": [
+        0
+      ]
+    },
+    {
+      "p": [],
+      "parent": [
+        9,
+        [
+          "edge",
+          "x4"
+        ]
+      ],
+      "state": [
+        5,
+        1,
+        1,
+        "v2p0",
+        0,
+        []
+      ],
+      "t": [
+        0
+      ]
+    }
+  ],
+  "schema": "neutralization-frontier"
+}

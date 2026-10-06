@@ -1,0 +1,5 @@
+base_model,expanded_model,word,locations,transitions,skeleton_states,frontier_records,minimum_cost,safe_plans,policy_budget_queries,interpreter_plan_comparisons,longest_discrete_row_path
+L01-drain-clean,L01-drain-clean-phased,"c1:P:p,C:t",7,9,15,2,2,1,96,4,7
+L02-clean-drain,L02-clean-drain-phased,"c1:C:t,P:p",7,9,15,2,,0,96,4,7
+L03-clean-repoison,L03-clean-repoison-phased,c1:C:t,6,7,11,2,,0,48,2,6
+L04-return-repair,L04-return-repair-phased,c1:C:t;h1:R:t,7,8,13,2,4,1,96,4,7

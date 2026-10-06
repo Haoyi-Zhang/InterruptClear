@@ -1,0 +1,17 @@
+{
+  "cpu_seconds": 0.580076558,
+  "peak_rss_kib": 21236,
+  "runtime_limits": {
+    "cooperative_cpu_checks": true,
+    "mode": "posix",
+    "os_address_space_limit_enforced": true,
+    "os_cpu_limit_enforced": true,
+    "peak_rss_available": true,
+    "platform": "linux",
+    "requested_address_space_mib": 2500,
+    "requested_cpu_hard_seconds": 180,
+    "requested_cpu_soft_seconds": 170
+  },
+  "wall_seconds": 0.5817131499999988,
+  "workers": 1
+}

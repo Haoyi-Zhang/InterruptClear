@@ -1,0 +1,581 @@
+{
+  "frontier": [
+    [
+      3,
+      6,
+      2,
+      2
+    ]
+  ],
+  "model": {
+    "atoms": [
+      {
+        "cost": 1,
+        "id": "N"
+      },
+      {
+        "cost": 2,
+        "id": "U"
+      }
+    ],
+    "cap": [
+      6,
+      2,
+      2
+    ],
+    "constants": [
+      0
+    ],
+    "edges": [
+      {
+        "dst": "h0",
+        "guard": [],
+        "id": "call",
+        "kind": "interrupt",
+        "p_clear": null,
+        "reset": false,
+        "resume": "done",
+        "src": "c0",
+        "t_clear": null
+      },
+      {
+        "dst": "h1",
+        "guard": [],
+        "id": "clean",
+        "kind": "neutralize",
+        "p_clear": null,
+        "reset": false,
+        "resume": null,
+        "src": "h0",
+        "t_clear": null
+      },
+      {
+        "dst": "n0",
+        "guard": [],
+        "id": "nested",
+        "kind": "interrupt",
+        "p_clear": null,
+        "reset": false,
+        "resume": "h1",
+        "src": "h1",
+        "t_clear": null
+      },
+      {
+        "dst": "n1",
+        "guard": [],
+        "id": "arm",
+        "kind": "arm",
+        "p_clear": null,
+        "reset": false,
+        "resume": null,
+        "src": "n0",
+        "t_clear": null
+      },
+      {
+        "dst": null,
+        "guard": [],
+        "id": "nested-return",
+        "kind": "return",
+        "p_clear": null,
+        "reset": false,
+        "resume": null,
+        "src": "n1",
+        "t_clear": "N"
+      },
+      {
+        "dst": "h1",
+        "guard": [],
+        "id": "use",
+        "kind": "use",
+        "p_clear": null,
+        "reset": false,
+        "resume": null,
+        "src": "h1",
+        "t_clear": "U"
+      },
+      {
+        "dst": null,
+        "guard": [],
+        "id": "return",
+        "kind": "return",
+        "p_clear": null,
+        "reset": false,
+        "resume": null,
+        "src": "h1",
+        "t_clear": null
+      }
+    ],
+    "initial": {
+      "pc": "c0",
+      "pending": false,
+      "taint": true
+    },
+    "invariants": {},
+    "locations": [
+      "c0",
+      "done",
+      "h0",
+      "h1",
+      "n0",
+      "n1"
+    ],
+    "name": "F09-nested-cause",
+    "urgent": [
+      "c0",
+      "done",
+      "h0",
+      "h1",
+      "n0",
+      "n1"
+    ]
+  },
+  "nodes": [
+    {
+      "p": [],
+      "parent": null,
+      "state": [
+        0,
+        0,
+        0,
+        "c0",
+        0,
+        []
+      ],
+      "t": [
+        0
+      ]
+    },
+    {
+      "p": [],
+      "parent": [
+        0,
+        [
+          "edge",
+          "call"
+        ]
+      ],
+      "state": [
+        1,
+        1,
+        1,
+        "h0",
+        0,
+        [
+          "done"
+        ]
+      ],
+      "t": [
+        0
+      ]
+    },
+    {
+      "p": [],
+      "parent": [
+        1,
+        [
+          "edge",
+          "clean"
+        ]
+      ],
+      "state": [
+        2,
+        1,
+        1,
+        "h1",
+        0,
+        [
+          "done"
+        ]
+      ],
+      "t": []
+    },
+    {
+      "p": [],
+      "parent": [
+        2,
+        [
+          "edge",
+          "return"
+        ]
+      ],
+      "state": [
+        3,
+        1,
+        1,
+        "done",
+        0,
+        []
+      ],
+      "t": []
+    },
+    {
+      "p": [],
+      "parent": [
+        2,
+        [
+          "edge",
+          "use"
+        ]
+      ],
+      "state": [
+        3,
+        1,
+        1,
+        "h1",
+        0,
+        [
+          "done"
+        ]
+      ],
+      "t": []
+    },
+    {
+      "p": [],
+      "parent": [
+        2,
+        [
+          "edge",
+          "nested"
+        ]
+      ],
+      "state": [
+        3,
+        2,
+        2,
+        "n0",
+        0,
+        [
+          "done",
+          "h1"
+        ]
+      ],
+      "t": []
+    },
+    {
+      "p": [],
+      "parent": [
+        4,
+        [
+          "edge",
+          "return"
+        ]
+      ],
+      "state": [
+        4,
+        1,
+        1,
+        "done",
+        0,
+        []
+      ],
+      "t": []
+    },
+    {
+      "p": [],
+      "parent": [
+        4,
+        [
+          "edge",
+          "use"
+        ]
+      ],
+      "state": [
+        4,
+        1,
+        1,
+        "h1",
+        0,
+        [
+          "done"
+        ]
+      ],
+      "t": []
+    },
+    {
+      "p": [],
+      "parent": [
+        4,
+        [
+          "edge",
+          "nested"
+        ]
+      ],
+      "state": [
+        4,
+        2,
+        2,
+        "n0",
+        0,
+        [
+          "done",
+          "h1"
+        ]
+      ],
+      "t": []
+    },
+    {
+      "p": [],
+      "parent": [
+        5,
+        [
+          "edge",
+          "arm"
+        ]
+      ],
+      "state": [
+        4,
+        2,
+        2,
+        "n1",
+        0,
+        [
+          "done",
+          "h1"
+        ]
+      ],
+      "t": [
+        0
+      ]
+    },
+    {
+      "p": [],
+      "parent": [
+        7,
+        [
+          "edge",
+          "return"
+        ]
+      ],
+      "state": [
+        5,
+        1,
+        1,
+        "done",
+        0,
+        []
+      ],
+      "t": []
+    },
+    {
+      "p": [],
+      "parent": [
+        7,
+        [
+          "edge",
+          "use"
+        ]
+      ],
+      "state": [
+        5,
+        1,
+        1,
+        "h1",
+        0,
+        [
+          "done"
+        ]
+      ],
+      "t": []
+    },
+    {
+      "p": [],
+      "parent": [
+        9,
+        [
+          "edge",
+          "nested-return"
+        ]
+      ],
+      "state": [
+        5,
+        2,
+        2,
+        "h1",
+        0,
+        [
+          "done"
+        ]
+      ],
+      "t": [
+        1
+      ]
+    },
+    {
+      "p": [],
+      "parent": [
+        7,
+        [
+          "edge",
+          "nested"
+        ]
+      ],
+      "state": [
+        5,
+        2,
+        2,
+        "n0",
+        0,
+        [
+          "done",
+          "h1"
+        ]
+      ],
+      "t": []
+    },
+    {
+      "p": [],
+      "parent": [
+        8,
+        [
+          "edge",
+          "arm"
+        ]
+      ],
+      "state": [
+        5,
+        2,
+        2,
+        "n1",
+        0,
+        [
+          "done",
+          "h1"
+        ]
+      ],
+      "t": [
+        0
+      ]
+    },
+    {
+      "p": [],
+      "parent": [
+        11,
+        [
+          "edge",
+          "return"
+        ]
+      ],
+      "state": [
+        6,
+        1,
+        1,
+        "done",
+        0,
+        []
+      ],
+      "t": []
+    },
+    {
+      "p": [],
+      "parent": [
+        11,
+        [
+          "edge",
+          "use"
+        ]
+      ],
+      "state": [
+        6,
+        1,
+        1,
+        "h1",
+        0,
+        [
+          "done"
+        ]
+      ],
+      "t": []
+    },
+    {
+      "p": [],
+      "parent": [
+        12,
+        [
+          "edge",
+          "return"
+        ]
+      ],
+      "state": [
+        6,
+        2,
+        2,
+        "done",
+        0,
+        []
+      ],
+      "t": [
+        1
+      ]
+    },
+    {
+      "p": [],
+      "parent": [
+        12,
+        [
+          "edge",
+          "use"
+        ]
+      ],
+      "state": [
+        6,
+        2,
+        2,
+        "h1",
+        0,
+        [
+          "done"
+        ]
+      ],
+      "t": [
+        1
+      ]
+    },
+    {
+      "p": [],
+      "parent": [
+        11,
+        [
+          "edge",
+          "nested"
+        ]
+      ],
+      "state": [
+        6,
+        2,
+        2,
+        "n0",
+        0,
+        [
+          "done",
+          "h1"
+        ]
+      ],
+      "t": []
+    },
+    {
+      "p": [],
+      "parent": [
+        13,
+        [
+          "edge",
+          "arm"
+        ]
+      ],
+      "state": [
+        6,
+        2,
+        2,
+        "n1",
+        0,
+        [
+          "done",
+          "h1"
+        ]
+      ],
+      "t": [
+        0
+      ]
+    }
+  ],
+  "schema": "neutralization-frontier"
+}

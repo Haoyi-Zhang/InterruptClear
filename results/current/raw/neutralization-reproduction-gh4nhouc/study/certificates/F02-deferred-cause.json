@@ -1,0 +1,181 @@
+{
+  "frontier": [
+    [
+      5,
+      3,
+      0,
+      0
+    ],
+    [
+      6,
+      3,
+      0,
+      0
+    ]
+  ],
+  "model": {
+    "atoms": [
+      {
+        "cost": 1,
+        "id": "C"
+      },
+      {
+        "cost": 2,
+        "id": "P"
+      },
+      {
+        "cost": 3,
+        "id": "U"
+      }
+    ],
+    "cap": [
+      3,
+      0,
+      0
+    ],
+    "constants": [
+      0
+    ],
+    "edges": [
+      {
+        "dst": "c1",
+        "guard": [],
+        "id": "visible-clean",
+        "kind": "nop",
+        "p_clear": null,
+        "reset": false,
+        "resume": null,
+        "src": "c0",
+        "t_clear": "C"
+      },
+      {
+        "dst": "c2",
+        "guard": [],
+        "id": "commit",
+        "kind": "commit",
+        "p_clear": "P",
+        "reset": false,
+        "resume": null,
+        "src": "c1",
+        "t_clear": null
+      },
+      {
+        "dst": "done",
+        "guard": [],
+        "id": "use",
+        "kind": "use",
+        "p_clear": null,
+        "reset": false,
+        "resume": null,
+        "src": "c2",
+        "t_clear": "U"
+      }
+    ],
+    "initial": {
+      "pc": "c0",
+      "pending": true,
+      "taint": true
+    },
+    "invariants": {},
+    "locations": [
+      "c0",
+      "c1",
+      "c2",
+      "done"
+    ],
+    "name": "F02-deferred-cause",
+    "urgent": [
+      "c0",
+      "c1",
+      "c2",
+      "done"
+    ]
+  },
+  "nodes": [
+    {
+      "p": [
+        0
+      ],
+      "parent": null,
+      "state": [
+        0,
+        0,
+        0,
+        "c0",
+        0,
+        []
+      ],
+      "t": [
+        0
+      ]
+    },
+    {
+      "p": [
+        0
+      ],
+      "parent": [
+        0,
+        [
+          "edge",
+          "visible-clean"
+        ]
+      ],
+      "state": [
+        1,
+        0,
+        0,
+        "c1",
+        0,
+        []
+      ],
+      "t": [
+        1
+      ]
+    },
+    {
+      "p": [],
+      "parent": [
+        1,
+        [
+          "edge",
+          "commit"
+        ]
+      ],
+      "state": [
+        2,
+        0,
+        0,
+        "c2",
+        0,
+        []
+      ],
+      "t": [
+        1,
+        2
+      ]
+    },
+    {
+      "p": [],
+      "parent": [
+        2,
+        [
+          "edge",
+          "use"
+        ]
+      ],
+      "state": [
+        3,
+        0,
+        0,
+        "done",
+        0,
+        []
+      ],
+      "t": [
+        5,
+        6
+      ]
+    }
+  ],
+  "schema": "neutralization-frontier"
+}

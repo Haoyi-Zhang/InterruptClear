@@ -1,0 +1,57 @@
+{
+  "atoms": [
+    {
+      "cost": 1,
+      "id": "C"
+    }
+  ],
+  "cap": [
+    2,
+    0,
+    0
+  ],
+  "constants": [
+    0
+  ],
+  "edges": [
+    {
+      "dst": "c1",
+      "guard": [],
+      "id": "ineffective-clear",
+      "kind": "arm",
+      "p_clear": null,
+      "reset": false,
+      "resume": null,
+      "src": "c0",
+      "t_clear": "C"
+    },
+    {
+      "dst": "done",
+      "guard": [],
+      "id": "use",
+      "kind": "use",
+      "p_clear": null,
+      "reset": false,
+      "resume": null,
+      "src": "c1",
+      "t_clear": null
+    }
+  ],
+  "initial": {
+    "pc": "c0",
+    "pending": false,
+    "taint": false
+  },
+  "invariants": {},
+  "locations": [
+    "c0",
+    "c1",
+    "done"
+  ],
+  "name": "F10-unrepairable-source",
+  "urgent": [
+    "c0",
+    "c1",
+    "done"
+  ]
+}

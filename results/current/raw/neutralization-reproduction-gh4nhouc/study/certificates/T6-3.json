@@ -1,0 +1,908 @@
+{
+  "frontier": [
+    [
+      7,
+      7,
+      0,
+      0
+    ],
+    [
+      11,
+      7,
+      0,
+      0
+    ],
+    [
+      13,
+      7,
+      0,
+      0
+    ],
+    [
+      14,
+      7,
+      0,
+      0
+    ],
+    [
+      19,
+      7,
+      0,
+      0
+    ],
+    [
+      21,
+      7,
+      0,
+      0
+    ],
+    [
+      22,
+      7,
+      0,
+      0
+    ],
+    [
+      25,
+      7,
+      0,
+      0
+    ],
+    [
+      26,
+      7,
+      0,
+      0
+    ],
+    [
+      28,
+      7,
+      0,
+      0
+    ],
+    [
+      35,
+      7,
+      0,
+      0
+    ],
+    [
+      37,
+      7,
+      0,
+      0
+    ],
+    [
+      38,
+      7,
+      0,
+      0
+    ],
+    [
+      41,
+      7,
+      0,
+      0
+    ],
+    [
+      42,
+      7,
+      0,
+      0
+    ],
+    [
+      44,
+      7,
+      0,
+      0
+    ],
+    [
+      49,
+      7,
+      0,
+      0
+    ],
+    [
+      50,
+      7,
+      0,
+      0
+    ],
+    [
+      52,
+      7,
+      0,
+      0
+    ],
+    [
+      56,
+      7,
+      0,
+      0
+    ]
+  ],
+  "model": {
+    "atoms": [
+      {
+        "cost": 1,
+        "id": "A0"
+      },
+      {
+        "cost": 1,
+        "id": "A1"
+      },
+      {
+        "cost": 1,
+        "id": "A2"
+      },
+      {
+        "cost": 1,
+        "id": "A3"
+      },
+      {
+        "cost": 1,
+        "id": "A4"
+      },
+      {
+        "cost": 1,
+        "id": "A5"
+      }
+    ],
+    "cap": [
+      7,
+      0,
+      0
+    ],
+    "constants": [
+      0
+    ],
+    "edges": [
+      {
+        "dst": "q1_0",
+        "guard": [],
+        "id": "skip0_0",
+        "kind": "nop",
+        "p_clear": null,
+        "reset": false,
+        "resume": null,
+        "src": "q0_0",
+        "t_clear": null
+      },
+      {
+        "dst": "q1_1",
+        "guard": [],
+        "id": "pick0_0",
+        "kind": "nop",
+        "p_clear": null,
+        "reset": false,
+        "resume": null,
+        "src": "q0_0",
+        "t_clear": "A0"
+      },
+      {
+        "dst": "q2_0",
+        "guard": [],
+        "id": "skip1_0",
+        "kind": "nop",
+        "p_clear": null,
+        "reset": false,
+        "resume": null,
+        "src": "q1_0",
+        "t_clear": null
+      },
+      {
+        "dst": "q2_1",
+        "guard": [],
+        "id": "pick1_0",
+        "kind": "nop",
+        "p_clear": null,
+        "reset": false,
+        "resume": null,
+        "src": "q1_0",
+        "t_clear": "A1"
+      },
+      {
+        "dst": "q2_1",
+        "guard": [],
+        "id": "skip1_1",
+        "kind": "nop",
+        "p_clear": null,
+        "reset": false,
+        "resume": null,
+        "src": "q1_1",
+        "t_clear": null
+      },
+      {
+        "dst": "q2_2",
+        "guard": [],
+        "id": "pick1_1",
+        "kind": "nop",
+        "p_clear": null,
+        "reset": false,
+        "resume": null,
+        "src": "q1_1",
+        "t_clear": "A1"
+      },
+      {
+        "dst": "q3_0",
+        "guard": [],
+        "id": "skip2_0",
+        "kind": "nop",
+        "p_clear": null,
+        "reset": false,
+        "resume": null,
+        "src": "q2_0",
+        "t_clear": null
+      },
+      {
+        "dst": "q3_1",
+        "guard": [],
+        "id": "pick2_0",
+        "kind": "nop",
+        "p_clear": null,
+        "reset": false,
+        "resume": null,
+        "src": "q2_0",
+        "t_clear": "A2"
+      },
+      {
+        "dst": "q3_1",
+        "guard": [],
+        "id": "skip2_1",
+        "kind": "nop",
+        "p_clear": null,
+        "reset": false,
+        "resume": null,
+        "src": "q2_1",
+        "t_clear": null
+      },
+      {
+        "dst": "q3_2",
+        "guard": [],
+        "id": "pick2_1",
+        "kind": "nop",
+        "p_clear": null,
+        "reset": false,
+        "resume": null,
+        "src": "q2_1",
+        "t_clear": "A2"
+      },
+      {
+        "dst": "q3_2",
+        "guard": [],
+        "id": "skip2_2",
+        "kind": "nop",
+        "p_clear": null,
+        "reset": false,
+        "resume": null,
+        "src": "q2_2",
+        "t_clear": null
+      },
+      {
+        "dst": "q3_3",
+        "guard": [],
+        "id": "pick2_2",
+        "kind": "nop",
+        "p_clear": null,
+        "reset": false,
+        "resume": null,
+        "src": "q2_2",
+        "t_clear": "A2"
+      },
+      {
+        "dst": "q4_1",
+        "guard": [],
+        "id": "pick3_0",
+        "kind": "nop",
+        "p_clear": null,
+        "reset": false,
+        "resume": null,
+        "src": "q3_0",
+        "t_clear": "A3"
+      },
+      {
+        "dst": "q4_1",
+        "guard": [],
+        "id": "skip3_1",
+        "kind": "nop",
+        "p_clear": null,
+        "reset": false,
+        "resume": null,
+        "src": "q3_1",
+        "t_clear": null
+      },
+      {
+        "dst": "q4_2",
+        "guard": [],
+        "id": "pick3_1",
+        "kind": "nop",
+        "p_clear": null,
+        "reset": false,
+        "resume": null,
+        "src": "q3_1",
+        "t_clear": "A3"
+      },
+      {
+        "dst": "q4_2",
+        "guard": [],
+        "id": "skip3_2",
+        "kind": "nop",
+        "p_clear": null,
+        "reset": false,
+        "resume": null,
+        "src": "q3_2",
+        "t_clear": null
+      },
+      {
+        "dst": "q4_3",
+        "guard": [],
+        "id": "pick3_2",
+        "kind": "nop",
+        "p_clear": null,
+        "reset": false,
+        "resume": null,
+        "src": "q3_2",
+        "t_clear": "A3"
+      },
+      {
+        "dst": "q4_3",
+        "guard": [],
+        "id": "skip3_3",
+        "kind": "nop",
+        "p_clear": null,
+        "reset": false,
+        "resume": null,
+        "src": "q3_3",
+        "t_clear": null
+      },
+      {
+        "dst": "q5_2",
+        "guard": [],
+        "id": "pick4_1",
+        "kind": "nop",
+        "p_clear": null,
+        "reset": false,
+        "resume": null,
+        "src": "q4_1",
+        "t_clear": "A4"
+      },
+      {
+        "dst": "q5_2",
+        "guard": [],
+        "id": "skip4_2",
+        "kind": "nop",
+        "p_clear": null,
+        "reset": false,
+        "resume": null,
+        "src": "q4_2",
+        "t_clear": null
+      },
+      {
+        "dst": "q5_3",
+        "guard": [],
+        "id": "pick4_2",
+        "kind": "nop",
+        "p_clear": null,
+        "reset": false,
+        "resume": null,
+        "src": "q4_2",
+        "t_clear": "A4"
+      },
+      {
+        "dst": "q5_3",
+        "guard": [],
+        "id": "skip4_3",
+        "kind": "nop",
+        "p_clear": null,
+        "reset": false,
+        "resume": null,
+        "src": "q4_3",
+        "t_clear": null
+      },
+      {
+        "dst": "q6_3",
+        "guard": [],
+        "id": "pick5_2",
+        "kind": "nop",
+        "p_clear": null,
+        "reset": false,
+        "resume": null,
+        "src": "q5_2",
+        "t_clear": "A5"
+      },
+      {
+        "dst": "q6_3",
+        "guard": [],
+        "id": "skip5_3",
+        "kind": "nop",
+        "p_clear": null,
+        "reset": false,
+        "resume": null,
+        "src": "q5_3",
+        "t_clear": null
+      },
+      {
+        "dst": "done",
+        "guard": [],
+        "id": "use",
+        "kind": "use",
+        "p_clear": null,
+        "reset": false,
+        "resume": null,
+        "src": "q6_3",
+        "t_clear": null
+      }
+    ],
+    "initial": {
+      "pc": "q0_0",
+      "pending": false,
+      "taint": true
+    },
+    "invariants": {},
+    "locations": [
+      "q0_0",
+      "q1_0",
+      "q1_1",
+      "q2_0",
+      "q2_1",
+      "q2_2",
+      "q3_0",
+      "q3_1",
+      "q3_2",
+      "q3_3",
+      "q4_1",
+      "q4_2",
+      "q4_3",
+      "q5_2",
+      "q5_3",
+      "q6_3",
+      "done"
+    ],
+    "name": "T6-3",
+    "urgent": [
+      "done",
+      "q0_0",
+      "q1_0",
+      "q1_1",
+      "q2_0",
+      "q2_1",
+      "q2_2",
+      "q3_0",
+      "q3_1",
+      "q3_2",
+      "q3_3",
+      "q4_1",
+      "q4_2",
+      "q4_3",
+      "q5_2",
+      "q5_3",
+      "q6_3"
+    ]
+  },
+  "nodes": [
+    {
+      "p": [],
+      "parent": null,
+      "state": [
+        0,
+        0,
+        0,
+        "q0_0",
+        0,
+        []
+      ],
+      "t": [
+        0
+      ]
+    },
+    {
+      "p": [],
+      "parent": [
+        0,
+        [
+          "edge",
+          "skip0_0"
+        ]
+      ],
+      "state": [
+        1,
+        0,
+        0,
+        "q1_0",
+        0,
+        []
+      ],
+      "t": [
+        0
+      ]
+    },
+    {
+      "p": [],
+      "parent": [
+        0,
+        [
+          "edge",
+          "pick0_0"
+        ]
+      ],
+      "state": [
+        1,
+        0,
+        0,
+        "q1_1",
+        0,
+        []
+      ],
+      "t": [
+        1
+      ]
+    },
+    {
+      "p": [],
+      "parent": [
+        1,
+        [
+          "edge",
+          "skip1_0"
+        ]
+      ],
+      "state": [
+        2,
+        0,
+        0,
+        "q2_0",
+        0,
+        []
+      ],
+      "t": [
+        0
+      ]
+    },
+    {
+      "p": [],
+      "parent": [
+        1,
+        [
+          "edge",
+          "pick1_0"
+        ]
+      ],
+      "state": [
+        2,
+        0,
+        0,
+        "q2_1",
+        0,
+        []
+      ],
+      "t": [
+        1,
+        2
+      ]
+    },
+    {
+      "p": [],
+      "parent": [
+        2,
+        [
+          "edge",
+          "pick1_1"
+        ]
+      ],
+      "state": [
+        2,
+        0,
+        0,
+        "q2_2",
+        0,
+        []
+      ],
+      "t": [
+        3
+      ]
+    },
+    {
+      "p": [],
+      "parent": [
+        3,
+        [
+          "edge",
+          "skip2_0"
+        ]
+      ],
+      "state": [
+        3,
+        0,
+        0,
+        "q3_0",
+        0,
+        []
+      ],
+      "t": [
+        0
+      ]
+    },
+    {
+      "p": [],
+      "parent": [
+        3,
+        [
+          "edge",
+          "pick2_0"
+        ]
+      ],
+      "state": [
+        3,
+        0,
+        0,
+        "q3_1",
+        0,
+        []
+      ],
+      "t": [
+        1,
+        2,
+        4
+      ]
+    },
+    {
+      "p": [],
+      "parent": [
+        4,
+        [
+          "edge",
+          "pick2_1"
+        ]
+      ],
+      "state": [
+        3,
+        0,
+        0,
+        "q3_2",
+        0,
+        []
+      ],
+      "t": [
+        3,
+        5,
+        6
+      ]
+    },
+    {
+      "p": [],
+      "parent": [
+        5,
+        [
+          "edge",
+          "pick2_2"
+        ]
+      ],
+      "state": [
+        3,
+        0,
+        0,
+        "q3_3",
+        0,
+        []
+      ],
+      "t": [
+        7
+      ]
+    },
+    {
+      "p": [],
+      "parent": [
+        6,
+        [
+          "edge",
+          "pick3_0"
+        ]
+      ],
+      "state": [
+        4,
+        0,
+        0,
+        "q4_1",
+        0,
+        []
+      ],
+      "t": [
+        1,
+        2,
+        4,
+        8
+      ]
+    },
+    {
+      "p": [],
+      "parent": [
+        7,
+        [
+          "edge",
+          "pick3_1"
+        ]
+      ],
+      "state": [
+        4,
+        0,
+        0,
+        "q4_2",
+        0,
+        []
+      ],
+      "t": [
+        3,
+        5,
+        6,
+        9,
+        10,
+        12
+      ]
+    },
+    {
+      "p": [],
+      "parent": [
+        8,
+        [
+          "edge",
+          "pick3_2"
+        ]
+      ],
+      "state": [
+        4,
+        0,
+        0,
+        "q4_3",
+        0,
+        []
+      ],
+      "t": [
+        7,
+        11,
+        13,
+        14
+      ]
+    },
+    {
+      "p": [],
+      "parent": [
+        10,
+        [
+          "edge",
+          "pick4_1"
+        ]
+      ],
+      "state": [
+        5,
+        0,
+        0,
+        "q5_2",
+        0,
+        []
+      ],
+      "t": [
+        3,
+        5,
+        6,
+        9,
+        10,
+        12,
+        17,
+        18,
+        20,
+        24
+      ]
+    },
+    {
+      "p": [],
+      "parent": [
+        11,
+        [
+          "edge",
+          "pick4_2"
+        ]
+      ],
+      "state": [
+        5,
+        0,
+        0,
+        "q5_3",
+        0,
+        []
+      ],
+      "t": [
+        7,
+        11,
+        13,
+        14,
+        19,
+        21,
+        22,
+        25,
+        26,
+        28
+      ]
+    },
+    {
+      "p": [],
+      "parent": [
+        13,
+        [
+          "edge",
+          "pick5_2"
+        ]
+      ],
+      "state": [
+        6,
+        0,
+        0,
+        "q6_3",
+        0,
+        []
+      ],
+      "t": [
+        7,
+        11,
+        13,
+        14,
+        19,
+        21,
+        22,
+        25,
+        26,
+        28,
+        35,
+        37,
+        38,
+        41,
+        42,
+        44,
+        49,
+        50,
+        52,
+        56
+      ]
+    },
+    {
+      "p": [],
+      "parent": [
+        15,
+        [
+          "edge",
+          "use"
+        ]
+      ],
+      "state": [
+        7,
+        0,
+        0,
+        "done",
+        0,
+        []
+      ],
+      "t": [
+        7,
+        11,
+        13,
+        14,
+        19,
+        21,
+        22,
+        25,
+        26,
+        28,
+        35,
+        37,
+        38,
+        41,
+        42,
+        44,
+        49,
+        50,
+        52,
+        56
+      ]
+    }
+  ],
+  "schema": "neutralization-frontier"
+}

@@ -1,0 +1,283 @@
+Raw reproduction workspace: /home/runner/work/InterruptClear/InterruptClear/scientific-output/raw/neutralization-reproduction-gh4nhouc
+test_baseline_imports_no_frontier_or_direct_semantics (test_config_lift.ConfigurationLifting.test_baseline_imports_no_frontier_or_direct_semantics) ... ok
+test_disjunctive_join_preserves_existential_facts (test_config_lift.ConfigurationLifting.test_disjunctive_join_preserves_existential_facts) ... ok
+test_exact_optimum_ties_and_unused_zero_cost_atom (test_config_lift.ConfigurationLifting.test_exact_optimum_ties_and_unused_zero_cost_atom) ... ok
+test_fixed_models_all_smaller_budgets (test_config_lift.ConfigurationLifting.test_fixed_models_all_smaller_budgets) ... ok
+test_plan_cap_and_operation_limits_fail_closed (test_config_lift.ConfigurationLifting.test_plan_cap_and_operation_limits_fail_closed) ... ok
+test_preemption_words_and_unreturned_prefix (test_config_lift.ConfigurationLifting.test_preemption_words_and_unreturned_prefix) ... ok
+test_resource_tradeoff_is_not_scalarized (test_config_lift.ConfigurationLifting.test_resource_tradeoff_is_not_scalarized) ... ok
+test_zero_atoms_and_zero_event_boundary (test_config_lift.ConfigurationLifting.test_zero_atoms_and_zero_event_boundary) ... ok
+test_optimal_plan_set_against_explicit_execution (test_core.AdditionalProofObligations.test_optimal_plan_set_against_explicit_execution) ... ok
+test_ordering_criterion_all_words_length_at_most_four (test_core.AdditionalProofObligations.test_ordering_criterion_all_words_length_at_most_four) ... ok
+test_peak_depth_not_depth_at_use (test_core.AdditionalProofObligations.test_peak_depth_not_depth_at_use) ... ok
+test_corrupted_certificate_does_not_change_trusted_model (test_core.Certificates.test_corrupted_certificate_does_not_change_trusted_model) ... ok
+test_no_import_of_generator_or_region_explorer (test_core.Certificates.test_no_import_of_generator_or_region_explorer) ... ok
+test_nonminimal_and_duplicate_frontier_rejected (test_core.Certificates.test_nonminimal_and_duplicate_frontier_rejected) ... ok
+test_systematic_mutations (test_core.Certificates.test_systematic_mutations) ... ok
+test_accepted_name_boundary_preserved_by_empty_word_lowering (test_core.Lowering.test_accepted_name_boundary_preserved_by_empty_word_lowering) ... ok
+test_all_word_cases_semantically_match (test_core.Lowering.test_all_word_cases_semantically_match) ... ok
+test_changed_clock_reset_rejected (test_core.Lowering.test_changed_clock_reset_rejected) ... ok
+test_changed_initial_fact_rejected (test_core.Lowering.test_changed_initial_fact_rejected) ... ok
+test_clear_order_changes_synthesizability (test_core.Lowering.test_clear_order_changes_synthesizability) ... ok
+test_declaration_required_and_instrumented_base_rejected (test_core.Lowering.test_declaration_required_and_instrumented_base_rejected) ... ok
+test_ineffective_repair_cannot_consume_base_budget (test_core.Lowering.test_ineffective_repair_cannot_consume_base_budget) ... ok
+test_missing_interrupt_phase_is_rejected (test_core.Lowering.test_missing_interrupt_phase_is_rejected) ... ok
+test_selected_plan_does_not_change_schedules (test_core.Lowering.test_selected_plan_does_not_change_schedules) ... ok
+test_swapped_clear_word_is_rejected (test_core.Lowering.test_swapped_clear_word_is_rejected) ... ok
+test_untrusted_lowering_word_and_annotation_domains_rejected (test_core.Lowering.test_untrusted_lowering_word_and_annotation_domains_rejected) ... ok
+test_zero_event_cycle_rejected (test_core.Lowering.test_zero_event_cycle_rejected) ... ok
+test_boolean_integer (test_core.Parsing.test_boolean_integer) ... ok
+test_duplicate_json_keys (test_core.Parsing.test_duplicate_json_keys) ... ok
+test_negative_cost (test_core.Parsing.test_negative_cost) ... ok
+test_nontotal_repair_guard (test_core.Parsing.test_nontotal_repair_guard) ... ok
+test_normalized_collision (test_core.Parsing.test_normalized_collision) ... ok
+test_normalized_identifier_expansion_rejected_and_legal_roundtrip (test_core.Parsing.test_normalized_identifier_expansion_rejected_and_legal_roundtrip) ... ok
+test_numeric_identifier (test_core.Parsing.test_numeric_identifier) ... ok
+test_portable_limits_report_missing_capabilities (test_core.Parsing.test_portable_limits_report_missing_capabilities) ... ok
+test_reset_string (test_core.Parsing.test_reset_string) ... ok
+test_roundtrip (test_core.Parsing.test_roundtrip) ... ok
+test_unknown_field (test_core.Parsing.test_unknown_field) ... ok
+test_unknown_guard (test_core.Parsing.test_unknown_guard) ... ok
+test_fixed_01 (test_core.Semantics.test_fixed_01) ... ok
+test_fixed_02 (test_core.Semantics.test_fixed_02) ... ok
+test_fixed_03 (test_core.Semantics.test_fixed_03) ... ok
+test_fixed_04 (test_core.Semantics.test_fixed_04) ... ok
+test_fixed_05 (test_core.Semantics.test_fixed_05) ... ok
+test_fixed_06 (test_core.Semantics.test_fixed_06) ... ok
+test_fixed_07 (test_core.Semantics.test_fixed_07) ... ok
+test_fixed_08 (test_core.Semantics.test_fixed_08) ... ok
+test_fixed_09 (test_core.Semantics.test_fixed_09) ... ok
+test_fixed_10 (test_core.Semantics.test_fixed_10) ... ok
+test_fixed_11 (test_core.Semantics.test_fixed_11) ... ok
+test_fixed_12 (test_core.Semantics.test_fixed_12) ... ok
+test_and_transfer_rejected_not_silently_approximated (test_core.Theorems.test_and_transfer_rejected_not_silently_approximated) ... ok
+test_budget_tradeoff_not_scalar (test_core.Theorems.test_budget_tradeoff_not_scalar) ... ok
+test_budget_zero_and_monotonicity (test_core.Theorems.test_budget_zero_and_monotonicity) ... ok
+test_dbm_strict_zero_cycle (test_core.Theorems.test_dbm_strict_zero_cycle) ... ok
+test_empty_obstruction_means_unrepairable (test_core.Theorems.test_empty_obstruction_means_unrepairable) ... ok
+test_every_finite_grammar_case (test_core.Theorems.test_every_finite_grammar_case) ... ok
+test_frontier_canonical_reduction (test_core.Theorems.test_frontier_canonical_reduction) ... ok
+test_irredundant_query_separators (test_core.Theorems.test_irredundant_query_separators) ... ok
+test_strict_oracle_all_fixed_plans (test_core.Theorems.test_strict_oracle_all_fixed_plans) ... ok
+test_threshold_lower_bound (test_core.Theorems.test_threshold_lower_bound) ... ok
+test_truncated_bad_prefix_is_observed (test_core.Theorems.test_truncated_bad_prefix_is_observed) ... ok
+test_typed_transition_label_collision (test_core.Theorems.test_typed_transition_label_collision) ... ok
+test_weighted_optimum_not_greedy (test_core.Theorems.test_weighted_optimum_not_greedy) ... ok
+test_audit_comparison_failure_retains_observation (test_reproduction.RawEvidence.test_audit_comparison_failure_retains_observation) ... ok
+test_keep_work_survives_success_and_failure (test_reproduction.RawEvidence.test_keep_work_survives_success_and_failure) ... Raw reproduction workspace: /home/runner/work/InterruptClear/InterruptClear/scientific-output/raw/tmpl29nh79e/neutralization-reproduction-cwegbdns
+Raw reproduction workspace: /home/runner/work/InterruptClear/InterruptClear/scientific-output/raw/tmpl29nh79e/neutralization-reproduction-ic91adqi
+ok
+
+----------------------------------------------------------------------
+Ran 66 tests in 0.695s
+
+OK
+{
+  "test_methods": 66,
+  "expected_test_methods": 66,
+  "failures": 0,
+  "errors": 0,
+  "skips": 0,
+  "successful": true,
+  "measured_cpu_seconds": 0.834224458,
+  "peak_rss_kib": 29208,
+  "runtime_limits": {
+    "platform": "linux",
+    "mode": "posix",
+    "requested_cpu_soft_seconds": 170,
+    "requested_cpu_hard_seconds": 180,
+    "requested_address_space_mib": 2500,
+    "os_cpu_limit_enforced": true,
+    "os_address_space_limit_enforced": true,
+    "cooperative_cpu_checks": true,
+    "peak_rss_available": true
+  },
+  "charged_operations": {
+    "skeleton_edges": 641,
+    "symbolic_arcs": 641,
+    "bad_terms": 252,
+    "explicit_edges": 21502,
+    "checker_terms": 965,
+    "checker_parent": 379,
+    "checker_arcs": 416,
+    "checker_bad": 188,
+    "test_query": 5046,
+    "word_base_edge": 155,
+    "word_repair": 54,
+    "oracle_constraints": 818,
+    "configuration_literal_bit_tests": 204,
+    "skeleton_successor_arcs": 152,
+    "fact_transfer_arcs": 152,
+    "constant_fact_assignments": 22,
+    "join_bitwise_or": 304,
+    "clear_bitwise_and": 53,
+    "commit_bitwise_or": 9,
+    "bad_bucket_bitwise_or": 31,
+    "test_explicit_edges": 419,
+    "query_cost_bucket_tests": 651,
+    "query_bitwise_or": 83,
+    "optimization_plan_bit_tests": 35,
+    "optimization_atom_tests": 28,
+    "query_plan_bit_tests": 508
+  },
+  "charged_operations_by_module": {
+    "test_core": {
+      "skeleton_edges": 641,
+      "symbolic_arcs": 641,
+      "bad_terms": 252,
+      "explicit_edges": 21502,
+      "checker_terms": 965,
+      "checker_parent": 379,
+      "checker_arcs": 416,
+      "checker_bad": 188,
+      "test_query": 5046,
+      "word_base_edge": 155,
+      "word_repair": 54,
+      "oracle_constraints": 818
+    },
+    "test_config_lift": {
+      "configuration_literal_bit_tests": 204,
+      "skeleton_successor_arcs": 152,
+      "fact_transfer_arcs": 152,
+      "constant_fact_assignments": 22,
+      "join_bitwise_or": 304,
+      "clear_bitwise_and": 53,
+      "commit_bitwise_or": 9,
+      "bad_bucket_bitwise_or": 31,
+      "test_explicit_edges": 419,
+      "query_cost_bucket_tests": 651,
+      "query_bitwise_or": 83,
+      "optimization_plan_bit_tests": 35,
+      "optimization_atom_tests": 28,
+      "query_plan_bit_tests": 508
+    }
+  },
+  "mutation_cases_in_systematic_test": 20
+}
+{
+  "summary": {
+    "fixed_models": 12,
+    "finite_grammar_models": 64,
+    "finite_grammar_unique_executable_models": 64,
+    "threshold_models": 4,
+    "lowering_models": 4,
+    "total_model_instances": 84,
+    "policy_budget_queries": 5046,
+    "oracle_plan_instances": 76,
+    "oracle_distinct_model_descriptions": 18,
+    "budget_configurations": 360,
+    "cleanup_word_shapes": 31,
+    "cleanup_word_plan_queries": 124,
+    "charged_obligations": {
+      "skeleton_edges": 495,
+      "symbolic_arcs": 495,
+      "bad_terms": 199,
+      "checker_terms": 893,
+      "checker_parent": 357,
+      "checker_arcs": 396,
+      "checker_bad": 175,
+      "explicit_edges": 22326,
+      "policy_budget_query": 5046,
+      "oracle_constraints": 2806,
+      "irredundancy_separator": 173,
+      "optimality_comparison": 638,
+      "microstep_bound_arcs": 396,
+      "word_base_edge": 155,
+      "word_repair": 54,
+      "ordering_law_query": 124
+    },
+    "mismatches": 0
+  },
+  "measurements": {
+    "cpu_seconds": 0.580076558,
+    "wall_seconds": 0.5817131499999988,
+    "peak_rss_kib": 21236,
+    "workers": 1,
+    "runtime_limits": {
+      "platform": "linux",
+      "mode": "posix",
+      "requested_cpu_soft_seconds": 170,
+      "requested_cpu_hard_seconds": 180,
+      "requested_address_space_mib": 2500,
+      "os_cpu_limit_enforced": true,
+      "os_address_space_limit_enforced": true,
+      "cooperative_cpu_checks": true,
+      "peak_rss_available": true
+    }
+  }
+}
+{
+  "totals": {
+    "models": 80,
+    "plans": 640,
+    "plan_budget_queries": 28800,
+    "oracle_state_observations": 17986,
+    "oracle_constraint_systems": 79080,
+    "oracle_control_prefixes": 11248,
+    "oracle_ceiling_cases": 0,
+    "query_disagreements": 0,
+    "oracle_disagreements": 0
+  },
+  "unique_executable_descriptions": 80,
+  "charged_obligations": 145424,
+  "reference_sha256": "4864fa063c22ddec409aad08cd77c59e0153db4043e48d2cd5775798133fc791"
+}
+{
+  "summary": {
+    "model_instances": 84,
+    "plan_budget_comparisons": 5046,
+    "budget_configurations": 526,
+    "optimal_plan_set_comparisons": 526,
+    "fact_state_plan_comparisons": 18816,
+    "mismatches": 0,
+    "lifting_operations": {
+      "configuration_literal_bit_tests": 3128,
+      "skeleton_successor_arcs": 396,
+      "fact_transfer_arcs": 396,
+      "clear_bitwise_and": 271,
+      "bad_bucket_bitwise_or": 78,
+      "join_bitwise_or": 792,
+      "query_cost_bucket_tests": 1206,
+      "query_plan_bit_tests": 5046,
+      "optimization_plan_bit_tests": 5046,
+      "optimization_atom_tests": 25509,
+      "query_bitwise_or": 284,
+      "commit_bitwise_or": 40,
+      "constant_fact_assignments": 115
+    },
+    "comparison_obligations": {
+      "fact_state_plan_comparisons": 18816,
+      "three_way_plan_budget_comparisons": 5046,
+      "three_way_optimal_plan_set_comparisons": 526
+    },
+    "frontier_and_explicit_operations": {
+      "skeleton_edges": 396,
+      "symbolic_arcs": 396,
+      "bad_terms": 175,
+      "explicit_edges": 17841
+    },
+    "dense_fact_table_logical_bits": 18816,
+    "fact_vector_slots": 882,
+    "frontier_symbolic_proof_terms": 893,
+    "frontier_records": 173
+  },
+  "measurements": {
+    "cpu_seconds": 0.475961578,
+    "wall_seconds": 0.4763623209999963,
+    "peak_rss_kib": 24792,
+    "workers": 1,
+    "meaning": "whole comparison including all methods; no speedup or per-method timing inference",
+    "runtime_limits": {
+      "platform": "linux",
+      "mode": "posix",
+      "requested_cpu_soft_seconds": 170,
+      "requested_cpu_hard_seconds": 180,
+      "requested_address_space_mib": 2500,
+      "os_cpu_limit_enforced": true,
+      "os_address_space_limit_enforced": true,
+      "cooperative_cpu_checks": true,
+      "peak_rss_available": true
+    }
+  }
+}
+{"status": "PASS", "test_methods": 66, "semantic_reference_equal": true, "retained_models_replayed": 20, "retained_lowerings_rechecked": 4, "charged_operations_total": 300437}
