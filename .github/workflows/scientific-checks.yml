@@ -1,0 +1,47 @@
+name: Finite scientific checks
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  finite-reproduction:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    env:
+      PYTHONUTF8: '1'
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONHASHSEED: '0'
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12'
+      - name: Reproduce the owned finite campaigns and certificate checks
+        shell: bash
+        run: |
+          mkdir -p scientific-output/raw
+          # Child campaigns keep their own stricter CPU/memory/operation gates.
+          ulimit -v 2560000
+          ulimit -t 650
+          set +e
+          timeout --kill-after=10s 650s python -B verify_all.py \
+            --keep-work --scratch scientific-output/raw \
+            --output scientific-output/reproduction.json \
+            > scientific-output/command.log 2>&1
+          result=$?
+          cat scientific-output/command.log
+          exit "$result"
+      - name: Upload raw outputs on either outcome
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: finite-scientific-output
+          path: scientific-output/
+          if-no-files-found: error

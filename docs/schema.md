@@ -8,6 +8,8 @@ Each edge has exactly `id`, `src`, `dst`, `kind`, `guard`, `reset`, `resume`, `t
 
 An installation word maps declared base locations to lists or tuples of two-item slots `[atom, bit]`, with a declared atom and `bit` exactly `"t"` or `"p"`. Both expansion and the local correspondence checker require an uninstrumented base and validate that declaration; an unknown bit cannot be treated as an identity slot. The checker requires a supplied word map (an empty map is valid), an exact transition-origin annotation domain and a projection into declared base locations. A missing declaration cannot certify execution of a particular repair word.
 
+Expansion appends `-phased` to the model's name only when it fits the accepted 96-character identifier limit; otherwise it retains the valid base name. The name is a provenance label, not a phase or schedule observation. No location or transition limit is increased by this naming rule.
+
 An internal plan is a nonnegative integer bitmask over the atom list. Frontier queries and synthesis are defined only for plans over that list and nonnegative budget triples componentwise at most the frontier's construction cap. Callers must not reuse a frontier at a larger cap or for a modified model. The public verifier obtains the trusted model independently of the certificate; it checks all model fields, not merely a name or digest. No cryptographic integrity claim or release-hash manifest is used.
 
 A debug trace from the explicit baseline is a feasible diagnostic selected by breadth-first row traversal. It is **not** advertised as the minimum-original-event diagnostic. Original-event costs, actual discrete transition rows, delay steps, delivery counts and peak nesting are different quantities.

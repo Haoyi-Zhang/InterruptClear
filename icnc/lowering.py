@@ -43,7 +43,10 @@ def expand(base, words):
                     row['resume'] = src if e.resume == q else phase[e.resume][0]
                 emit(row, e.id)
     raw = base.raw()
-    raw['name'] = base.name + '-phased'
+    # Names are provenance labels, not phase semantics. Do not make a valid
+    # small input unlowerable just because its accepted name fills the limit.
+    suffix = '-phased'
+    raw['name'] = base.name + suffix if len(base.name) + len(suffix) <= 96 else base.name
     raw['locations'] = [p for q in base.pcs for p in phase[q]]
     raw['initial']['pc'] = phase[base.initial][0]
     raw['urgent'] = [p for q in base.urgent for p in phase[q]]

@@ -10,15 +10,17 @@ Requirements: Python 3.10+. POSIX mode requires `resource.setrlimit`; Windows mu
 ./verify.sh
 ```
 
-The script runs the discovered 63-method test suite in a child process, reruns the whole primary study, separate exploratory semantic audit and Boolean configuration-lifting comparison in fresh temporary directories, compares their deterministic JSON with the retained references, compares all model/certificate/lowering objects, separately replays all 20 retained certificates, and rechecks all four phase-lowering maps. The audit remains a separate campaign: its counts are not added to the primary model or oracle denominators. A report records the actual test count and per-campaign operations only after these actions succeed. Elapsed time and resident memory are descriptive, not reproducibility targets. Scratch files are created inside the artifact by default.
+The script runs the discovered 66-method test suite in a child process, reruns the whole primary study, separate exploratory semantic audit and Boolean configuration-lifting comparison in fresh directories, compares their deterministic JSON with the retained references, compares all model/certificate/lowering objects, separately replays all 20 retained certificates, and rechecks all four phase-lowering maps. The audit remains a separate campaign: its counts are not added to the primary model or oracle denominators. A report records the actual test count and per-campaign operations only after these actions succeed. Elapsed time and resident memory are descriptive, not reproducibility targets. Scratch files are created inside the artifact by default. Pass `--keep-work` to preserve the raw campaign files on success or failure; otherwise the temporary files are removed. The semantic audit writes its observed result before comparing it with a reference, so a failed equality gate does not discard that observation.
 
 Portable local reproduction (from this directory):
 
 ```sh
-python verify_all.py --portable --scratch results/repair/scratch --output results/repair/reproduction.json
+python -B verify_all.py --portable --keep-work --scratch /path/to/private/raw --output /path/to/private/reproduction.json
 ```
 
-Individual portable campaigns also accept `--portable`; write their results to `results/repair/` to preserve the retained POSIX evidence. Missing RSS is JSON null and OS-limit enforcement fields are false, not successful limit checks. The current local rerun has 63 methods (the original 61 plus two regression methods), while the three deterministic campaign references are unchanged.
+Individual portable campaigns also accept `--portable`; write new attempts outside this repository to preserve the retained evidence. Missing RSS is JSON null and OS-limit enforcement fields are false, not successful limit checks. The retained local report has 63 methods (the original 61 plus two regressions). A subsequent local rerun has 66, adding an accepted-name boundary regression and two raw-retention regressions; the three deterministic campaign references are unchanged. The saved POSIX and earlier portable reports are historical measurements, not measurements of these added regressions.
+
+The prepared `scientific-checks.yml` workflow runs from this flat artifact root on Ubuntu 24.04 for pushes to `main` or manual dispatch. It retains the existing comparison/failure gates, limits the whole command to 650 seconds and 2,500 MiB address space, and always attempts to upload its command log and raw campaign files. It has not been executed remotely by this repair worker. This workflow does not build the sibling paper or establish hardware refinement.
 
 Individual commands:
 
@@ -62,7 +64,7 @@ None of these programs is proof-assistant verified. Separate source logic is not
 
 POSIX primary study/test invocations enforce 2,500 MiB address space and 170/180 CPU seconds. The primary study has a 150,000 charged-operation cap; core and configuration test modules have separate 90,000 and 50,000 caps. The configuration comparison caps the lifted operations and frontier/explicit operations separately at 200,000 each. The POSIX semantic audit enforces 512 MiB, 25 CPU seconds and 150,000 charged operations. Portable mode checks process CPU cooperatively at metered/test boundaries, with no hard OS CPU or memory cap. The complete clean reproduction checks a 400,000 aggregate allowance and reports each campaign separately; child processes also have wall-clock timeouts. Charges count selected classes of checking operations, not every internal comparison or equivalent instruction costs. Exceeding an available cap produces no partial safe verdict.
 
-The retained complete execution and the portable local reproduction each used 300,410 charged operations across the tests, primary study, separate semantic audit, configuration comparison and certificate replay. These are accounting values, not runtime or speedup estimates; the two new regression methods exercise unmetered validation/reporting operations and do not alter that count. The local report retains all five subtotals and the actual 63-method test report.
+The retained complete execution and earlier portable local reproduction used 300,410 charged operations across the tests, primary study, separate semantic audit, configuration comparison and certificate replay. The subsequent 66-method portable run uses 300,437: the name-boundary regression adds 27 metered obligations, while the two raw-retention regressions are unmetered orchestration checks. These are accounting values, not runtime or speedup estimates. All five subtotals and the raw workspace path are reported by a fresh `--keep-work` run; primary, audit, lifting and replay subtotals are unchanged.
 
 ## Provenance and license
 

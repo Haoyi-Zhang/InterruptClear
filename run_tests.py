@@ -5,7 +5,7 @@ from collections import Counter
 from pathlib import Path
 from icnc.runtime_limits import configure_limits,check_cpu_limit,peak_rss_kib
 ROOT=Path(__file__).resolve().parent
-EXPECTED_TEST_METHODS=63
+EXPECTED_TEST_METHODS=66
 
 class BoundedResult(unittest.TextTestResult):
  def startTest(self,test):

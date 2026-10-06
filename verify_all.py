@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Clean semantic reproduction and replay; status is emitted only after checks."""
 from pathlib import Path
+from contextlib import contextmanager
 import argparse
 import json
 import os
@@ -16,11 +17,23 @@ from run_tests import EXPECTED_TEST_METHODS
 
 ROOT = Path(__file__).resolve().parent
 
+@contextmanager
+def reproduction_workspace(scratch, keep_work=False):
+    """Keep raw campaign files on either outcome when explicitly requested."""
+    if keep_work:
+        directory = Path(tempfile.mkdtemp(prefix='neutralization-reproduction-', dir=scratch))
+        print('Raw reproduction workspace: ' + str(directory.resolve()), flush=True)
+        yield directory
+    else:
+        with tempfile.TemporaryDirectory(prefix='neutralization-reproduction-', dir=scratch) as temp:
+            yield Path(temp)
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument('--output', type=Path, default=ROOT / 'results' / 'verification.json')
     ap.add_argument('--portable', action='store_true')
     ap.add_argument('--scratch', type=Path, default=ROOT / 'results' / 'scratch')
+    ap.add_argument('--keep-work', action='store_true', help='retain raw child campaign files after success or failure')
     args = ap.parse_args()
     limits = configure_limits(portable=args.portable)
     start = time.monotonic()
@@ -34,8 +47,7 @@ def main():
         counts[kind] = counts.get(kind, 0) + amount
         if sum(counts.values()) > 100000:
             raise RuntimeError('verification work ceiling; no verdict')
-    with tempfile.TemporaryDirectory(prefix='neutralization-reproduction-', dir=args.scratch) as temp:
-        temp = Path(temp)
+    with reproduction_workspace(args.scratch, args.keep_work) as temp:
         testfile = temp / 'tests.json'
         subprocess.run([sys.executable, str(ROOT / 'run_tests.py'), '--output', str(testfile), *portable], cwd=ROOT, env=env, check=True, timeout=190)
         test = json.loads(testfile.read_text())
@@ -89,6 +101,7 @@ def main():
             'status': 'PASS',
             'meaning': 'all listed commands and finite equalities completed; not a proof-assistant result or publication endorsement',
             'test_methods': test['test_methods'],
+            'raw_workspace': str(temp.resolve()) if args.keep_work else None,
             'runtime_limits': limits,
             'child_runtime_limits': {'tests': test['runtime_limits'],
                 'primary': json.loads((fresh / 'measurements.json').read_text())['runtime_limits'],

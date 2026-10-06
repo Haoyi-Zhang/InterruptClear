@@ -169,10 +169,6 @@ def main():
     cpu_start = time.process_time()
     result = run()
     check_cpu_limit()
-    if args.compare is not None:
-        expected = json.loads(args.compare.read_text(encoding='utf-8'))
-        if encoded(expected) != encoded(result):
-            raise AssertionError('retained exploratory audit differs')
     args.out.mkdir(parents=True, exist_ok=True)
     (args.out / 'reference.json').write_text(
         json.dumps(result, indent=2, sort_keys=True, ensure_ascii=False) + '\n',
@@ -190,6 +186,12 @@ def main():
     (args.out / 'measurements.json').write_text(
         json.dumps(measurements, indent=2, sort_keys=True) + '\n',
         encoding='utf-8')
+    # Preserve the actual observation before the comparison gate can fail.
+    # A written observation is not a successful reproduction verdict.
+    if args.compare is not None:
+        expected = json.loads(args.compare.read_text(encoding='utf-8'))
+        if encoded(expected) != encoded(result):
+            raise AssertionError('retained exploratory audit differs')
     print(json.dumps({'totals': result['totals'],
                       'unique_executable_descriptions': result['unique_executable_descriptions'],
                       'charged_obligations': sum(result['charged_obligations'].values()),

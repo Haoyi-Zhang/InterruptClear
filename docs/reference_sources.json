@@ -365,7 +365,7 @@
       "primary_source": "https://doi.org/10.1109/TDSC.2016.2596719",
       "author_text": "https://www.cse.msu.edu/~borzoo/Publications/16/TDSC/tdsc16.pdf",
       "reading_status": "substantive primary full-text method, proofs, evaluation and limitations",
-      "scope_of_use": "Sections 3-6 and 8: legitimate-subbehavior preservation, strict two-phase recovery, sound incomplete synthesis; no tool execution",
+      "scope_of_use": "Sections 3-6 and 8: legitimate-subbehavior preservation, strict two-phase recovery, soundness and termination of zone-based synthesis; no tool execution",
       "checked_in_this_work_on": "2026-10-05"
     }
   ]

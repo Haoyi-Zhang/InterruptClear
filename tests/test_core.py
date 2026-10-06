@@ -95,6 +95,16 @@ class Theorems(unittest.TestCase):
   with self.assertRaises(InvalidModel):parse(raw)
 
 class Lowering(unittest.TestCase):
+ def test_accepted_name_boundary_preserved_by_empty_word_lowering(self):
+  for name in ('n'*89,'n'*90,'é'*96):
+   b=model(name,['s','done'],[edge('use','s','done','use')],taint=True,cap=(1,0,0))
+   m,p,o=expand(b,{})
+   self.assertEqual(m.name,name+'-phased' if len(name)<=89 else name)
+   self.assertEqual(parse(m.raw()),m)
+   self.assertTrue(projection_obligations(b,m,p,o,{}))
+   a=build(m,METER);check(m.raw(),a['certificate'],METER.charge)
+   self.assertEqual(a['frontier'],((0,1,0,0),))
+   self.assertFalse(explore(m,0,METER)['safe'])
  def test_all_word_cases_semantically_match(self):
   for b,word in lowering_cases():
    m,projection,origin=expand(b,word);self.assertTrue(projection_obligations(b,m,projection,origin,word));compare(m)
