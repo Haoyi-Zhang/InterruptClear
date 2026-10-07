@@ -8,7 +8,7 @@ it is a representation comparator, not an independent timing specification.
 from __future__ import annotations
 from collections import deque
 from dataclasses import dataclass
-from .model import Model, initial_state, successors
+from .model import Model, initial_state, successors, _prepare, _successors
 
 
 class LiftLimitExceeded(RuntimeError):
@@ -110,12 +110,13 @@ def build(m: Model, charge=None, operation_limit=250000, state_limit=250000):
         disabled.append(bits)
 
     root = initial_state(m)
+    structure = _prepare(m)
     seen = {root}
     todo = deque([root])
     graph = {}
     while todo:
         state = todo.popleft()
-        arcs = tuple(successors(m, state))
+        arcs = tuple(_successors(m, state, structure))
         graph[state] = arcs
         counter.add('skeleton_successor_arcs', len(arcs))
         for _, dest, _ in arcs:
@@ -131,7 +132,7 @@ def build(m: Model, charge=None, operation_limit=250000, state_limit=250000):
     values = {state: (0, 0) for state in seen}
     values[root] = (full if m.taint else 0, full if m.pending else 0)
     bad_by_cost = {}
-    index = m.atom_index
+    index = m.atom_index if structure is None else structure.atom_index
     for state in order:
         taint, pending = values[state]
         for _, dest, edge in graph[state]:

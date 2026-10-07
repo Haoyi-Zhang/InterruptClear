@@ -30,6 +30,10 @@ jobs:
           # Child campaigns keep their own stricter CPU/memory/operation gates.
           ulimit -v 2560000
           ulimit -t 650
+          python -B tests/structural_regression.py > scientific-output/structural-regression.log 2>&1 || {
+            cat scientific-output/structural-regression.log
+            exit 1
+          }
           set +e
           timeout --kill-after=10s 650s python -B verify_all.py \
             --keep-work --scratch scientific-output/raw \

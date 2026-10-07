@@ -1,7 +1,7 @@
 """Exact symbolic causal obstructions for every static repair and smaller budget."""
 from __future__ import annotations
 from collections import deque
-from .model import Model, initial_state, successors
+from .model import Model, initial_state, successors, _prepare, _successors
 from .runtime_limits import check_cpu_limit
 
 class BudgetExceeded(RuntimeError): pass
@@ -31,6 +31,9 @@ def reduce_frontier(values):
 def transfers(m,e,t,p):
     """A term mask F denotes survival iff no chosen repair lies in F."""
     index=m.atom_index
+    return _transfers(index,e,t,p)
+
+def _transfers(index,e,t,p):
     def gate(terms,a):
         return minimal_masks(v | (1<<index[a]) for v in terms) if a is not None else terms
     t=gate(t,e.t_clear); p=gate(p,e.p_clear)
@@ -44,9 +47,10 @@ def transfers(m,e,t,p):
 
 def build(m:Model,meter:Meter|None=None):
     meter=meter or Meter(); root=initial_state(m)
+    structure=_prepare(m)
     seen={root}; todo=deque([root]); graph={}; parent={root:None}
     while todo:
-        s=todo.popleft(); arcs=list(successors(m,s)); graph[s]=arcs
+        s=todo.popleft(); arcs=list(_successors(m,s,structure)); graph[s]=arcs
         meter.charge('skeleton_edges',len(arcs))
         for label,z,e in arcs:
             if z not in seen:
@@ -62,7 +66,7 @@ def build(m:Model,meter:Meter|None=None):
             meter.charge('symbolic_arcs')
             if e is None: nt,np=t,p
             else:
-                nt,np,bad=transfers(m,e,t,p)
+                nt,np,bad=transfers(m,e,t,p) if structure is None else _transfers(structure.atom_index,e,t,p)
                 for mask in bad:
                     raw.append((mask,z[0],z[1],z[2])); meter.charge('bad_terms')
             ot,op=values[z]

@@ -3,6 +3,7 @@ from __future__ import annotations
 from dataclasses import dataclass, replace
 from pathlib import Path
 import json, unicodedata
+from types import MappingProxyType
 
 OPS = {'<','<=','==','>=','>'}
 ACTIONS = {'nop','arm','neutralize','schedule','clear_pending','commit','use','interrupt','return','repair'}
@@ -145,16 +146,44 @@ def holds(m,r,g):
         if not {'<':v<target,'<=':v<=target,'==':v==target,'>=':v>=target,'>':v>target}[op]: return False
     return True
 
+@dataclass(frozen=True)
+class _Structure:
+    """Invocation-local indices for immutable model structure, never a cache."""
+    outgoing:object; inv:object; atom_index:object; representatives:tuple
+    def holds(self,r,g):
+        v=self.representatives[r]
+        for op,c in g:
+            target=2*c
+            if not {'<':v<target,'<=':v<=target,'==':v==target,'>=':v>=target,'>':v>target}[op]: return False
+        return True
+
+def _prepare(m):
+    # Parsed models contain only immutable fields. Hand-built models can carry
+    # lists or other mutable objects despite frozen dataclass attributes; those
+    # retain the original fresh-read path, including reads after callbacks.
+    def immutable(x):
+        if type(x) in (str,int,bool,type(None)): return True
+        if type(x) in (tuple,frozenset): return all(immutable(v) for v in x)
+        if type(x) is Edge: return all(immutable(getattr(x,k)) for k in Edge.__dataclass_fields__)
+        return False
+    if type(m) is not Model or not all(immutable(getattr(m,k)) for k in Model.__dataclass_fields__): return None
+    representatives=tuple(lo if hi==lo else lo+1 if hi is None else (lo+hi)/2 for lo,hi in regions(m))
+    return _Structure(MappingProxyType(m.outgoing),MappingProxyType(m.inv),MappingProxyType(m.atom_index),representatives)
+
 # State is (event count, delivery count, peak stack depth, location, region, stack).
 def initial_state(m): return (0,0,0,m.initial,0,())
 
 def successors(m,s):
-    n,k,h,q,r,stack=s; inv=m.inv
-    if q not in m.urgent and r+1<len(regions(m)) and holds(m,r+1,inv.get(q,())):
+    yield from _successors(m,s,None)
+
+def _successors(m,s,structure):
+    n,k,h,q,r,stack=s; inv=m.inv if structure is None else structure.inv
+    truth=(lambda r,g: holds(m,r,g)) if structure is None else structure.holds
+    if q not in m.urgent and r+1<(len(regions(m)) if structure is None else len(structure.representatives)) and truth(r+1,inv.get(q,())):
         yield ('delay',r+1),(n,k,h,q,r+1,stack),None
-    for e in m.outgoing[q]:
+    for e in (m.outgoing if structure is None else structure.outgoing)[q]:
         if e.kind!='repair' and n>=m.cap[0]: continue
-        if not holds(m,r,e.guard): continue
+        if not truth(r,e.guard): continue
         nk=k+(e.kind=='interrupt'); ns=stack; nh=h
         if nk>m.cap[1]: continue
         if e.kind=='interrupt':
@@ -165,4 +194,4 @@ def successors(m,s):
             dest=stack[-1]; ns=stack[:-1]
         else: dest=e.dst
         nr=0 if e.reset else r
-        if holds(m,nr,inv.get(dest,())): yield ('edge',e.id),(n+int(e.kind!='repair'),int(nk),nh,dest,nr,ns),e
+        if truth(nr,inv.get(dest,())): yield ('edge',e.id),(n+int(e.kind!='repair'),int(nk),nh,dest,nr,ns),e

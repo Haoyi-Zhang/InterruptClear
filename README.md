@@ -36,6 +36,18 @@ python3 query.py models/F02-deferred-cause.json results/primary/certificates/F02
 
 ## Scientific objects
 
+An explicit optional portable structural regression runs with
+`python -B tests/structural_regression.py` from any working directory. The
+scientific CI runs this step before full reproduction and retains its log.
+It is deliberately outside the historical 66-method/campaign accounting;
+all existing expected counts, comparisons and resource gates remain active.
+The reference uses raw tables and rational representatives, plus bounded
+strict-DBM controls. Producer and both shared-skeleton baselines now prepare
+invocation-local read-only indices only for recursively immutable model fields;
+hand-built models with mutable fields keep fresh reads. Public properties still
+return fresh containers, and the separate-source checker is unchanged.
+This is implementation conformance, not a timing or new scientific guarantee.
+
 A selected static repair clears taint or pending data at specified sites. It cannot change guards, clock resets, interruption admission or control. A symbolic term `F` says that a causal fact survives exactly when the selected plan intersects none of `F`. A frontier record `[F,n,k,h]` couples that condition with the original-event, delivery and **peak-depth** resources needed to reach a bad use. Plan `X` is unsafe under cap `B` exactly when an active record has `F & X == 0`.
 
 The repair-word compiler exposes interrupts before, between and after its zero-time cleanup slots. Erasing those slots preserves the original timed event language. They cost zero in **original-event units**, not zero machine instructions or measured time. Total executed transition rows are checked separately in the retained cases; every evaluated path has at most 32 rows. An ineffective inserted operation cannot obtain apparent safety merely by pushing the original use past an instruction-count horizon.

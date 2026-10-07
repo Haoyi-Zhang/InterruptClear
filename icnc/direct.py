@@ -1,19 +1,20 @@
 """Explicit-state baseline for a fixed plan. No symbolic frontier operations."""
 from collections import deque
-from .model import initial_state,successors
+from .model import initial_state,successors,_prepare,_successors
 
 def explore(m,plan,meter=None):
     if type(plan) is not int or not 0<=plan<(1<<len(m.atoms)): raise ValueError('plan')
     root=(*initial_state(m),m.taint,m.pending)
+    structure=_prepare(m)
     seen={root}; todo=deque([root]); bad_costs=set(); first=None; parents={root:None}; structural_edges=set()
     while todo:
         s=todo.popleft(); base=s[:6]; t,p=s[6:]
-        for label,z,e in successors(m,base):
+        for label,z,e in _successors(m,base,structure):
             if meter: meter.charge('explicit_edges')
             structural_edges.add((base,label,z))
             nt,np=t,p
             if e is not None:
-                ai=m.atom_index
+                ai=m.atom_index if structure is None else structure.atom_index
                 if e.t_clear is not None and plan&(1<<ai[e.t_clear]): nt=False
                 if e.p_clear is not None and plan&(1<<ai[e.p_clear]): np=False
                 if e.kind=='use' and nt:
