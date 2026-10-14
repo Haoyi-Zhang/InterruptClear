@@ -8,7 +8,7 @@ it is a representation comparator, not an independent timing specification.
 from __future__ import annotations
 from collections import deque
 from dataclasses import dataclass
-from .model import Model, initial_state, successors, _prepare, _successors
+from .model import Model, initial_state, successors, _prepare, _successors, installation_weights
 
 
 class LiftLimitExceeded(RuntimeError):
@@ -67,7 +67,8 @@ class Lifted:
         self.counter.add('query_plan_bit_tests')
         return bool(bits & (1 << plan))
 
-    def optimum(self, cap):
+    def optimum(self, cap, *, weights=None):
+        prices = installation_weights(self.model, weights)
         bits = self.truth_at(cap)
         best = None
         winners = []
@@ -78,7 +79,7 @@ class Lifted:
                 continue
             safe += 1
             cost = 0
-            for i, (_, weight) in enumerate(self.model.atoms):
+            for i, weight in enumerate(prices):
                 self.counter.add('optimization_atom_tests')
                 if plan & (1 << i):
                     cost += weight

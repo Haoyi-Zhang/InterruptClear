@@ -10,28 +10,25 @@ Requirements: Python 3.10+. POSIX mode requires `resource.setrlimit`; Windows mu
 ./verify.sh
 ```
 
-The script runs the discovered 66-method test suite in a child process, reruns the whole primary study, separate exploratory semantic audit and Boolean configuration-lifting comparison in fresh directories, compares their deterministic JSON with the retained references, compares all model/certificate/lowering objects, separately replays all 20 retained certificates, and rechecks all four phase-lowering maps. The audit remains a separate campaign: its counts are not added to the primary model or oracle denominators. A report records the actual test count and per-campaign operations only after these actions succeed. Elapsed time and resident memory are descriptive, not reproducibility targets. Scratch files are created inside the artifact by default. Pass `--keep-work` to preserve the raw campaign files on success or failure; otherwise the temporary files are removed. The semantic audit writes its observed result before comparing it with a reference, so a failed equality gate does not discard that observation.
+The script runs the discovered 80-method test suite in a child process, reruns the whole primary study, separate exploratory semantic audit and Boolean configuration-lifting comparison in fresh directories, compares their deterministic JSON with the retained references, compares all model/certificate/lowering objects, separately replays all 20 retained certificates, and rechecks all four phase-lowering maps. The audit remains a separate campaign: its counts are not added to primary model or oracle denominators. A report records the actual test count and per-campaign operations only after these actions succeed. Elapsed time and resident memory are descriptive, not reproducibility targets. Scratch files default to the artifact directory; select a private external `--scratch` location to preserve a read-only checkout. Pass `--keep-work` to retain raw campaign files on success or failure. Each child command records its literal arguments, exit code and output. The semantic audit writes its observation before its equality gate.
 
 Portable local reproduction (from this directory):
 
 ```sh
-python -B verify_all.py --portable --keep-work --scratch /path/to/private/raw --output /path/to/private/reproduction.json
+python -B -S verify_all.py --portable --keep-work --scratch /path/to/private/raw --output /path/to/private/reproduction.json
+python -B -S -O verify_all.py --portable --keep-work --scratch /path/to/private/raw-optimized --output /path/to/private/reproduction-optimized.json
 ```
 
-Individual portable campaigns also accept `--portable`; write new attempts outside this repository to preserve the retained evidence. Missing RSS is JSON null and OS-limit enforcement fields are false, not successful limit checks. The retained local report has 63 methods (the original 61 plus two regressions). A subsequent local rerun has 66, adding an accepted-name boundary regression and two raw-retention regressions; the three deterministic campaign references are unchanged. The saved POSIX and earlier portable reports are historical measurements, not measurements of these added regressions.
+Set `PYTHONDONTWRITEBYTECODE=1` for owned subprocesses. The runner propagates bytecode, optimization and site-disabling flags to its scientific children. Individual portable campaigns accept `--portable`; write new attempts outside this repository. Missing RSS is JSON null and OS-limit enforcement fields are false, not successful limit checks. `results/query-workflow/` contains the current normal and optimized 80-method executions, fresh raw campaign data, literal command receipts, environment, common query answers and source bindings. Both modes reproduce the same retained semantic references; modes are not pooled. Earlier 61-, 63- and 66-method results and raw timings remain unchanged historical evidence, not measurements of the new controls.
 
 The prepared `scientific-checks.yml` workflow runs from this flat artifact root on Ubuntu 24.04 for pushes to `main` or manual dispatch. It retains the existing comparison/failure gates, limits the whole command to 650 seconds and 2,500 MiB address space, and always attempts to upload its command log and raw campaign files. It has not been executed remotely by this repair worker. This workflow does not build the sibling paper or establish hardware refinement.
 
-Individual commands:
+Read-only query commands (full campaign inputs are generated in the private scratch directory above):
 
 ```sh
-python3 generate_models.py
-python3 run_tests.py --output results/tests-local.json
-python3 study.py --output results/reproduced --compare results/primary/reference.json
-python3 audit_semantics.py --out results/audit-local --compare results/audit/reference.json
-python3 compare_lifting.py --primary results/reproduced/reference.json --output results/lifting-local --compare results/lifting/reference.json
-python3 verify.py models/F02-deferred-cause.json results/primary/certificates/F02-deferred-cause.json
-python3 query.py models/F02-deferred-cause.json results/primary/certificates/F02-deferred-cause.json --cap 3 0 0
+python -B -S verify.py models/F02-deferred-cause.json results/primary/certificates/F02-deferred-cause.json
+python -B -S query.py models/F02-deferred-cause.json results/primary/certificates/F02-deferred-cause.json --cap 3 0 0
+python -B -S query.py models/F02-deferred-cause.json results/primary/certificates/F02-deferred-cause.json --cap 3 0 0 --weights /path/to/private/weights.json
 ```
 
 ## Scientific objects
@@ -39,7 +36,7 @@ python3 query.py models/F02-deferred-cause.json results/primary/certificates/F02
 An explicit optional portable structural regression runs with
 `python -B tests/structural_regression.py` from any working directory. The
 scientific CI runs this step before full reproduction and retains its log.
-It is deliberately outside the historical 66-method/campaign accounting;
+Its three methods are deliberately outside the historical and current suite/campaign accounting;
 all existing expected counts, comparisons and resource gates remain active.
 The reference uses raw tables and rational representatives, plus bounded
 strict-DBM controls. Producer and both shared-skeleton baselines now prepare
@@ -78,6 +75,16 @@ POSIX primary study/test invocations enforce 2,500 MiB address space and 170/180
 
 The retained complete execution and earlier portable local reproduction used 300,410 charged operations across the tests, primary study, separate semantic audit, configuration comparison and certificate replay. The subsequent 66-method portable run uses 300,437: the name-boundary regression adds 27 metered obligations, while the two raw-retention regressions are unmetered orchestration checks. These are accounting values, not runtime or speedup estimates. All five subtotals and the raw workspace path are reported by a fresh `--keep-work` run; primary, audit, lifting and replay subtotals are unchanged.
 
+The current 80-method runs also report 300,437 selected-operation charges. The new query/schema, objective-reuse and interpreter-mode controls are included in test execution and CPU time, not added to those historical core/configuration operation categories or to scientific model counts. Numeric scientific reference comparisons use canonical JSON rather than Python's Boolean/integer/float coercive equality. Query masks and caps require exact integers; model-bound queries reject out-of-universe masks and caps beyond the certified construction domain. A bare frontier tuple has no model identity: use the frontier of the same admitted model, or replay the certificate first.
+
+## Installation objectives and complete costs
+
+`--weights` is a JSON object naming exactly the existing atoms with integer prices in 0..256. It changes only the selection objective after full certificate replay; it does not change offered clears, executable semantics, budgets or the certificate's trusted model binding. For F02, `{ "C": 1, "P": 2, "U": 1 }` selects `{U}` at cost 1 instead of the original cost-3 tie `{C,P}` / `{U}`. The five safe plans are unchanged. All zero-cost ties are retained. This is reuse of ordinary weighted hitting-set selection, not a new optimization theorem.
+
+`profile_workflow.py` provides a fresh-process arm for `frontier`, `lifting` or `explicit`; its `--primary`, `--output` and `--portable` options select the unchanged cohort, a private output directory and portable limits. See `results/query-workflow/commands/profile-*.json` for literal executed commands and `docs/query-workflow.md` for the complete method. The same 84 models, 652 plans, 5,046 safety queries and 526 optimal-plan-set queries produce byte-identical answers in all three arms. In one actual Windows 11 / Intel Core i7-12700KF / CPython 3.12.14 run, wall time through answers was 0.133 s for frontier construction plus complete certificate replay, 0.078 s for dense lifting, and 0.198 s for explicit exploration. Whole child wall times, own-process peaks and every stage are retained. The frontier arm was slower than dense lifting; no general runtime or memory superiority is inferred. All arms supply the same query guarantee, while the frontier arm additionally emits and replays an explanation certificate. These are actual local Python finite-model executions, not native processor defenses, production traces or executions of external research tools.
+
 ## Provenance and license
 
-The current repair-frontier implementation, proof documents and primary results were recovered from the October 5 packet and edited. This development is distinct from the older one-clock baseline report; no absent earlier contract manuscript or frozen reference input is claimed recovered. The baseline PDF's standard region/certificate results are retained as attributed foundations, not renamed as new theorems. The source is licensed under `LICENSE`; third-party publications are cited rather than redistributed. Substantive ChatGPT assistance covered formulation, proofs, implementation, tests, experiments and prose. Human authors must review the work and satisfy applicable policies before external use; no author approval or venue acceptance is asserted.
+The current repair-frontier implementation, proof documents and primary results were recovered from the October 5 packet and edited. This development is distinct from the older one-clock baseline report; no absent earlier contract manuscript or frozen reference input is claimed recovered. The baseline PDF's standard region/certificate results are retained as attributed foundations, not renamed as new theorems. The source is licensed under `LICENSE`; third-party publications are cited rather than redistributed.
+
+Substantive ChatGPT assistance covered formulation, proofs, implementation, tests, experiments and prose. Human authors must review the work and satisfy applicable policies before external use; no author approval or venue acceptance is asserted.

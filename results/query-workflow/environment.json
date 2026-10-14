@@ -1,0 +1,33 @@
+{
+  "measured_utc": "2026-10-14T03:22:44.714905+00:00",
+  "host": {
+    "processor": {
+      "Name": "12th Gen Intel(R) Core(TM) i7-12700KF",
+      "NumberOfCores": 12,
+      "NumberOfLogicalProcessors": 20,
+      "Manufacturer": "GenuineIntel"
+    },
+    "operating_system": {
+      "Caption": "Microsoft Windows 11 专业版",
+      "Version": "10.0.28000",
+      "OSArchitecture": "64 位"
+    }
+  },
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "executable": "D:\\CodexProjects\\2026-07-13\\new-chat-4\\completion_workspace\\library_review\\pdf-env\\Scripts\\python.exe",
+  "platform": "Windows-11-10.0.28000-SP0",
+  "host_query": {
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-NonInteractive",
+      "-Command",
+      "[Console]::OutputEncoding=[Text.UTF8Encoding]::new(); $cpu=Get-CimInstance Win32_Processor | Select-Object Name,NumberOfCores,NumberOfLogicalProcessors,Manufacturer; $os=Get-CimInstance Win32_OperatingSystem | Select-Object Caption,Version,OSArchitecture; @{processor=$cpu;operating_system=$os} | ConvertTo-Json -Depth 4"
+    ],
+    "exit_code": 0,
+    "stdout": "{\r\n    \"processor\":  {\r\n                      \"Name\":  \"12th Gen Intel(R) Core(TM) i7-12700KF\",\r\n                      \"NumberOfCores\":  12,\r\n                      \"NumberOfLogicalProcessors\":  20,\r\n                      \"Manufacturer\":  \"GenuineIntel\"\r\n                  },\r\n    \"operating_system\":  {\r\n                             \"Caption\":  \"Microsoft Windows 11 专业版\",\r\n                             \"Version\":  \"10.0.28000\",\r\n                             \"OSArchitecture\":  \"64 位\"\r\n                         }\r\n}\r\n",
+    "stderr": ""
+  },
+  "scope": "actual local host only; no remote CPU, deployment, hardware-interrupt or side-channel execution",
+  "dependencies": "scientific programs use CPython standard library; TeX/Poppler/ReportLab are typesetting only"
+}

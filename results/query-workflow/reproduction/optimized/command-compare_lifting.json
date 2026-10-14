@@ -1,0 +1,20 @@
+{
+  "argv": [
+    "D:\\CodexProjects\\2026-07-13\\new-chat-4\\completion_workspace\\library_review\\pdf-env\\Scripts\\python.exe",
+    "-B",
+    "-O",
+    "-S",
+    "$PROJECT\\artifact\\compare_lifting.py",
+    "--primary",
+    "$OWNED_OUTPUT\\campaign-optimized\\neutralization-reproduction-r2edixa2\\study\\reference.json",
+    "--output",
+    "$OWNED_OUTPUT\\campaign-optimized\\neutralization-reproduction-r2edixa2\\configuration-lifting",
+    "--compare",
+    "$PROJECT\\artifact\\results\\lifting\\reference.json",
+    "--portable"
+  ],
+  "exit_code": 0,
+  "wall_seconds": 0.3909999999741558,
+  "stdout": "{\r\n  \"summary\": {\r\n    \"model_instances\": 84,\r\n    \"plan_budget_comparisons\": 5046,\r\n    \"budget_configurations\": 526,\r\n    \"optimal_plan_set_comparisons\": 526,\r\n    \"fact_state_plan_comparisons\": 18816,\r\n    \"mismatches\": 0,\r\n    \"lifting_operations\": {\r\n      \"configuration_literal_bit_tests\": 3128,\r\n      \"skeleton_successor_arcs\": 396,\r\n      \"fact_transfer_arcs\": 396,\r\n      \"clear_bitwise_and\": 271,\r\n      \"bad_bucket_bitwise_or\": 78,\r\n      \"join_bitwise_or\": 792,\r\n      \"query_cost_bucket_tests\": 1206,\r\n      \"query_plan_bit_tests\": 5046,\r\n      \"optimization_plan_bit_tests\": 5046,\r\n      \"optimization_atom_tests\": 25509,\r\n      \"query_bitwise_or\": 284,\r\n      \"commit_bitwise_or\": 40,\r\n      \"constant_fact_assignments\": 115\r\n    },\r\n    \"comparison_obligations\": {\r\n      \"fact_state_plan_comparisons\": 18816,\r\n      \"three_way_plan_budget_comparisons\": 5046,\r\n      \"three_way_optimal_plan_set_comparisons\": 526\r\n    },\r\n    \"frontier_and_explicit_operations\": {\r\n      \"skeleton_edges\": 396,\r\n      \"symbolic_arcs\": 396,\r\n      \"bad_terms\": 175,\r\n      \"explicit_edges\": 17841\r\n    },\r\n    \"dense_fact_table_logical_bits\": 18816,\r\n    \"fact_vector_slots\": 882,\r\n    \"frontier_symbolic_proof_terms\": 893,\r\n    \"frontier_records\": 173\r\n  },\r\n  \"measurements\": {\r\n    \"cpu_seconds\": 0.171875,\r\n    \"wall_seconds\": 0.17199999999138527,\r\n    \"peak_rss_kib\": null,\r\n    \"workers\": 1,\r\n    \"meaning\": \"whole comparison including all methods; no speedup or per-method timing inference\",\r\n    \"runtime_limits\": {\r\n      \"platform\": \"win32\",\r\n      \"python_optimization\": 1,\r\n      \"site_packages_disabled\": true,\r\n      \"dont_write_bytecode\": true,\r\n      \"mode\": \"portable\",\r\n      \"requested_cpu_soft_seconds\": 170,\r\n      \"requested_cpu_hard_seconds\": 180,\r\n      \"requested_address_space_mib\": 2500,\r\n      \"os_cpu_limit_enforced\": false,\r\n      \"os_address_space_limit_enforced\": false,\r\n      \"cooperative_cpu_checks\": true,\r\n      \"peak_rss_available\": false\r\n    }\r\n  }\r\n}\r\n",
+  "stderr": ""
+}

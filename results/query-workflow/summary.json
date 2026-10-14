@@ -1,0 +1,204 @@
+{
+  "scope": "unchanged existing owned finite-model cohort; no new generated matrix or deployment sample",
+  "models": 84,
+  "plans": 652,
+  "plan_budget_queries": 5046,
+  "optimal_plan_set_queries": 526,
+  "all_three_answer_files_byte_identical": true,
+  "answer_sha256": "a91031246b3ec38386ff76072789482651ef05cf0e56644daceaf563323a9454",
+  "profile": {
+    "frontier": {
+      "cpu_seconds_through_answers": 0.125,
+      "wall_seconds_through_answers": 0.13259210000978783,
+      "parent_startup_receipt_io_exit_wall_seconds": 0.5997870999854058,
+      "memory": {
+        "peak_rss_kib": null,
+        "windows_peak_working_set_bytes": 23785472,
+        "windows_peak_commit_bytes": 15761408,
+        "scope": "whole owned child peak observed before receipt write/exit; includes imports/input/answers, not an OS cap or Linux RSS"
+      },
+      "stages": {
+        "input_read_and_decode": {
+          "cpu_seconds": 0.015625,
+          "wall_seconds": 0.006577000021934509
+        },
+        "model_admission": {
+          "cpu_seconds": 0.0,
+          "wall_seconds": 0.004865200113272294
+        },
+        "complete_construction": {
+          "cpu_seconds": 0.015625,
+          "wall_seconds": 0.016216399788390845
+        },
+        "full_certificate_replay": {
+          "cpu_seconds": 0.046875,
+          "wall_seconds": 0.0341887001413852
+        },
+        "all_plan_safety_queries": {
+          "cpu_seconds": 0.0,
+          "wall_seconds": 0.029482999991159886
+        },
+        "all_weighted_optimum_queries": {
+          "cpu_seconds": 0.03125,
+          "wall_seconds": 0.029150299757020548
+        },
+        "answer_encoding": {
+          "cpu_seconds": 0.015625,
+          "wall_seconds": 0.004775100009283051
+        },
+        "answer_write": {
+          "cpu_seconds": 0.0,
+          "wall_seconds": 0.00037349999183788896
+        },
+        "receipt_source_binding": {
+          "cpu_seconds": 0.0,
+          "wall_seconds": 0.0035510000016074628
+        }
+      }
+    },
+    "lifting": {
+      "cpu_seconds_through_answers": 0.078125,
+      "wall_seconds_through_answers": 0.07824770000297576,
+      "parent_startup_receipt_io_exit_wall_seconds": 0.44103770001675,
+      "memory": {
+        "peak_rss_kib": null,
+        "windows_peak_working_set_bytes": 23916544,
+        "windows_peak_commit_bytes": 15601664,
+        "scope": "whole owned child peak observed before receipt write/exit; includes imports/input/answers, not an OS cap or Linux RSS"
+      },
+      "stages": {
+        "input_read_and_decode": {
+          "cpu_seconds": 0.015625,
+          "wall_seconds": 0.006746900005964562
+        },
+        "model_admission": {
+          "cpu_seconds": 0.0,
+          "wall_seconds": 0.004685699997935444
+        },
+        "complete_construction": {
+          "cpu_seconds": 0.0,
+          "wall_seconds": 0.012839300004998222
+        },
+        "all_plan_safety_queries": {
+          "cpu_seconds": 0.015625,
+          "wall_seconds": 0.004640999861294404
+        },
+        "all_weighted_optimum_queries": {
+          "cpu_seconds": 0.046875,
+          "wall_seconds": 0.040367199981119484
+        },
+        "answer_encoding": {
+          "cpu_seconds": 0.0,
+          "wall_seconds": 0.0028962000214960426
+        },
+        "answer_write": {
+          "cpu_seconds": 0.0,
+          "wall_seconds": 0.00041000000783242285
+        },
+        "receipt_source_binding": {
+          "cpu_seconds": 0.0,
+          "wall_seconds": 0.0018249000131618232
+        }
+      }
+    },
+    "explicit": {
+      "cpu_seconds_through_answers": 0.1875,
+      "wall_seconds_through_answers": 0.19822239998029545,
+      "parent_startup_receipt_io_exit_wall_seconds": 0.5276127999823075,
+      "memory": {
+        "peak_rss_kib": null,
+        "windows_peak_working_set_bytes": 31166464,
+        "windows_peak_commit_bytes": 22446080,
+        "scope": "whole owned child peak observed before receipt write/exit; includes imports/input/answers, not an OS cap or Linux RSS"
+      },
+      "stages": {
+        "input_read_and_decode": {
+          "cpu_seconds": 0.015625,
+          "wall_seconds": 0.006103899999288842
+        },
+        "model_admission": {
+          "cpu_seconds": 0.0,
+          "wall_seconds": 0.004861999914282933
+        },
+        "complete_construction": {
+          "cpu_seconds": 0.140625,
+          "wall_seconds": 0.1651235000754241
+        },
+        "all_plan_safety_queries": {
+          "cpu_seconds": 0.0,
+          "wall_seconds": 0.005871899455087259
+        },
+        "all_weighted_optimum_queries": {
+          "cpu_seconds": 0.015625,
+          "wall_seconds": 0.007330499734962359
+        },
+        "answer_encoding": {
+          "cpu_seconds": 0.0,
+          "wall_seconds": 0.002991499990457669
+        },
+        "answer_write": {
+          "cpu_seconds": 0.0,
+          "wall_seconds": 0.0004369000089354813
+        },
+        "receipt_source_binding": {
+          "cpu_seconds": 0.0,
+          "wall_seconds": 0.001584099984029308
+        }
+      }
+    }
+  },
+  "cost_interpretation": "one sequential run; frontier plus full certificate consumer is slower than same-information dense lifting; no general speedup/memory ranking or external tool execution",
+  "reproduction": {
+    "normal": {
+      "test_methods": 80,
+      "charged_operations": 300437,
+      "retained_certificates": 20,
+      "lowerings": 4,
+      "all_child_flags_propagated": true,
+      "wall_seconds_descriptive": 4.407000000006519,
+      "runtime_limits": {
+        "cooperative_cpu_checks": true,
+        "dont_write_bytecode": true,
+        "mode": "portable",
+        "os_address_space_limit_enforced": false,
+        "os_cpu_limit_enforced": false,
+        "peak_rss_available": false,
+        "platform": "win32",
+        "python_optimization": 0,
+        "requested_address_space_mib": 2500,
+        "requested_cpu_hard_seconds": 180,
+        "requested_cpu_soft_seconds": 170,
+        "site_packages_disabled": true
+      }
+    },
+    "optimized": {
+      "test_methods": 80,
+      "charged_operations": 300437,
+      "retained_certificates": 20,
+      "lowerings": 4,
+      "all_child_flags_propagated": true,
+      "wall_seconds_descriptive": 5.39100000000326,
+      "runtime_limits": {
+        "cooperative_cpu_checks": true,
+        "dont_write_bytecode": true,
+        "mode": "portable",
+        "os_address_space_limit_enforced": false,
+        "os_cpu_limit_enforced": false,
+        "peak_rss_available": false,
+        "platform": "win32",
+        "python_optimization": 1,
+        "requested_address_space_mib": 2500,
+        "requested_cpu_hard_seconds": 180,
+        "requested_cpu_soft_seconds": 170,
+        "site_packages_disabled": true
+      }
+    }
+  },
+  "historical_results_unchanged": true,
+  "native_scope": "actual local CPython stdlib execution of owned automata, not native defense deployment",
+  "unexecuted": [
+    "external SPLlift/BDD/IF/UPPAAL/TarTar tools",
+    "processor/RTL/OS refinement or side-channel experiments",
+    "fresh POSIX hard-cap run"
+  ]
+}

@@ -11,11 +11,20 @@ import tempfile
 import time
 from icnc.checker import check, read
 from icnc.lowering import projection_obligations
-from icnc.model import parse
+from icnc.model import parse, scientific_equal
 from icnc.runtime_limits import configure_limits,check_cpu_limit
 from run_tests import EXPECTED_TEST_METHODS
 
 ROOT = Path(__file__).resolve().parent
+
+def python_command(script, *arguments):
+    """Children inherit the reviewed parent's optimization/site contract."""
+    flags = ['-B']
+    if sys.flags.optimize:
+        flags.append('-' + 'O' * sys.flags.optimize)
+    if sys.flags.no_site:
+        flags.append('-S')
+    return [sys.executable, *flags, str(script), *map(str, arguments)]
 
 @contextmanager
 def reproduction_workspace(scratch, keep_work=False):
@@ -39,7 +48,8 @@ def main():
     start = time.monotonic()
     env = dict(os.environ, PYTHONHASHSEED='0')
     args.scratch.mkdir(parents=True, exist_ok=True)
-    env.update(TEMP=str(args.scratch.resolve()), TMP=str(args.scratch.resolve()), PYTHONDONTWRITEBYTECODE='1')
+    env.update(TEMP=str(args.scratch.resolve()), TMP=str(args.scratch.resolve()),
+               TMPDIR=str(args.scratch.resolve()), PYTHONDONTWRITEBYTECODE='1')
     portable = ['--portable'] if args.portable else []
     counts = {}
     def charge(kind, amount=1):
@@ -48,20 +58,35 @@ def main():
         if sum(counts.values()) > 100000:
             raise RuntimeError('verification work ceiling; no verdict')
     with reproduction_workspace(args.scratch, args.keep_work) as temp:
+        child_commands = []
+        def run_child(script, arguments, timeout):
+            argv = python_command(ROOT / script, *arguments)
+            begin = time.monotonic()
+            result = subprocess.run(argv, cwd=ROOT, env=env, capture_output=True, timeout=timeout)
+            row = {'argv': argv, 'exit_code': result.returncode,
+                   'wall_seconds': time.monotonic() - begin,
+                   'stdout': result.stdout.decode('utf-8', errors='replace'),
+                   'stderr': result.stderr.decode('utf-8', errors='replace')}
+            child_commands.append(row)
+            (temp / ('command-' + Path(script).stem + '.json')).write_text(
+                json.dumps(row, indent=2) + '\n', encoding='utf-8', newline='\n')
+            if result.returncode:
+                raise RuntimeError('child failed; raw command output retained: ' + script)
         testfile = temp / 'tests.json'
-        subprocess.run([sys.executable, str(ROOT / 'run_tests.py'), '--output', str(testfile), *portable], cwd=ROOT, env=env, check=True, timeout=190)
+        run_child('run_tests.py', ['--output', testfile, *portable], 190)
         test = json.loads(testfile.read_text())
         if test['test_methods'] != EXPECTED_TEST_METHODS or not test['successful'] or test['failures'] or test['errors'] or test['skips']:
             raise RuntimeError('test result mismatch')
         fresh = temp / 'study'
-        subprocess.run([sys.executable, str(ROOT / 'study.py'), '--output', str(fresh), '--compare', str(ROOT / 'results' / 'primary' / 'reference.json'), *portable], cwd=ROOT, env=env, check=True, timeout=190)
+        run_child('study.py', ['--output', fresh, '--compare', ROOT / 'results' / 'primary' / 'reference.json', *portable], 190)
         original = ROOT / 'results' / 'primary'
         observed = json.loads((fresh / 'reference.json').read_text())
         audit_directory = temp / 'semantic-audit'
-        subprocess.run([sys.executable, str(ROOT / 'audit_semantics.py'), '--out', str(audit_directory), '--compare', str(ROOT / 'results' / 'audit' / 'reference.json'), *portable], cwd=ROOT, env=env, check=True, timeout=40)
+        run_child('audit_semantics.py', ['--out', audit_directory, '--compare', ROOT / 'results' / 'audit' / 'reference.json', *portable], 40)
         audit = json.loads((audit_directory / 'reference.json').read_text())
         lifting_directory = temp / 'configuration-lifting'
-        subprocess.run([sys.executable, str(ROOT / 'compare_lifting.py'), '--primary', str(fresh / 'reference.json'), '--output', str(lifting_directory), '--compare', str(ROOT / 'results' / 'lifting' / 'reference.json'), *portable], cwd=ROOT, env=env, check=True, timeout=190)
+        run_child('compare_lifting.py', ['--primary', fresh / 'reference.json', '--output', lifting_directory,
+                                      '--compare', ROOT / 'results' / 'lifting' / 'reference.json', *portable], 190)
         lifting = json.loads((lifting_directory / 'reference.json').read_text())
         # Exact retained model/certificate bytes are not cryptographic evidence;
         # compare parsed scientific values instead of generating hash manifests.
@@ -71,7 +96,7 @@ def main():
             if a != b:
                 raise RuntimeError('retained file set differs: ' + folder)
             for name in a:
-                if json.loads((original / folder / name).read_text()) != json.loads((fresh / folder / name).read_text()):
+                if not scientific_equal(json.loads((original / folder / name).read_text()), json.loads((fresh / folder / name).read_text())):
                     raise RuntimeError('scientific artifact differs: ' + name)
         replay = []
         for path in sorted((fresh / 'models').glob('*.json')):
@@ -108,6 +133,7 @@ def main():
                 'audit': json.loads((audit_directory / 'measurements.json').read_text())['runtime_limits'],
                 'lifting': json.loads((lifting_directory / 'measurements.json').read_text())['runtime_limits']},
             'test_report': test,
+            'child_commands': child_commands,
             'semantic_reference_equal': True,
             'retained_models_replayed': len(replay),
             'retained_lowerings_rechecked': len(lowerings),

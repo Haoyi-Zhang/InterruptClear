@@ -12,7 +12,7 @@ from dataclasses import replace
 from math import comb
 import csv,json,time
 from icnc.runtime_limits import configure_limits,check_cpu_limit,peak_rss_kib
-from icnc.model import parse,initial_state,successors
+from icnc.model import parse,initial_state,successors,scientific_equal
 from icnc.examples import fixed,grammar,threshold,lowering_cases,model,edge,ordering_words
 from icnc.frontier import Meter,build,unsafe,synthesize
 from icnc.direct import explore
@@ -166,9 +166,10 @@ def run(output):
                 active=maxm.bounded((n,k,maxm.cap[2]));d=explore(active,0,meter);pred=unsafe(fm['frontier'],0,active.cap)
                 if (not d['safe'])!=pred:raise AssertionError('active budget scan')
                 scan.append({'model':original.name,'requested_events':n,'requested_interrupts':k,'effective_events':active.cap[0],'effective_interrupts':active.cap[1],'effective_depth':active.cap[2],'states':d['states'],'safe':d['safe']})
-    assert len(scan)==360
+    if len(scan)!=360:raise AssertionError('budget scan must retain all 360 bounded copies')
     z=[r for r in scan if r['model']=='F03-truncated-handler' and r['effective_interrupts']==0]
-    assert all(r['states']==1 and r['safe'] for r in z)
+    if not all(r['states']==1 and r['safe'] for r in z):
+        raise AssertionError('zero-delivery handler scan observation differs')
     # Full-domain uniqueness excludes names only; generation changes real
     # actions or initial flags, not merely a label.
     fingerprints=[]
@@ -189,5 +190,6 @@ if __name__=='__main__':
     result,measures=run(args.output)
     measures['runtime_limits']=limits
     write_json(args.output/'measurements.json',measures)
-    if args.compare is not None and result!=json.loads(args.compare.read_text()):raise SystemExit('semantic reproduction differs')
+    if args.compare is not None and not scientific_equal(result,json.loads(args.compare.read_text())):
+        raise SystemExit('semantic reproduction differs')
     print(json.dumps({'summary':result['summary'],'measurements':measures},indent=2))

@@ -12,7 +12,7 @@ import argparse
 import json
 import time
 from icnc.runtime_limits import configure_limits,check_cpu_limit,peak_rss_kib
-from icnc.model import parse
+from icnc.model import parse, scientific_equal
 from icnc.config_lift import build as lift
 from icnc.frontier import build as frontier_build, synthesize, unsafe, Meter
 from icnc.direct import explore
@@ -140,6 +140,6 @@ if __name__ == '__main__':
     result, measurements = run(args.primary, args.output)
     measurements['runtime_limits'] = limits
     write(args.output / 'measurements.json', measurements)
-    if args.compare is not None and result != json.loads(args.compare.read_text()):
+    if args.compare is not None and not scientific_equal(result, json.loads(args.compare.read_text())):
         raise SystemExit('configuration-lifting semantic reproduction differs')
     print(json.dumps({'summary': result['summary'], 'measurements': measurements}, indent=2))

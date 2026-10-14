@@ -1,0 +1,17 @@
+{
+  "argv": [
+    "D:\\CodexProjects\\2026-07-13\\new-chat-4\\completion_workspace\\library_review\\pdf-env\\Scripts\\python.exe",
+    "-B",
+    "-S",
+    "$PROJECT\\artifact\\audit_semantics.py",
+    "--out",
+    "$OWNED_OUTPUT\\campaign-normal\\neutralization-reproduction-16m7j5nd\\semantic-audit",
+    "--compare",
+    "$PROJECT\\artifact\\results\\audit\\reference.json",
+    "--portable"
+  ],
+  "exit_code": 0,
+  "wall_seconds": 2.875,
+  "stdout": "{\r\n  \"totals\": {\r\n    \"models\": 80,\r\n    \"plans\": 640,\r\n    \"plan_budget_queries\": 28800,\r\n    \"oracle_state_observations\": 17986,\r\n    \"oracle_constraint_systems\": 79080,\r\n    \"oracle_control_prefixes\": 11248,\r\n    \"oracle_ceiling_cases\": 0,\r\n    \"query_disagreements\": 0,\r\n    \"oracle_disagreements\": 0\r\n  },\r\n  \"unique_executable_descriptions\": 80,\r\n  \"charged_obligations\": 145424,\r\n  \"reference_sha256\": \"4864fa063c22ddec409aad08cd77c59e0153db4043e48d2cd5775798133fc791\"\r\n}\r\n",
+  "stderr": ""
+}

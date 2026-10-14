@@ -20,6 +20,28 @@ def integer(x,hi):
     if type(x) is not int or not 0<=x<=hi: raise InvalidModel('integer outside admitted range')
     return x
 
+def query_cap(cap, construction_cap=None):
+    """Admit a literal budget; a model-bound query cannot exceed its explored cap."""
+    if type(cap) not in (tuple,list) or len(cap)!=3:
+        raise ValueError('three integer budget coordinates required')
+    if any(type(v) is not int or v<0 for v in cap):
+        raise ValueError('nonnegative integer budget coordinates required')
+    if construction_cap is not None and any(v>hi for v,hi in zip(cap,construction_cap)):
+        raise ValueError('query cap must be componentwise within construction cap')
+    return tuple(cap)
+
+def query_plan(plan, atom_count=None):
+    if type(plan) is not int or plan<0 or (atom_count is not None and plan>=1<<atom_count):
+        raise ValueError('static plan outside configured domain')
+    return plan
+
+def installation_weights(m, override=None):
+    """Query-only prices never change the trusted model or certificate."""
+    if override is None: return tuple(cost for _,cost in m.atoms)
+    if type(override) is not dict or set(override)!={name for name,_ in m.atoms}:
+        raise ValueError('weights must name exactly the existing atom universe')
+    return tuple(integer(override[name],256) for name,_ in m.atoms)
+
 def unique_pairs(rows):
     out={}
     for k,v in rows:
@@ -32,6 +54,16 @@ def read(path):
     raw=Path(path).read_bytes()
     if len(raw)>2**20: raise InvalidModel('model byte limit')
     return json.loads(raw,object_pairs_hook=unique_pairs,parse_constant=lambda x: (_ for _ in ()).throw(InvalidModel('nonfinite JSON')))
+
+def scientific_equal(left,right):
+    """Canonical JSON replay keeps Boolean/integer/float types distinct.
+
+    Lists and tuples both denote wire arrays; object-member order is irrelevant.
+    This is a recording guard, not a new model or cryptographic guarantee.
+    """
+    def encoded(value):
+        return json.dumps(value,sort_keys=True,ensure_ascii=False,separators=(',',':'),allow_nan=False)
+    return encoded(left)==encoded(right)
 
 @dataclass(frozen=True)
 class Edge:

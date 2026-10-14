@@ -24,6 +24,9 @@ def configure_limits(cpu_soft=170, cpu_hard=180, address_space_mib=2500, *, port
     _cpu_deadline = cpu_soft
     return {
         'platform': sys.platform,
+        'python_optimization': sys.flags.optimize,
+        'site_packages_disabled': bool(sys.flags.no_site),
+        'dont_write_bytecode': sys.dont_write_bytecode,
         'mode': 'posix' if _resource is not None else 'portable',
         'requested_cpu_soft_seconds': cpu_soft,
         'requested_cpu_hard_seconds': cpu_hard,

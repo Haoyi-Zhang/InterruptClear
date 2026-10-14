@@ -1,7 +1,7 @@
 """Exact symbolic causal obstructions for every static repair and smaller budget."""
 from __future__ import annotations
 from collections import deque
-from .model import Model, initial_state, successors, _prepare, _successors
+from .model import Model, initial_state, successors, _prepare, _successors, query_cap, query_plan, installation_weights
 from .runtime_limits import check_cpu_limit
 
 class BudgetExceeded(RuntimeError): pass
@@ -81,13 +81,23 @@ def build(m:Model,meter:Meter|None=None):
     cert={'schema':'neutralization-frontier','model':m.raw(),'nodes':proof,'frontier':[list(x) for x in frontier]}
     return {'frontier':frontier,'certificate':cert,'states':len(seen),'edges':sum(len(a) for a in graph.values()),'raw_bad_terms':len(raw),'proof_terms':sum(len(t)+len(p) for t,p in values.values())}
 
-def unsafe(frontier,plan,cap):
+def unsafe(frontier,plan,cap,*,model=None):
+    # Raw frontiers are mathematical predicates, not self-describing models.
+    # Supply model for the full construction-domain check; synthesis always does.
+    cap=query_cap(cap,None if model is None else model.cap)
+    query_plan(plan,None if model is None else len(model.atoms))
     return any(not (mask&plan) and n<=cap[0] and k<=cap[1] and h<=cap[2] for mask,n,k,h in frontier)
 
-def plan_cost(m,plan): return sum(c for i,(_,c) in enumerate(m.atoms) if plan&(1<<i))
+def plan_cost(m,plan,*,weights=None):
+    query_plan(plan,len(m.atoms))
+    prices=installation_weights(m,weights)
+    return sum(c for i,c in enumerate(prices) if plan&(1<<i))
 
-def synthesize(m,frontier,cap):
+def synthesize(m,frontier,cap,*,weights=None):
+    cap=query_cap(cap,m.cap)
+    prices=installation_weights(m,weights)
     feasible=[p for p in range(1<<len(m.atoms)) if not unsafe(frontier,p,cap)]
     if not feasible: return {'minimum_cost':None,'optimal_plans':[],'safe_plans':0}
-    c=min(plan_cost(m,p) for p in feasible)
-    return {'minimum_cost':c,'optimal_plans':[p for p in feasible if plan_cost(m,p)==c],'safe_plans':len(feasible)}
+    costs={p:sum(c for i,c in enumerate(prices) if p&(1<<i)) for p in feasible}
+    c=min(costs.values())
+    return {'minimum_cost':c,'optimal_plans':[p for p in feasible if costs[p]==c],'safe_plans':len(feasible)}

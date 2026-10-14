@@ -13,3 +13,18 @@ Expansion appends `-phased` to the model's name only when it fits the accepted 9
 An internal plan is a nonnegative integer bitmask over the atom list. Frontier queries and synthesis are defined only for plans over that list and nonnegative budget triples componentwise at most the frontier's construction cap. Callers must not reuse a frontier at a larger cap or for a modified model. The public verifier obtains the trusted model independently of the certificate; it checks all model fields, not merely a name or digest. No cryptographic integrity claim or release-hash manifest is used.
 
 A debug trace from the explicit baseline is a feasible diagnostic selected by breadth-first row traversal. It is **not** advertised as the minimum-original-event diagnostic. Original-event costs, actual discrete transition rows, delay steps, delivery counts and peak nesting are different quantities.
+
+`query.py --weights prices.json` accepts a JSON object naming exactly the model's
+existing atoms, each with an integer price in 0..256 (Boolean/float substitutes
+are rejected). Prices are a query-only objective; the complete original trusted
+model and certificate still match, including their original atom-cost fields.
+Repricing cannot change atom identity, placement, clear effects, schedules or
+feasible plans. Zero-price optimal supersets and ties remain in the result.
+
+`synthesize` validates a smaller model-bound query cap; `plan_cost` validates
+the plan's atom universe. `unsafe(..., model=m)` additionally binds the query
+domain to m. The legacy bare-frontier predicate checks literal plan/budget types,
+shape and signs but cannot infer a missing model or its cap from records alone.
+Callers must supply the frontier of that model, preferably a replayed certificate.
+Scientific JSON replay distinguishes Boolean/integer/float values while treating
+tuple/list wire arrays and object-member ordering equivalently.

@@ -1,0 +1,17 @@
+{
+  "argv": [
+    "D:\\CodexProjects\\2026-07-13\\new-chat-4\\completion_workspace\\library_review\\pdf-env\\Scripts\\python.exe",
+    "-B",
+    "-S",
+    "$PROJECT\\artifact\\study.py",
+    "--output",
+    "$OWNED_OUTPUT\\campaign-normal\\neutralization-reproduction-16m7j5nd\\study",
+    "--compare",
+    "$PROJECT\\artifact\\results\\primary\\reference.json",
+    "--portable"
+  ],
+  "exit_code": 0,
+  "wall_seconds": 0.32800000000861473,
+  "stdout": "{\r\n  \"summary\": {\r\n    \"fixed_models\": 12,\r\n    \"finite_grammar_models\": 64,\r\n    \"finite_grammar_unique_executable_models\": 64,\r\n    \"threshold_models\": 4,\r\n    \"lowering_models\": 4,\r\n    \"total_model_instances\": 84,\r\n    \"policy_budget_queries\": 5046,\r\n    \"oracle_plan_instances\": 76,\r\n    \"oracle_distinct_model_descriptions\": 18,\r\n    \"budget_configurations\": 360,\r\n    \"cleanup_word_shapes\": 31,\r\n    \"cleanup_word_plan_queries\": 124,\r\n    \"charged_obligations\": {\r\n      \"skeleton_edges\": 495,\r\n      \"symbolic_arcs\": 495,\r\n      \"bad_terms\": 199,\r\n      \"checker_terms\": 893,\r\n      \"checker_parent\": 357,\r\n      \"checker_arcs\": 396,\r\n      \"checker_bad\": 175,\r\n      \"explicit_edges\": 22326,\r\n      \"policy_budget_query\": 5046,\r\n      \"oracle_constraints\": 2806,\r\n      \"irredundancy_separator\": 173,\r\n      \"optimality_comparison\": 638,\r\n      \"microstep_bound_arcs\": 396,\r\n      \"word_base_edge\": 155,\r\n      \"word_repair\": 54,\r\n      \"ordering_law_query\": 124\r\n    },\r\n    \"mismatches\": 0\r\n  },\r\n  \"measurements\": {\r\n    \"cpu_seconds\": 0.25,\r\n    \"wall_seconds\": 0.25,\r\n    \"peak_rss_kib\": null,\r\n    \"workers\": 1,\r\n    \"runtime_limits\": {\r\n      \"platform\": \"win32\",\r\n      \"python_optimization\": 0,\r\n      \"site_packages_disabled\": true,\r\n      \"dont_write_bytecode\": true,\r\n      \"mode\": \"portable\",\r\n      \"requested_cpu_soft_seconds\": 170,\r\n      \"requested_cpu_hard_seconds\": 180,\r\n      \"requested_address_space_mib\": 2500,\r\n      \"os_cpu_limit_enforced\": false,\r\n      \"os_address_space_limit_enforced\": false,\r\n      \"cooperative_cpu_checks\": true,\r\n      \"peak_rss_available\": false\r\n    }\r\n  }\r\n}\r\n",
+  "stderr": ""
+}

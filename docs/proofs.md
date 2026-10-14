@@ -83,3 +83,29 @@ Therefore acceptance implies the supplied frontier answers precisely the declare
 The strict-DBM oracle introduces absolute times for actual transition rows, a reset index and nondecreasing-time constraints. Guards/invariants become differences between event times and the last reset. Equalities use two weak inequalities. Strictness is propagated by disjunction along paths. A negative or strict-zero cycle is inconsistent. Conversely, for a finite integer-weight system with no such cycle, replace each strict bound c by c-epsilon for sufficiently small positive epsilon; positive-weight simple cycles remain positive and zero cycles are all weak. Shortest-path potentials satisfy the perturbed system, hence the original strict constraints. Region constraints recover full reachable post-clock regions. This independently structured check still shares the intended model specification and is not independent authorship.
 
 For an external defense, a separate relation must map initial states, simulate caller/interrupt segments, preserve well-nested behavior and peak-depth/delivery accounting, bound original-event usage, and reflect every concrete violating observation into an abstract tainted use. If the chosen plan hits all active frontier masks and these conditions hold, a concrete bad prefix would map to an admitted abstract bad prefix, contradicting the query theorem. No such processor, RTL or operating-system relation is supplied. The owned repair-language lowering discharges a language-to-language correspondence, not that external obligation.
+
+## 10. Checked query-domain and objective reuse
+
+A certificate is replayed against the complete original trusted model, including
+its atom list and original prices. Query-only prices w' do not replace that model.
+They assign a nonnegative integer (0..256 in the executable interface) to each
+and exactly each existing atom. For a fixed frontier and B <= construction cap,
+the feasible set is determined by the same active cuts in Section 6 and is
+independent of w'. Minimizing sum(w'(a): a in X) over that set therefore returns
+the exact re-priced optimum and every tie, without a new timing/fact exploration.
+This is reuse of the established hitting-set result, not a new optimization
+theorem. Zero prices can make safe supersets optimal and must not be discarded.
+
+The checked CLI keeps the model/certificate equality obligation and supplies
+prices separately. Changing an embedded model price still fails that obligation;
+the objective override is not permission to move a site or alter its clear.
+Programmatic synthesis now checks the three literal integer coordinates against
+the construction cap. A raw tuple frontier alone cannot identify its model or
+cap: its predicate validates basic types, while a supplied model checks the full
+query domain. Such raw predicates remain caller-bound mathematical objects,
+not self-authenticating certificates. A domain error gives no safety verdict.
+
+The existing F02 cuts are {C,U} and {P,U}. At prices (1,2,3), {C,P} and {U}
+tie at three. Changing only U's query price to one selects {U} at one. At zero
+prices all five safe plans tie. The same objective is supplied to configuration
+lifting and explicit execution; no safety answer or model language changes.

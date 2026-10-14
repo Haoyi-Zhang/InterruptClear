@@ -1,0 +1,83 @@
+{
+  "profile_source_sha256": {
+    "profile_workflow.py": "bd9af012a9b006027248eee51e7873548973c21a0409d5e7efd622dd3badb592",
+    "icnc/__init__.py": "74ea10b169031a389e376b38287f9a75952aecb097fd494d82865146eac204c1",
+    "icnc/model.py": "9169cec8e76a562c86bfa0de204a10bfbaab6fcc4abdec0be2446b99d84de82b",
+    "icnc/checker.py": "d4a00a3db94fee70b6abb4c98e252af6a9aa0cce6deb2525aeec8b71967f6a24",
+    "icnc/config_lift.py": "87d14959ea8b0fc7c1006931001e952fb9e3e23796db8e33c9e2a9f8b9ad50b3",
+    "icnc/direct.py": "536b624470bb660286f1b19dd44a4cc41d0415fe293d889e81f52c181edff164",
+    "icnc/frontier.py": "ae7e8c0cbb58351384fd6090a4847cd4c7606a9c601f2b4fd7cd60d5eb5406bc",
+    "icnc/runtime_limits.py": "3618b8058ea5130f41522e8ccc23801dc8127b5d7d2e7a0bfe1bec22378928cb"
+  },
+  "scope": "eight imported local profile sources, not every function executed; full command launch snapshots have broader nonexecuted files",
+  "primary_input_sha256": "fd01cf409b31221c966d5d69966b614d2f385841c411e9f3459326261b8ab26a",
+  "primary_input_path": "artifact/results/primary/reference.json",
+  "answer_sources": {
+    "frontier": {
+      "private_sha256": "a91031246b3ec38386ff76072789482651ef05cf0e56644daceaf563323a9454",
+      "private_path": "native-profile/frontier/answers.jsonl"
+    },
+    "lifting": {
+      "private_sha256": "a91031246b3ec38386ff76072789482651ef05cf0e56644daceaf563323a9454",
+      "private_path": "native-profile/lifting/answers.jsonl"
+    },
+    "explicit": {
+      "private_sha256": "a91031246b3ec38386ff76072789482651ef05cf0e56644daceaf563323a9454",
+      "private_path": "native-profile/explicit/answers.jsonl"
+    }
+  },
+  "current_result_sha256": {
+    "artifact/results/query-workflow/answers.jsonl": "a91031246b3ec38386ff76072789482651ef05cf0e56644daceaf563323a9454",
+    "artifact/results/query-workflow/profile/frontier.json": "5ad70e86129d4c8e8c4d5b895f28474fe463fd5da2d185fcd915d2cde651b09d",
+    "artifact/results/query-workflow/profile/lifting.json": "8f08f4528f34d2808a0722c629b9fedb69c4ebe3d832e36f4e3affbe8f8197f6",
+    "artifact/results/query-workflow/profile/explicit.json": "424318a00c992f73d6d5ad91ab02a5bf5b4cf792e13a63498ff78d688ae2252e",
+    "artifact/results/query-workflow/reproduction/normal.json": "bda864f9c8ccf2e94183203db75f5273604189217cc477ac7998240c6b8d1714",
+    "artifact/results/query-workflow/reproduction/normal/study/reference.json": "fd01cf409b31221c966d5d69966b614d2f385841c411e9f3459326261b8ab26a",
+    "artifact/results/query-workflow/reproduction/normal/study/measurements.json": "98ea75e8bfbd5664052c7fef07e534cf79106c4e29e6a4e4dcc4c1a885585fce",
+    "artifact/results/query-workflow/reproduction/normal/semantic-audit/reference.json": "d50407ce31a9fb31adccb09e9ba653e7ea05f9c8d949c81c48b60059c8a620c6",
+    "artifact/results/query-workflow/reproduction/normal/semantic-audit/measurements.json": "44f2d5bf5a1c6c01a06a9556007e8183d9787c40af827a744434c4407aed217e",
+    "artifact/results/query-workflow/reproduction/normal/configuration-lifting/reference.json": "9d67a5c42425c19eacc0dfc77c8d7136403ffe66ac5aa7af7aefe23ef0682804",
+    "artifact/results/query-workflow/reproduction/normal/configuration-lifting/measurements.json": "bbc97da0229377c8fc5ac6db72061cd7db73573e3fb896eba90820a45635b09e",
+    "artifact/results/query-workflow/reproduction/normal/tests.json": "7d33ce2272aa3ac4c5fb4eac67a8096c6425070667ff5b3f6d2bae2cd370c393",
+    "artifact/results/query-workflow/reproduction/normal/command-audit_semantics.json": "cfae607285437f40e79211313249f6061ece3e5fbd6761698cc21ce775a320e3",
+    "artifact/results/query-workflow/reproduction/normal/command-compare_lifting.json": "705795172acc3f2d9c2bd83087ebe0bb8a665228eb179fe5ec93ab8d36abe94d",
+    "artifact/results/query-workflow/reproduction/normal/command-run_tests.json": "bcebd666c55e27284b85907e76f15ea546e38d5f46a1021ee30a3cf6fe870a2a",
+    "artifact/results/query-workflow/reproduction/normal/command-study.json": "e48ed22d3125854e28c40e1eaf655bfd19bc23f99af53c44fbfc56db4a191f8d",
+    "artifact/results/query-workflow/reproduction/optimized.json": "efca317d0483a2658b5b78deeae911c9841342f552f168be693f221b8f169962",
+    "artifact/results/query-workflow/reproduction/optimized/study/reference.json": "fd01cf409b31221c966d5d69966b614d2f385841c411e9f3459326261b8ab26a",
+    "artifact/results/query-workflow/reproduction/optimized/study/measurements.json": "730758ebb74f5df3d4e10936ba20ca6deb82efc4b8ad5bb70bdaf2712709de4c",
+    "artifact/results/query-workflow/reproduction/optimized/semantic-audit/reference.json": "d50407ce31a9fb31adccb09e9ba653e7ea05f9c8d949c81c48b60059c8a620c6",
+    "artifact/results/query-workflow/reproduction/optimized/semantic-audit/measurements.json": "b220f33a167ab7c9ac72be5dfc9a4f47309cca353882459c041b3d83b6b60161",
+    "artifact/results/query-workflow/reproduction/optimized/configuration-lifting/reference.json": "9d67a5c42425c19eacc0dfc77c8d7136403ffe66ac5aa7af7aefe23ef0682804",
+    "artifact/results/query-workflow/reproduction/optimized/configuration-lifting/measurements.json": "502da7eacd70527bb375314a1fb1ec056d6a70c7938f917aacdefc40b8ae178e",
+    "artifact/results/query-workflow/reproduction/optimized/tests.json": "9bfb961e0414435268755866fc70fc0ef4329a336f9141c95726196f3b5ba540",
+    "artifact/results/query-workflow/reproduction/optimized/command-audit_semantics.json": "4292965e27ba92e6da6f2bba45eb7856c5092f0c1b4897c6bc37a45c57d09564",
+    "artifact/results/query-workflow/reproduction/optimized/command-compare_lifting.json": "4c45c0f3aacf86c1118e6d6fb51d3e42fbf1083b43b3712bd30f8bea2c39f067",
+    "artifact/results/query-workflow/reproduction/optimized/command-run_tests.json": "45a0c5edee6f3392f402a26733a567a692d12c328df55ef4a9e52200c23f1689",
+    "artifact/results/query-workflow/reproduction/optimized/command-study.json": "ec47a924f18c55d4a111bd4551bcea558dec1a7fb7cce138be1b35c12661dd2a",
+    "artifact/results/query-workflow/commands/query-red-normal.json": "c6472d540210b64398395ff3e422b985d34a9f6608acf8cc542dba77c9fcfdc3",
+    "artifact/results/query-workflow/commands/query-red-optimized.json": "25904d061b7b5080cf2406657fab64758a267a85298b4868f1eff2ab4f309927",
+    "artifact/results/query-workflow/commands/query-green-normal.json": "88998438f42f90cf88da049fcb0ab571766ac7c119cb62908136283cecbd8181",
+    "artifact/results/query-workflow/commands/query-green-optimized.json": "9f830789dd98030cb918100513b5810582895d493b3590a6ba33e6d2b1f19f23",
+    "artifact/results/query-workflow/commands/reference-red-normal.json": "8391e99a4ce1276df895290c8f5e7dc4483865371b1ca2019186af4e5fe1eedb",
+    "artifact/results/query-workflow/commands/reference-red-optimized.json": "1fb3449ddb4fa42404de8ded4d5a6a015f097ea236ca01915b84ee4b2d04f348",
+    "artifact/results/query-workflow/commands/reference-green-normal.json": "fdb39eb72175bea75e4569cfa4daf16018ebc22fe8faf8cba7d0420549d025fd",
+    "artifact/results/query-workflow/commands/reference-green-optimized.json": "0d36505f4c83430af3dc90ca63ffaeb3560f3521e4869bb39b556d683ed7ba89",
+    "artifact/results/query-workflow/commands/child-mode-red-normal.json": "077da0711a35e1fa2ac1148f93553a9c05e0c3e41d98e589c531bc302439f99f",
+    "artifact/results/query-workflow/commands/child-mode-red-optimized.json": "aec41805d9ce8fe2d7b2fce96d71a3c93fdb469081fe826763dba27143abf559",
+    "artifact/results/query-workflow/commands/child-mode-green-normal.json": "ae1821ddf785b1f33d89f087fbdb80148439887719934acc56f7cb4bd6e46c9d",
+    "artifact/results/query-workflow/commands/child-mode-green-optimized.json": "0a894f55f0acde3f3f1099d7320e777ff5411446bcfa8d539c3a7674878e7f09",
+    "artifact/results/query-workflow/commands/suite-normal.json": "e6cd373c57d3ab39ec7748322214f1462bb935557fa1397e4d2d9ede65ec10ed",
+    "artifact/results/query-workflow/commands/suite-optimized.json": "4f93befa0f491c62364c5284ba5aad2dea6c36e7aab2fea65f208d3646f6dbc0",
+    "artifact/results/query-workflow/commands/structural-normal.json": "927b70613aa8991d4abc9b797f334ece0cefb31498853f278ee2634ffed1dbdc",
+    "artifact/results/query-workflow/commands/structural-optimized.json": "9d7a2922f15998ca3980d79daacc1c0d73755e3e99fd8844caba462342bf3cbf",
+    "artifact/results/query-workflow/commands/full-normal.json": "09b6af1d843134845fc618c71c9ab6105cdf5d0561de3331d9453de46b102c00",
+    "artifact/results/query-workflow/commands/full-optimized.json": "3fe4edf6a8a0417ab7097e8d3a1728fc69640571a57ed9171b5bf106c202dfe8",
+    "artifact/results/query-workflow/commands/profile-frontier.json": "b56a2f6e60784f34b0ba43526e60f4c1e68928612c7c12132d86d74fd045aed5",
+    "artifact/results/query-workflow/commands/profile-lifting.json": "f946fe0bd5b8f77a323c0bb809641a17433bdec3037c2adaba5c39cf3170d29a",
+    "artifact/results/query-workflow/commands/profile-explicit.json": "14e299aa9487788a2762b81399b8705500027fe447baea2aa2583a650cd9f570",
+    "artifact/results/query-workflow/commands/query-weights-command.json": "4d07c868c50291abaec3004eb0e325d1203ed84bbe7c178c7040f2b09ffe14fa",
+    "artifact/results/query-workflow/environment.json": "4dc6c2ad2c5691451fff400e95ba8aea137a1703c7b7a14c82ce46cc76b04e7f",
+    "artifact/results/query-workflow/summary.json": "ca9e956a4a68b4688b1d10138b6ca62fe7ab0b32d1f929d885f981bb833d1319"
+  }
+}

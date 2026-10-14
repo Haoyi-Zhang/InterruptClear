@@ -1,0 +1,87 @@
+{
+  "method": "explicit",
+  "models": 84,
+  "plans": 652,
+  "plan_budget_queries": 5046,
+  "optimal_plan_set_queries": 526,
+  "stages": {
+    "input_read_and_decode": {
+      "cpu_seconds": 0.015625,
+      "wall_seconds": 0.006103899999288842
+    },
+    "model_admission": {
+      "cpu_seconds": 0.0,
+      "wall_seconds": 0.004861999914282933
+    },
+    "complete_construction": {
+      "cpu_seconds": 0.140625,
+      "wall_seconds": 0.1651235000754241
+    },
+    "all_plan_safety_queries": {
+      "cpu_seconds": 0.0,
+      "wall_seconds": 0.005871899455087259
+    },
+    "all_weighted_optimum_queries": {
+      "cpu_seconds": 0.015625,
+      "wall_seconds": 0.007330499734962359
+    },
+    "answer_encoding": {
+      "cpu_seconds": 0.0,
+      "wall_seconds": 0.002991499990457669
+    },
+    "answer_write": {
+      "cpu_seconds": 0.0,
+      "wall_seconds": 0.0004369000089354813
+    },
+    "receipt_source_binding": {
+      "cpu_seconds": 0.0,
+      "wall_seconds": 0.001584099984029308
+    }
+  },
+  "runtime_limits": {
+    "platform": "win32",
+    "python_optimization": 0,
+    "site_packages_disabled": true,
+    "dont_write_bytecode": true,
+    "mode": "portable",
+    "requested_cpu_soft_seconds": 170,
+    "requested_cpu_hard_seconds": 180,
+    "requested_address_space_mib": 2500,
+    "os_cpu_limit_enforced": false,
+    "os_address_space_limit_enforced": false,
+    "cooperative_cpu_checks": true,
+    "peak_rss_available": false
+  },
+  "cpu_seconds_through_answers": 0.1875,
+  "wall_seconds_through_answers": 0.19822239998029545,
+  "memory": {
+    "peak_rss_kib": null,
+    "windows_peak_working_set_bytes": 31166464,
+    "windows_peak_commit_bytes": 22446080,
+    "scope": "whole owned child peak observed before receipt write/exit; includes imports/input/answers, not an OS cap or Linux RSS"
+  },
+  "answer_sha256": "a91031246b3ec38386ff76072789482651ef05cf0e56644daceaf563323a9454",
+  "primary_input_sha256": "fd01cf409b31221c966d5d69966b614d2f385841c411e9f3459326261b8ab26a",
+  "source_sha256": {
+    "profile_workflow.py": "bd9af012a9b006027248eee51e7873548973c21a0409d5e7efd622dd3badb592",
+    "icnc/__init__.py": "74ea10b169031a389e376b38287f9a75952aecb097fd494d82865146eac204c1",
+    "icnc/model.py": "9169cec8e76a562c86bfa0de204a10bfbaab6fcc4abdec0be2446b99d84de82b",
+    "icnc/checker.py": "d4a00a3db94fee70b6abb4c98e252af6a9aa0cce6deb2525aeec8b71967f6a24",
+    "icnc/config_lift.py": "87d14959ea8b0fc7c1006931001e952fb9e3e23796db8e33c9e2a9f8b9ad50b3",
+    "icnc/direct.py": "536b624470bb660286f1b19dd44a4cc41d0415fe293d889e81f52c181edff164",
+    "icnc/frontier.py": "ae7e8c0cbb58351384fd6090a4847cd4c7606a9c601f2b4fd7cd60d5eb5406bc",
+    "icnc/runtime_limits.py": "3618b8058ea5130f41522e8ccc23801dc8127b5d7d2e7a0bfe1bec22378928cb"
+  },
+  "source_scope": "eight imported local modules; only the named arm executes its construction, not function coverage of every import",
+  "environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.28000-SP0"
+  },
+  "contract": "all original static-plan/sub-budget safety and exact optimum/ties; identical models and weights",
+  "scope": "one real owned CPython finite-model process per arm; not deployed interrupts or external SPLlift",
+  "accounting": "stages include complete per-arm construction and frontier certificate consumer; startup/receipt I/O stay in external command wall",
+  "comparison_note": "dense truth_at batches plan bits; explicit optimum reuses its just-computed bits; frontier/lifting optimum use their actual public APIs",
+  "charged_operations": {
+    "explicit_edges": 17841
+  }
+}
