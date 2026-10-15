@@ -111,6 +111,3 @@ counts and campaign denominators are reported separately by the runner.
 Original implementation, proof documents and results use [LICENSE](LICENSE).
 Third-party publications are attributed rather than redistributed. The repair
 frontier development is distinct from the older one-clock baseline.
-Substantive ChatGPT assistance covered formulation, proofs, code, tests,
-experiments and prose; external use requires author review and applicable-policy
-compliance.
