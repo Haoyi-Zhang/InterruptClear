@@ -6,7 +6,7 @@ The existing 84-instance primary cohort supplies the common admitted model input
 - `lifting`: construct dense all-plan Boolean annotations, then answer the same safety and optimum queries. It shares the region skeleton, not frontier annotations or the certificate consumer.
 - `explicit`: explore every fixed plan, retain those exploration results, and reuse their safety bits for selection. This implementation retains diagnostic exploration data; it is not an optimized memory lower bound.
 
-All three canonical answer streams have SHA-256 `a91031246b3ec38386ff76072789482651ef05cf0e56644daceaf563323a9454`. The frontier's certificate is an additional explainable output, not a stronger safety guarantee than the common exact query contract. Safety and optimum stages follow the actual APIs: dense lifting batches plan truth bits, and explicit selection reuses its computed safety bits. No deliberately weakened baseline repeats exploration for every query.
+All three canonical answer streams are byte-identical, as recorded in `results/query-workflow/summary.json`. The frontier's certificate is an additional explainable output, not a stronger safety guarantee than the common exact query contract. Safety and optimum stages follow the actual APIs: dense lifting batches plan truth bits, and explicit selection reuses its computed safety bits. No deliberately weakened baseline repeats exploration for every query.
 
 ## Measured boundary
 

@@ -20,4 +20,4 @@ The manuscript's bibliography is newly assembled for this development. It is not
 
 The retained research claim combines an explicit non-erasing repair language, exact joint static-plan/resource explanations with constructive canonicality, and a preemption-sensitive cleanup-order boundary. Any claim of practical deployed usefulness requires additional evidence. The paper does not claim first repair synthesis, first interruption contracts, first use of Pareto antichains, or first certified reachability.
 
-Twelve selected TDSC primary texts have now received substantive methods/proofs/evaluation/limits comparison, recorded in the full project at `review/venue-calibration.json`. This is a targeted sample, not an established ranking of the twelve closest papers. Reading only an abstract or metadata is not recorded as primary-fulltext inspection.
+Literature attribution and the recorded reading scope are in `docs/reference_sources.json`.
