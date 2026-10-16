@@ -101,6 +101,9 @@ local Python measurements, not a general speedup or hardware-defense result.
 - `results/query-workflow/`: normal/optimized commands, answers and complete-cost records.
 - `tests/`: schema, query, interpreter-mode, orchestration and semantic controls.
 - `docs/`: proofs, related work, configuration lifting, schemas and study definitions.
+- `figures/draw_schematics.py`: direct Python vector diagrams for repair order
+  and phase expansion. Optional Matplotlib dependency; run with `--outdir PATH`.
+  Fonts are embedded and label bounds checked; no experiment or TeX is invoked.
 - `claim_evidence_ledger.csv` and `external_resources.csv`: result/source mappings.
 
 Retained older run records remain execution-time evidence; current test-method
