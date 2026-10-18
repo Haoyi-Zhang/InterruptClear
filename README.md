@@ -114,3 +114,7 @@ counts and campaign denominators are reported separately by the runner.
 Original implementation, proof documents and results use [LICENSE](LICENSE).
 Third-party publications are attributed rather than redistributed. The repair
 frontier development is distinct from the older one-clock baseline.
+
+## Portable path notation
+
+Published execution records use `<PYTHON_ROOT>`, `<NODE_ROOT>`, `<RUNTIME_ROOT>` and `<PROJECTS_ROOT>` for machine-local installation and workspace prefixes. These are path aliases, not literal directories; substitute the corresponding local roots when replaying a command. Recorded interpreter and dependency versions, inputs, measurements and outcomes are unchanged. File inventories bind the published portable serializations; any `recorded_` identity denotes the pre-normalization bytes.
