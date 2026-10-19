@@ -1,6 +1,6 @@
 {
   "argv": [
-    "<PROJECTS_ROOT>/2026-07-13/new-chat-4/completion_workspace/library_review/pdf-env/Scripts/python.exe",
+    "<PYTHON_ROOT>/Scripts/python.exe",
     "-B",
     "-O",
     "-S",
@@ -66,6 +66,6 @@
   "status": "exited",
   "exit_code": 1,
   "stdout": "Raw reproduction workspace: $OWNED_OUTPUT\\temporary\\tmpwp2tqty_\\neutralization-reproduction-gb41u8p2\r\n",
-  "stderr": "test_full_reproduction_propagates_interpreter_contract (test_child_mode.ChildMode.test_full_reproduction_propagates_interpreter_contract) ... FAIL\r\n\r\n======================================================================\r\nFAIL: test_full_reproduction_propagates_interpreter_contract (test_child_mode.ChildMode.test_full_reproduction_propagates_interpreter_contract)\r\n----------------------------------------------------------------------\r\nTraceback (most recent call last):\r\n  File \"$PROJECT\\artifact\\tests\\test_child_mode.py\", line 26, in test_full_reproduction_propagates_interpreter_contract\r\n    self.assertFalse(required - set(command), ('missing interpreter flags', required - set(command), command))\r\nAssertionError: {'-B', '-O', '-S'} is not false : ('missing interpreter flags', {'-B', '-O', '-S'}, ['<PROJECTS_ROOT>\\\\2026-07-13\\\\new-chat-4\\\\completion_workspace\\\\library_review\\\\pdf-env\\\\Scripts\\\\python.exe', '<PROJECTS_ROOT>\\\\wg-check\\\\substantive-library\\\\P045\\\\artifact\\\\run_tests.py', '--output', '<PROJECTS_ROOT>\\\\2026-07-13\\\\new-chat-4\\\\completion_workspace\\\\library_review\\\\private\\\\substantive_library_completion\\\\P045\\\\temporary\\\\tmpwp2tqty_\\\\neutralization-reproduction-gb41u8p2\\\\tests.json', '--portable'])\r\n\r\n----------------------------------------------------------------------\r\nRan 1 test in 0.005s\r\n\r\nFAILED (failures=1)\r\n",
+  "stderr": "test_full_reproduction_propagates_interpreter_contract (test_child_mode.ChildMode.test_full_reproduction_propagates_interpreter_contract) ... FAIL\r\n\r\n======================================================================\r\nFAIL: test_full_reproduction_propagates_interpreter_contract (test_child_mode.ChildMode.test_full_reproduction_propagates_interpreter_contract)\r\n----------------------------------------------------------------------\r\nTraceback (most recent call last):\r\n  File \"$PROJECT\\artifact\\tests\\test_child_mode.py\", line 26, in test_full_reproduction_propagates_interpreter_contract\r\n    self.assertFalse(required - set(command), ('missing interpreter flags', required - set(command), command))\r\nAssertionError: {'-B', '-O', '-S'} is not false : ('missing interpreter flags', {'-B', '-O', '-S'}, ['<PYTHON_ROOT>/Scripts/python.exe', '<PROJECTS_ROOT>\\\\wg-check\\\\substantive-library\\\\P045\\\\artifact\\\\run_tests.py', '--output', '<WORK_ROOT>/temporary/tmpwp2tqty_/neutralization-reproduction-gb41u8p2/tests.json', '--portable'])\r\n\r\n----------------------------------------------------------------------\r\nRan 1 test in 0.005s\r\n\r\nFAILED (failures=1)\r\n",
   "wall_seconds": 0.7610972999827936
 }
